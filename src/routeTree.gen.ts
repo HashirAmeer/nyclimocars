@@ -13,9 +13,14 @@ import { Route as FleetRouteImport } from './routes/fleet'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesToursRouteImport } from './routes/services.tours'
 import { Route as ServicesPointToPointRouteImport } from './routes/services.point-to-point'
 import { Route as ServicesHourlyRouteImport } from './routes/services.hourly'
 import { Route as ServicesAirportRouteImport } from './routes/services.airport'
+import { Route as PricingToursRouteImport } from './routes/pricing.tours'
+import { Route as PricingPointToPointRouteImport } from './routes/pricing.point-to-point'
+import { Route as PricingHourlyRouteImport } from './routes/pricing.hourly'
+import { Route as PricingAirportRouteImport } from './routes/pricing.airport'
 
 const FleetRoute = FleetRouteImport.update({
   id: '/fleet',
@@ -37,6 +42,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesToursRoute = ServicesToursRouteImport.update({
+  id: '/services/tours',
+  path: '/services/tours',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesPointToPointRoute = ServicesPointToPointRouteImport.update({
   id: '/services/point-to-point',
   path: '/services/point-to-point',
@@ -52,24 +62,54 @@ const ServicesAirportRoute = ServicesAirportRouteImport.update({
   path: '/services/airport',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PricingToursRoute = PricingToursRouteImport.update({
+  id: '/pricing/tours',
+  path: '/pricing/tours',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingPointToPointRoute = PricingPointToPointRouteImport.update({
+  id: '/pricing/point-to-point',
+  path: '/pricing/point-to-point',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingHourlyRoute = PricingHourlyRouteImport.update({
+  id: '/pricing/hourly',
+  path: '/pricing/hourly',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingAirportRoute = PricingAirportRouteImport.update({
+  id: '/pricing/airport',
+  path: '/pricing/airport',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
+  '/pricing/airport': typeof PricingAirportRoute
+  '/pricing/hourly': typeof PricingHourlyRoute
+  '/pricing/point-to-point': typeof PricingPointToPointRoute
+  '/pricing/tours': typeof PricingToursRoute
   '/services/airport': typeof ServicesAirportRoute
   '/services/hourly': typeof ServicesHourlyRoute
   '/services/point-to-point': typeof ServicesPointToPointRoute
+  '/services/tours': typeof ServicesToursRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
+  '/pricing/airport': typeof PricingAirportRoute
+  '/pricing/hourly': typeof PricingHourlyRoute
+  '/pricing/point-to-point': typeof PricingPointToPointRoute
+  '/pricing/tours': typeof PricingToursRoute
   '/services/airport': typeof ServicesAirportRoute
   '/services/hourly': typeof ServicesHourlyRoute
   '/services/point-to-point': typeof ServicesPointToPointRoute
+  '/services/tours': typeof ServicesToursRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -77,9 +117,14 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
+  '/pricing/airport': typeof PricingAirportRoute
+  '/pricing/hourly': typeof PricingHourlyRoute
+  '/pricing/point-to-point': typeof PricingPointToPointRoute
+  '/pricing/tours': typeof PricingToursRoute
   '/services/airport': typeof ServicesAirportRoute
   '/services/hourly': typeof ServicesHourlyRoute
   '/services/point-to-point': typeof ServicesPointToPointRoute
+  '/services/tours': typeof ServicesToursRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -88,27 +133,42 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/fleet'
+    | '/pricing/airport'
+    | '/pricing/hourly'
+    | '/pricing/point-to-point'
+    | '/pricing/tours'
     | '/services/airport'
     | '/services/hourly'
     | '/services/point-to-point'
+    | '/services/tours'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/contact'
     | '/fleet'
+    | '/pricing/airport'
+    | '/pricing/hourly'
+    | '/pricing/point-to-point'
+    | '/pricing/tours'
     | '/services/airport'
     | '/services/hourly'
     | '/services/point-to-point'
+    | '/services/tours'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/contact'
     | '/fleet'
+    | '/pricing/airport'
+    | '/pricing/hourly'
+    | '/pricing/point-to-point'
+    | '/pricing/tours'
     | '/services/airport'
     | '/services/hourly'
     | '/services/point-to-point'
+    | '/services/tours'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -116,9 +176,14 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   FleetRoute: typeof FleetRoute
+  PricingAirportRoute: typeof PricingAirportRoute
+  PricingHourlyRoute: typeof PricingHourlyRoute
+  PricingPointToPointRoute: typeof PricingPointToPointRoute
+  PricingToursRoute: typeof PricingToursRoute
   ServicesAirportRoute: typeof ServicesAirportRoute
   ServicesHourlyRoute: typeof ServicesHourlyRoute
   ServicesPointToPointRoute: typeof ServicesPointToPointRoute
+  ServicesToursRoute: typeof ServicesToursRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -151,6 +216,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/tours': {
+      id: '/services/tours'
+      path: '/services/tours'
+      fullPath: '/services/tours'
+      preLoaderRoute: typeof ServicesToursRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/point-to-point': {
       id: '/services/point-to-point'
       path: '/services/point-to-point'
@@ -172,6 +244,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesAirportRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pricing/tours': {
+      id: '/pricing/tours'
+      path: '/pricing/tours'
+      fullPath: '/pricing/tours'
+      preLoaderRoute: typeof PricingToursRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing/point-to-point': {
+      id: '/pricing/point-to-point'
+      path: '/pricing/point-to-point'
+      fullPath: '/pricing/point-to-point'
+      preLoaderRoute: typeof PricingPointToPointRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing/hourly': {
+      id: '/pricing/hourly'
+      path: '/pricing/hourly'
+      fullPath: '/pricing/hourly'
+      preLoaderRoute: typeof PricingHourlyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing/airport': {
+      id: '/pricing/airport'
+      path: '/pricing/airport'
+      fullPath: '/pricing/airport'
+      preLoaderRoute: typeof PricingAirportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -180,9 +280,14 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   FleetRoute: FleetRoute,
+  PricingAirportRoute: PricingAirportRoute,
+  PricingHourlyRoute: PricingHourlyRoute,
+  PricingPointToPointRoute: PricingPointToPointRoute,
+  PricingToursRoute: PricingToursRoute,
   ServicesAirportRoute: ServicesAirportRoute,
   ServicesHourlyRoute: ServicesHourlyRoute,
   ServicesPointToPointRoute: ServicesPointToPointRoute,
+  ServicesToursRoute: ServicesToursRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
