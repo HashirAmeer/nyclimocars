@@ -13,6 +13,9 @@ import { Route as FleetRouteImport } from './routes/fleet'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesPointToPointRouteImport } from './routes/services.point-to-point'
+import { Route as ServicesHourlyRouteImport } from './routes/services.hourly'
+import { Route as ServicesAirportRouteImport } from './routes/services.airport'
 
 const FleetRoute = FleetRouteImport.update({
   id: '/fleet',
@@ -34,18 +37,39 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesPointToPointRoute = ServicesPointToPointRouteImport.update({
+  id: '/services/point-to-point',
+  path: '/services/point-to-point',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesHourlyRoute = ServicesHourlyRouteImport.update({
+  id: '/services/hourly',
+  path: '/services/hourly',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesAirportRoute = ServicesAirportRouteImport.update({
+  id: '/services/airport',
+  path: '/services/airport',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
+  '/services/airport': typeof ServicesAirportRoute
+  '/services/hourly': typeof ServicesHourlyRoute
+  '/services/point-to-point': typeof ServicesPointToPointRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
+  '/services/airport': typeof ServicesAirportRoute
+  '/services/hourly': typeof ServicesHourlyRoute
+  '/services/point-to-point': typeof ServicesPointToPointRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +77,38 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
+  '/services/airport': typeof ServicesAirportRoute
+  '/services/hourly': typeof ServicesHourlyRoute
+  '/services/point-to-point': typeof ServicesPointToPointRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/fleet'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/fleet'
+    | '/services/airport'
+    | '/services/hourly'
+    | '/services/point-to-point'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/fleet'
-  id: '__root__' | '/' | '/about' | '/contact' | '/fleet'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/fleet'
+    | '/services/airport'
+    | '/services/hourly'
+    | '/services/point-to-point'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/fleet'
+    | '/services/airport'
+    | '/services/hourly'
+    | '/services/point-to-point'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +116,9 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   FleetRoute: typeof FleetRoute
+  ServicesAirportRoute: typeof ServicesAirportRoute
+  ServicesHourlyRoute: typeof ServicesHourlyRoute
+  ServicesPointToPointRoute: typeof ServicesPointToPointRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +151,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/point-to-point': {
+      id: '/services/point-to-point'
+      path: '/services/point-to-point'
+      fullPath: '/services/point-to-point'
+      preLoaderRoute: typeof ServicesPointToPointRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/hourly': {
+      id: '/services/hourly'
+      path: '/services/hourly'
+      fullPath: '/services/hourly'
+      preLoaderRoute: typeof ServicesHourlyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/airport': {
+      id: '/services/airport'
+      path: '/services/airport'
+      fullPath: '/services/airport'
+      preLoaderRoute: typeof ServicesAirportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +180,9 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   FleetRoute: FleetRoute,
+  ServicesAirportRoute: ServicesAirportRoute,
+  ServicesHourlyRoute: ServicesHourlyRoute,
+  ServicesPointToPointRoute: ServicesPointToPointRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
