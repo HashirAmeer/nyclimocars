@@ -2,8 +2,10 @@ import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { FloatingActions } from "./FloatingActions";
 import { CookieBanner } from "./CookieBanner";
+import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 
 export function PageShell({ children }: { children: React.ReactNode }) {
+  useRevealOnScroll();
   return (
     <div className="flex min-h-screen flex-col">
       <a
