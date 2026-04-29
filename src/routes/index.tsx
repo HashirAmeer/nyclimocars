@@ -226,7 +226,7 @@ function HomePage() {
       {/* SECTION 1 — HERO */}
       <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden text-center">
         <img
-          src="https://unsplash.com/photos/the-interior-of-a-mercedes-benz-benz-benz-benz-benz-benz-benz-benz-benz-benz-benz-HaqGejTTBAk"
+          src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1920&q=80&auto=format&fit=crop"
           alt="Luxury black limousine driving through New York City at night"
           loading="eager"
           fetchPriority="high"
