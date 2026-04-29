@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 
@@ -30,30 +30,72 @@ function Dropdown({
   items: readonly { to: string; label: string }[];
 }) {
   const [open, setOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpen(false), 120);
+  };
+
+  useEffect(() => {
+    if (!open) return;
+    const onDocClick = (e: MouseEvent) => {
+      if (!wrapperRef.current?.contains(e.target as Node)) setOpen(false);
+    };
+    const onEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onDocClick);
+    document.addEventListener("keydown", onEsc);
+    return () => {
+      document.removeEventListener("mousedown", onDocClick);
+      document.removeEventListener("keydown", onEsc);
+    };
+  }, [open]);
+
   return (
     <div
+      ref={wrapperRef}
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={() => {
+        cancelClose();
+        setOpen(true);
+      }}
+      onMouseLeave={scheduleClose}
     >
       <button
+        type="button"
         onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-haspopup="menu"
         className={linkClass + " inline-flex items-center gap-1"}
       >
         {label}
         <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       <div
-        className={`absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 transition-all duration-200 ${
-          open ? "visible opacity-100 translate-y-0" : "invisible opacity-0 -translate-y-1"
+        className={`absolute left-1/2 top-full z-[60] -translate-x-1/2 pt-3 transition-all duration-200 ${
+          open ? "visible opacity-100 translate-y-0" : "pointer-events-none invisible opacity-0 -translate-y-1"
         }`}
       >
-        <div className="min-w-[240px] overflow-hidden rounded-lg border border-gold/30 bg-navy shadow-luxury"
-             style={{ boxShadow: "var(--shadow-luxury)" }}>
+        <div
+          className="min-w-[240px] overflow-hidden rounded-lg border border-gold/30 bg-navy"
+          style={{ boxShadow: "var(--shadow-luxury)" }}
+          role="menu"
+        >
           {items.map((item) => (
             <Link
               key={item.to}
               to={item.to}
+              onClick={() => setOpen(false)}
+              role="menuitem"
               className="block px-5 py-3 text-sm text-white/85 transition-colors hover:bg-gold/15 hover:text-gold"
             >
               {item.label}
