@@ -9,6 +9,7 @@ import {
 import {
   Accordion, AccordionItem, AccordionTrigger, AccordionContent,
 } from "@/components/ui/accordion";
+import { JsonLd, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
 const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
@@ -325,6 +326,11 @@ function ContactPage() {
           </Accordion>
         </div>
       </section>
+      <JsonLd data={faqSchema(FAQS)} />
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: "https://www.nyclimocar.com/" },
+        { name: "Contact", url: "https://www.nyclimocar.com/contact" },
+      ])} />
     </PageShell>
   );
 }
