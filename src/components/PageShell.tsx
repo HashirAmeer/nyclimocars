@@ -24,7 +24,7 @@ export function PageHero({
 }) {
   return (
     <section className="relative isolate overflow-hidden">
-      <img loading="lazy" decoding="async" src={image} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <img src={image} alt="" loading="eager" fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/70 to-navy/90" />
       <div className="container-luxury relative py-28 text-center text-white md:py-36">
         {eyebrow && (
