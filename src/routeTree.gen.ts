@@ -69,24 +69,24 @@ const ServicesAirportRoute = ServicesAirportRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const PricingToursRoute = PricingToursRouteImport.update({
-  id: '/tours',
-  path: '/tours',
-  getParentRoute: () => PricingRoute,
+  id: '/pricing/tours',
+  path: '/pricing/tours',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const PricingPointToPointRoute = PricingPointToPointRouteImport.update({
-  id: '/point-to-point',
-  path: '/point-to-point',
-  getParentRoute: () => PricingRoute,
+  id: '/pricing/point-to-point',
+  path: '/pricing/point-to-point',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const PricingHourlyRoute = PricingHourlyRouteImport.update({
-  id: '/hourly',
-  path: '/hourly',
-  getParentRoute: () => PricingRoute,
+  id: '/pricing/hourly',
+  path: '/pricing/hourly',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const PricingAirportRoute = PricingAirportRouteImport.update({
-  id: '/airport',
-  path: '/airport',
-  getParentRoute: () => PricingRoute,
+  id: '/pricing/airport',
+  path: '/pricing/airport',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -188,6 +188,10 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   FleetRoute: typeof FleetRoute
+  PricingAirportRoute: typeof PricingAirportRoute
+  PricingHourlyRoute: typeof PricingHourlyRoute
+  PricingPointToPointRoute: typeof PricingPointToPointRoute
+  PricingToursRoute: typeof PricingToursRoute
   ServicesAirportRoute: typeof ServicesAirportRoute
   ServicesHourlyRoute: typeof ServicesHourlyRoute
   ServicesPointToPointRoute: typeof ServicesPointToPointRoute
@@ -262,31 +266,31 @@ declare module '@tanstack/react-router' {
     }
     '/pricing/tours': {
       id: '/pricing/tours'
-      path: '/tours'
+      path: '/pricing/tours'
       fullPath: '/pricing/tours'
       preLoaderRoute: typeof PricingToursRouteImport
-      parentRoute: typeof PricingRoute
+      parentRoute: typeof rootRouteImport
     }
     '/pricing/point-to-point': {
       id: '/pricing/point-to-point'
-      path: '/point-to-point'
+      path: '/pricing/point-to-point'
       fullPath: '/pricing/point-to-point'
       preLoaderRoute: typeof PricingPointToPointRouteImport
-      parentRoute: typeof PricingRoute
+      parentRoute: typeof rootRouteImport
     }
     '/pricing/hourly': {
       id: '/pricing/hourly'
-      path: '/hourly'
+      path: '/pricing/hourly'
       fullPath: '/pricing/hourly'
       preLoaderRoute: typeof PricingHourlyRouteImport
-      parentRoute: typeof PricingRoute
+      parentRoute: typeof rootRouteImport
     }
     '/pricing/airport': {
       id: '/pricing/airport'
-      path: '/airport'
+      path: '/pricing/airport'
       fullPath: '/pricing/airport'
       preLoaderRoute: typeof PricingAirportRouteImport
-      parentRoute: typeof PricingRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -296,6 +300,10 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   FleetRoute: FleetRoute,
+  PricingAirportRoute: PricingAirportRoute,
+  PricingHourlyRoute: PricingHourlyRoute,
+  PricingPointToPointRoute: PricingPointToPointRoute,
+  PricingToursRoute: PricingToursRoute,
   ServicesAirportRoute: ServicesAirportRoute,
   ServicesHourlyRoute: ServicesHourlyRoute,
   ServicesPointToPointRoute: ServicesPointToPointRoute,
