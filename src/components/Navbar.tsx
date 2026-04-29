@@ -163,18 +163,15 @@ export function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`fixed inset-0 z-50 lg:hidden ${mobileOpen ? "" : "pointer-events-none"}`}
+        className={`fixed inset-0 z-50 lg:hidden ${mobileOpen ? "" : "hidden"}`}
+        aria-hidden={!mobileOpen}
       >
         <div
-          className={`absolute inset-0 bg-black/60 transition-opacity ${
-            mobileOpen ? "opacity-100" : "opacity-0"
-          }`}
+          className="absolute inset-0 bg-black/60"
           onClick={() => setMobileOpen(false)}
         />
         <aside
-          className={`absolute right-0 top-0 h-full w-[85%] max-w-sm bg-navy transition-transform duration-300 ${
-            mobileOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+          className="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-navy shadow-2xl"
         >
           <div className="flex h-20 items-center justify-between border-b border-gold/20 px-5">
             <Logo className="h-10 w-auto" />
