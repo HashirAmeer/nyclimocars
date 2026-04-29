@@ -223,7 +223,7 @@ function HomePage() {
     <PageShell>
       {/* SECTION 1 — HERO */}
       <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden text-center">
-        <img
+        <img loading="lazy" decoding="async"
           src="https://images.unsplash.com/photo-1520975922323-388183fcd0bd?w=1920&q=80"
           alt="Luxury black limousine driving through New York City at night"
           className="absolute inset-0 h-full w-full object-cover"
@@ -278,7 +278,7 @@ function HomePage() {
                 className="group relative isolate flex aspect-[4/5] items-center justify-center overflow-hidden rounded-xl border-2 border-transparent transition-all hover:-translate-y-1 hover:border-gold hover:shadow-2xl"
                 style={{ boxShadow: "0 0 0 transparent" }}
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={s.img}
                   alt={s.title}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -320,7 +320,7 @@ function HomePage() {
                 className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card text-left transition-all hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="aspect-[16/10] overflow-hidden">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={s.img}
                     alt={s.title}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -430,7 +430,7 @@ function HomePage() {
                 key={a.code}
                 className="group relative isolate flex aspect-[4/5] flex-col items-center justify-end overflow-hidden rounded-xl text-center text-white transition-all hover:-translate-y-1 hover:shadow-2xl"
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={a.img}
                   alt={`${a.name} (${a.code})`}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -479,7 +479,7 @@ function HomePage() {
                 className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={t.img}
                     alt={t.title}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -511,7 +511,7 @@ function HomePage() {
           <h2 className="text-center text-4xl font-semibold text-navy md:text-5xl">About NYC Limo Car</h2>
           <div className="mx-auto mt-4 h-px w-24 bg-gold" />
           <div className="mx-auto mt-12 grid max-w-6xl items-center gap-10 lg:grid-cols-2">
-            <img
+            <img loading="lazy" decoding="async"
               src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=1200&q=80"
               alt="Professional chauffeur in suit standing beside a luxury car"
               className="mx-auto aspect-[4/3] w-full rounded-2xl object-cover shadow-xl"

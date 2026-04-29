@@ -45,7 +45,7 @@ function AboutPage() {
     <PageShell>
       {/* SECTION 1 — HERO */}
       <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden">
-        <img
+        <img loading="lazy" decoding="async"
           src="https://images.unsplash.com/photo-1496588152823-86ff7695e68f?w=1920&q=80"
           alt="New York City skyline at night"
           className="absolute inset-0 h-full w-full object-cover"
@@ -79,7 +79,7 @@ function AboutPage() {
       <section className="bg-background py-24">
         <div className="container-luxury">
           <div className="grid items-center gap-14 text-center lg:grid-cols-2 lg:text-left">
-            <img
+            <img loading="lazy" decoding="async"
               src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1200&q=80"
               alt="Professional chauffeur opening luxury limousine door"
               className="mx-auto rounded-2xl object-cover shadow-xl"
@@ -167,7 +167,7 @@ function AboutPage() {
 
       {/* SECTION 4 — OUR MISSION */}
       <section className="relative isolate overflow-hidden bg-navy py-24 text-white">
-        <img
+        <img loading="lazy" decoding="async"
           src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=1600&q=80"
           alt=""
           className="absolute inset-0 h-full w-full object-cover opacity-15"
