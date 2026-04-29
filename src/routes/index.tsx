@@ -19,6 +19,7 @@ import {
   Star,
 } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
+import { JsonLd, localBusinessSchema } from "@/components/JsonLd";
 
 export const Route = createFileRoute("/")({
   head: () => ({
