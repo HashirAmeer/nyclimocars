@@ -79,38 +79,32 @@ const services = [
   {
     title: "EVENT TRANSPORTATION",
     img: "https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?w=900&q=80",
-    text:
-      "NYC Limo Car works with experienced drivers to serve each client with their event transportation needs. We take special precautions to ensure the transportation we provide meets the safety standards of the limousine industry. Our mission is to provide safety and comfort for clients on their way to events — whether it's a prom, concert, birthday party, bachelor/bachelorette party, sports event, or conference.",
+    text: "NYC Limo Car works with experienced drivers to serve each client with their event transportation needs. We take special precautions to ensure the transportation we provide meets the safety standards of the limousine industry. Our mission is to provide safety and comfort for clients on their way to events — whether it's a prom, concert, birthday party, bachelor/bachelorette party, sports event, or conference.",
   },
   {
     title: "NYC AIRPORT LIMOUSINE SERVICE (JFK · LGA · EWR · TEB)",
     img: "https://images.unsplash.com/photo-1542296332-2e4473faf563?w=900&q=80",
-    text:
-      "NYC Limo Car is among the top limousine service providers for airport transport in New York City. We provide limousine transfers to and from all major airports including JFK, LGA, EWR, and TEB. Complimentary meet & greet, flight monitoring, and up to 60 minutes free waiting time included.",
+    text: "NYC Limo Car is among the top limousine service providers for airport transport in New York City. We provide limousine transfers to and from all major airports including JFK, LGA, EWR, and TEB. Complimentary meet & greet, flight monitoring, and up to 60 minutes free waiting time included.",
   },
   {
     title: "PRIVATE NEW YORK CITY LIMOUSINE TOURS",
     img: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=900&q=80",
-    text:
-      "Experience the Big Apple with our exclusive private New York City limousine tour packages. Visit Times Square, Central Park, and the Statue of Liberty. NYC Limo Car offers private tours with a knowledgeable chauffeur-guide who will take you through the most popular — and hidden — gems of the city across all five boroughs.",
+    text: "Experience the Big Apple with our exclusive private New York City limousine tour packages. Visit Times Square, Central Park, and the Statue of Liberty. NYC Limo Car offers private tours with a knowledgeable chauffeur-guide who will take you through the most popular — and hidden — gems of the city across all five boroughs.",
   },
   {
     title: "LIMOUSINE SERVICE NYC FOR WEDDINGS",
     img: "https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80",
-    text:
-      "NYC Limo Car are experts in providing quality wedding transportation for your big day. Let us handle all your transportation needs so you have one less thing to worry about on the most important day of your life. We cover the bride and groom, wedding party, and all guests — with stretch limousines, luxury sedans, SUVs, and vans available.",
+    text: "NYC Limo Car are experts in providing quality wedding transportation for your big day. Let us handle all your transportation needs so you have one less thing to worry about on the most important day of your life. We cover the bride and groom, wedding party, and all guests — with stretch limousines, luxury sedans, SUVs, and vans available.",
   },
   {
     title: "NYC TO ATLANTIC CITY LIMOUSINE — CASINOS",
     img: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=900&q=80",
-    text:
-      "There is nothing more exciting than a night at the casino. NYC Limo Car ensures you travel to and from your casino night in style and comfort. Our professional chauffeurs take all the stress of driving off your shoulders — no parking, no traffic worries. Relax, enjoy complimentary beverages, and arrive ready to win big.",
+    text: "There is nothing more exciting than a night at the casino. NYC Limo Car ensures you travel to and from your casino night in style and comfort. Our professional chauffeurs take all the stress of driving off your shoulders — no parking, no traffic worries. Relax, enjoy complimentary beverages, and arrive ready to win big.",
   },
   {
     title: "CORPORATE LIMOUSINE TRANSPORTATION",
     img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80",
-    text:
-      "At NYC Limo Car, we understand there is no margin for error when it comes to corporate travel. We have made fulfilling the corporate ground transportation needs of our clients our specialty. From solo executive travel to large groups headed for meetings, conventions, or conferences — our polished chauffeurs and luxury fleet deliver impeccable service every time.",
+    text: "At NYC Limo Car, we understand there is no margin for error when it comes to corporate travel. We have made fulfilling the corporate ground transportation needs of our clients our specialty. From solo executive travel to large groups headed for meetings, conventions, or conferences — our polished chauffeurs and luxury fleet deliver impeccable service every time.",
   },
 ];
 
@@ -118,38 +112,32 @@ const features = [
   {
     icon: Trophy,
     title: "Best Quality Limousines",
-    text:
-      "Enjoy the finest quality limousine service in New York City. Luxurious, immaculately maintained vehicles for any occasion and any group size.",
+    text: "Enjoy the finest quality limousine service in New York City. Luxurious, immaculately maintained vehicles for any occasion and any group size.",
   },
   {
     icon: UserCheck,
     title: "Expert Chauffeurs",
-    text:
-      "Our professionally trained chauffeurs easily navigate New York City, providing a seamless, comfortable journey for every single passenger, every time.",
+    text: "Our professionally trained chauffeurs easily navigate New York City, providing a seamless, comfortable journey for every single passenger, every time.",
   },
   {
     icon: MapPin,
     title: "Many Locations Served",
-    text:
-      "NYC Limo Car serves Manhattan, Brooklyn, the Bronx, Queens, Staten Island, and the entire Tri-State Area — bringing luxury transportation to your door.",
+    text: "NYC Limo Car serves Manhattan, Brooklyn, the Bronx, Queens, Staten Island, and the entire Tri-State Area — bringing luxury transportation to your door.",
   },
   {
     icon: Radar,
     title: "Real-Time Flight Monitoring",
-    text:
-      "We monitor all incoming flights in real time. If your flight is delayed, we adjust your pickup time automatically — at no extra charge.",
+    text: "We monitor all incoming flights in real time. If your flight is delayed, we adjust your pickup time automatically — at no extra charge.",
   },
   {
     icon: ShieldCheck,
     title: "Safety & Reliability",
-    text:
-      "Meticulously maintained vehicles, licensed and insured chauffeurs — your safety and peace of mind is our top priority on every journey.",
+    text: "Meticulously maintained vehicles, licensed and insured chauffeurs — your safety and peace of mind is our top priority on every journey.",
   },
   {
     icon: DollarSign,
     title: "All-Inclusive Transparent Pricing",
-    text:
-      "No hidden fees, no surprises. All rates include taxes, gratuity, and tolls. What you see is exactly what you pay.",
+    text: "No hidden fees, no surprises. All rates include taxes, gratuity, and tolls. What you see is exactly what you pay.",
   },
 ];
 
@@ -161,35 +149,47 @@ const fleet = [
 ];
 
 const airports = [
-  { code: "JFK", name: "John F. Kennedy International Airport", img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=80" },
-  { code: "LGA", name: "LaGuardia Airport", img: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=900&q=80" },
-  { code: "EWR", name: "Newark Liberty International Airport", img: "https://images.unsplash.com/photo-1542296332-2e4473faf563?w=900&q=80" },
-  { code: "TEB", name: "Teterboro Airport", img: "https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=900&q=80" },
+  {
+    code: "JFK",
+    name: "John F. Kennedy International Airport",
+    img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=80",
+  },
+  {
+    code: "LGA",
+    name: "LaGuardia Airport",
+    img: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=900&q=80",
+  },
+  {
+    code: "EWR",
+    name: "Newark Liberty International Airport",
+    img: "https://images.unsplash.com/photo-1542296332-2e4473faf563?w=900&q=80",
+  },
+  {
+    code: "TEB",
+    name: "Teterboro Airport",
+    img: "https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=900&q=80",
+  },
 ];
 
 const tours = [
   {
     title: "Classic NYC Sightseeing Tour",
-    text:
-      "Visit Times Square, Central Park, Brooklyn Bridge, Statue of Liberty views, Rockefeller Center, Greenwich Village, and more. Stop whenever you like for photos or shopping.",
+    text: "Visit Times Square, Central Park, Brooklyn Bridge, Statue of Liberty views, Rockefeller Center, Greenwich Village, and more. Stop whenever you like for photos or shopping.",
     img: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=900&q=80",
   },
   {
     title: "NYC Night Lights Tour",
-    text:
-      "Witness New York City come alive after dark. Marvel at the glittering skyline, illuminated skyscrapers, and the electric energy of Manhattan by night.",
+    text: "Witness New York City come alive after dark. Marvel at the glittering skyline, illuminated skyscrapers, and the electric energy of Manhattan by night.",
     img: "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=900&q=80",
   },
   {
     title: "NYC Tour with Expert Guide",
-    text:
-      "The full limousine tour experience with a licensed tour guide. Get historical context, insider stories, and personalized recommendations across all five boroughs.",
+    text: "The full limousine tour experience with a licensed tour guide. Get historical context, insider stories, and personalized recommendations across all five boroughs.",
     img: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=900&q=80",
   },
   {
     title: "Shopping Tour",
-    text:
-      "Explore NYC's finest boutiques or visit Woodbury Common Premium Outlets — featuring 220+ designer brands including Coach, Dior, and Versace — one hour north of NYC.",
+    text: "Explore NYC's finest boutiques or visit Woodbury Common Premium Outlets — featuring 220+ designer brands including Coach, Dior, and Versace — one hour north of NYC.",
     img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900&q=80",
   },
 ];
@@ -226,7 +226,7 @@ function HomePage() {
       {/* SECTION 1 — HERO */}
       <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden text-center">
         <img
-          src="https://images.unsplash.com/photo-1520975922323-388183fcd0bd?w=1600&q=70"
+          src="https://unsplash.com/photos/the-interior-of-a-mercedes-benz-benz-benz-benz-benz-benz-benz-benz-benz-benz-benz-HaqGejTTBAk"
           alt="Luxury black limousine driving through New York City at night"
           loading="eager"
           fetchPriority="high"
@@ -283,7 +283,9 @@ function HomePage() {
                 className="group relative isolate flex aspect-[4/5] items-center justify-center overflow-hidden rounded-xl border-2 border-transparent transition-all hover:-translate-y-1 hover:border-gold hover:shadow-2xl"
                 style={{ boxShadow: "0 0 0 transparent" }}
               >
-                <img loading="lazy" decoding="async"
+                <img
+                  loading="lazy"
+                  decoding="async"
                   src={s.img}
                   alt={s.title}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -325,7 +327,9 @@ function HomePage() {
                 className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card text-left transition-all hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="aspect-[16/10] overflow-hidden">
-                  <img loading="lazy" decoding="async"
+                  <img
+                    loading="lazy"
+                    decoding="async"
                     src={s.img}
                     alt={s.title}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -351,9 +355,7 @@ function HomePage() {
       <section className="bg-silver/20 py-20 text-center">
         <div className="container-luxury">
           <h2 className="text-4xl font-semibold text-navy md:text-5xl">Why Choose NYC Limo Car?</h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            We Treat Our Customers Like Royalty
-          </p>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">We Treat Our Customers Like Royalty</p>
           <div className="mx-auto mt-4 h-px w-24 bg-gold" />
           <div className="mx-auto mt-14 grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {features.map(({ icon: Icon, title, text }) => (
@@ -378,9 +380,9 @@ function HomePage() {
           </p>
           <div className="mx-auto mt-4 h-px w-24 bg-gold" />
           <p className="mx-auto mt-6 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            NYC Limo Car offers a full range of luxury vehicles including stretch limousines, executive sedans,
-            SUVs, Mercedes Sprinter Vans, Hummer Limousines, Party Buses, and Coach Buses. Complimentary soft
-            drinks and water inside all vehicles. Champagne service available inside limousines upon request.
+            NYC Limo Car offers a full range of luxury vehicles including stretch limousines, executive sedans, SUVs,
+            Mercedes Sprinter Vans, Hummer Limousines, Party Buses, and Coach Buses. Complimentary soft drinks and water
+            inside all vehicles. Champagne service available inside limousines upon request.
           </p>
           <div className="mx-auto mt-12 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {fleet.map((v) => (
@@ -435,7 +437,9 @@ function HomePage() {
                 key={a.code}
                 className="group relative isolate flex aspect-[4/5] flex-col items-center justify-end overflow-hidden rounded-xl text-center text-white transition-all hover:-translate-y-1 hover:shadow-2xl"
               >
-                <img loading="lazy" decoding="async"
+                <img
+                  loading="lazy"
+                  decoding="async"
                   src={a.img}
                   alt={`${a.name} (${a.code})`}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -449,8 +453,8 @@ function HomePage() {
             ))}
           </div>
           <p className="mx-auto mt-8 max-w-3xl text-sm text-muted-foreground">
-            ✈️ Real-time flight tracking and complimentary meet & greet service inside the terminal included
-            with every airport transfer. Up to 60 minutes free waiting time.
+            ✈️ Real-time flight tracking and complimentary meet & greet service inside the terminal included with every
+            airport transfer. Up to 60 minutes free waiting time.
           </p>
           <Link
             to="/pricing/airport"
@@ -464,18 +468,16 @@ function HomePage() {
       {/* SECTION 8 — TOURS */}
       <section className="bg-background py-20 text-center">
         <div className="container-luxury">
-          <h2 className="text-4xl font-semibold text-navy md:text-5xl">
-            Private Limousine Tours of New York City
-          </h2>
+          <h2 className="text-4xl font-semibold text-navy md:text-5xl">Private Limousine Tours of New York City</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             See the city like never before — all-inclusive tour packages
           </p>
           <div className="mx-auto mt-4 h-px w-24 bg-gold" />
           <p className="mx-auto mt-6 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            NYC Limo Car gives you a tour of the city that would take 4–5 days on your own — covered in just
-            hours. We offer historical, informative, enjoyable, and memorable private tours. All tour packages
-            can be customized to suit your group. Our knowledgeable chauffeur-guides are native English speakers;
-            several foreign language experts also available upon request. Pick-up and drop-off at your hotel.
+            NYC Limo Car gives you a tour of the city that would take 4–5 days on your own — covered in just hours. We
+            offer historical, informative, enjoyable, and memorable private tours. All tour packages can be customized
+            to suit your group. Our knowledgeable chauffeur-guides are native English speakers; several foreign language
+            experts also available upon request. Pick-up and drop-off at your hotel.
           </p>
           <div className="mx-auto mt-12 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {tours.map((t) => (
@@ -484,7 +486,9 @@ function HomePage() {
                 className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img loading="lazy" decoding="async"
+                  <img
+                    loading="lazy"
+                    decoding="async"
                     src={t.img}
                     alt={t.title}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -516,7 +520,9 @@ function HomePage() {
           <h2 className="text-center text-4xl font-semibold text-navy md:text-5xl">About NYC Limo Car</h2>
           <div className="mx-auto mt-4 h-px w-24 bg-gold" />
           <div className="mx-auto mt-12 grid max-w-6xl items-center gap-10 lg:grid-cols-2">
-            <img loading="lazy" decoding="async"
+            <img
+              loading="lazy"
+              decoding="async"
               src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=1200&q=80"
               alt="Professional chauffeur in suit standing beside a luxury car"
               className="mx-auto aspect-[4/3] w-full rounded-2xl object-cover shadow-xl"
@@ -527,11 +533,11 @@ function HomePage() {
               </h3>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground md:text-base">
                 Welcome to NYC Limo Car — New York City's premier luxury limousine and chauffeur service. We are
-                dedicated to offering the safest, most reliable, and most luxurious transportation in the
-                Tri-State Area. Whether you need a ride to the airport, a chauffeured limousine for a special
-                event, or a private tour of NYC — NYC Limo Car is here to make you feel like royalty. Our fleet
-                of immaculate limousines and executive vehicles will have you spoiled for choice, and our
-                professional chauffeurs will add an extra level of luxury to every ride.
+                dedicated to offering the safest, most reliable, and most luxurious transportation in the Tri-State
+                Area. Whether you need a ride to the airport, a chauffeured limousine for a special event, or a private
+                tour of NYC — NYC Limo Car is here to make you feel like royalty. Our fleet of immaculate limousines and
+                executive vehicles will have you spoiled for choice, and our professional chauffeurs will add an extra
+                level of luxury to every ride.
               </p>
               <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
                 {[
@@ -577,9 +583,7 @@ function HomePage() {
                     <Star key={i} className="h-4 w-4 fill-gold text-gold" />
                   ))}
                 </div>
-                <blockquote className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                  "{t.quote}"
-                </blockquote>
+                <blockquote className="mt-5 text-sm leading-relaxed text-muted-foreground">"{t.quote}"</blockquote>
                 <figcaption className="mt-5 text-sm font-semibold text-navy">— {t.name}</figcaption>
               </figure>
             ))}
@@ -610,8 +614,8 @@ function HomePage() {
             All-inclusive pricing — no hidden fees, ever.
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-sm text-white/80">
-            Your credit card will not be charged until 24 hours before your trip. Free cancellation up to 24
-            hours before service.
+            Your credit card will not be charged until 24 hours before your trip. Free cancellation up to 24 hours
+            before service.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
