@@ -222,6 +222,7 @@ const stats = [
 function HomePage() {
   return (
     <PageShell>
+      <JsonLd data={localBusinessSchema()} />
       {/* SECTION 1 — HERO */}
       <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden text-center">
         <img
