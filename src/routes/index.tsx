@@ -19,6 +19,7 @@ import {
   Star,
 } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
+import { JsonLd, localBusinessSchema } from "@/components/JsonLd";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -221,6 +222,7 @@ const stats = [
 function HomePage() {
   return (
     <PageShell>
+      <JsonLd data={localBusinessSchema()} />
       {/* SECTION 1 — HERO */}
       <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden text-center">
         <img
