@@ -9,11 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as FleetRouteImport } from './routes/fleet'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PricingIndexRouteImport } from './routes/pricing.index'
 import { Route as ServicesToursRouteImport } from './routes/services.tours'
 import { Route as ServicesPointToPointRouteImport } from './routes/services.point-to-point'
 import { Route as ServicesHourlyRouteImport } from './routes/services.hourly'
@@ -23,11 +23,6 @@ import { Route as PricingPointToPointRouteImport } from './routes/pricing.point-
 import { Route as PricingHourlyRouteImport } from './routes/pricing.hourly'
 import { Route as PricingAirportRouteImport } from './routes/pricing.airport'
 
-const PricingRoute = PricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const FleetRoute = FleetRouteImport.update({
   id: '/fleet',
   path: '/fleet',
@@ -46,6 +41,11 @@ const AboutRoute = AboutRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingIndexRoute = PricingIndexRouteImport.update({
+  id: '/pricing/',
+  path: '/pricing/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesToursRoute = ServicesToursRouteImport.update({
@@ -94,7 +94,6 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
-  '/pricing': typeof PricingRouteWithChildren
   '/pricing/airport': typeof PricingAirportRoute
   '/pricing/hourly': typeof PricingHourlyRoute
   '/pricing/point-to-point': typeof PricingPointToPointRoute
@@ -103,13 +102,13 @@ export interface FileRoutesByFullPath {
   '/services/hourly': typeof ServicesHourlyRoute
   '/services/point-to-point': typeof ServicesPointToPointRoute
   '/services/tours': typeof ServicesToursRoute
+  '/pricing/': typeof PricingIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
-  '/pricing': typeof PricingRouteWithChildren
   '/pricing/airport': typeof PricingAirportRoute
   '/pricing/hourly': typeof PricingHourlyRoute
   '/pricing/point-to-point': typeof PricingPointToPointRoute
@@ -118,6 +117,7 @@ export interface FileRoutesByTo {
   '/services/hourly': typeof ServicesHourlyRoute
   '/services/point-to-point': typeof ServicesPointToPointRoute
   '/services/tours': typeof ServicesToursRoute
+  '/pricing': typeof PricingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -125,7 +125,6 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
-  '/pricing': typeof PricingRouteWithChildren
   '/pricing/airport': typeof PricingAirportRoute
   '/pricing/hourly': typeof PricingHourlyRoute
   '/pricing/point-to-point': typeof PricingPointToPointRoute
@@ -134,6 +133,7 @@ export interface FileRoutesById {
   '/services/hourly': typeof ServicesHourlyRoute
   '/services/point-to-point': typeof ServicesPointToPointRoute
   '/services/tours': typeof ServicesToursRoute
+  '/pricing/': typeof PricingIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -142,7 +142,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/fleet'
-    | '/pricing'
     | '/pricing/airport'
     | '/pricing/hourly'
     | '/pricing/point-to-point'
@@ -151,13 +150,13 @@ export interface FileRouteTypes {
     | '/services/hourly'
     | '/services/point-to-point'
     | '/services/tours'
+    | '/pricing/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/contact'
     | '/fleet'
-    | '/pricing'
     | '/pricing/airport'
     | '/pricing/hourly'
     | '/pricing/point-to-point'
@@ -166,13 +165,13 @@ export interface FileRouteTypes {
     | '/services/hourly'
     | '/services/point-to-point'
     | '/services/tours'
+    | '/pricing'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/contact'
     | '/fleet'
-    | '/pricing'
     | '/pricing/airport'
     | '/pricing/hourly'
     | '/pricing/point-to-point'
@@ -181,6 +180,7 @@ export interface FileRouteTypes {
     | '/services/hourly'
     | '/services/point-to-point'
     | '/services/tours'
+    | '/pricing/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -188,22 +188,15 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   FleetRoute: typeof FleetRoute
-  PricingRoute: typeof PricingRouteWithChildren
   ServicesAirportRoute: typeof ServicesAirportRoute
   ServicesHourlyRoute: typeof ServicesHourlyRoute
   ServicesPointToPointRoute: typeof ServicesPointToPointRoute
   ServicesToursRoute: typeof ServicesToursRoute
+  PricingIndexRoute: typeof PricingIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/pricing': {
-      id: '/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/fleet': {
       id: '/fleet'
       path: '/fleet'
@@ -230,6 +223,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing/': {
+      id: '/pricing/'
+      path: '/pricing'
+      fullPath: '/pricing/'
+      preLoaderRoute: typeof PricingIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/tours': {
@@ -291,33 +291,16 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface PricingRouteChildren {
-  PricingAirportRoute: typeof PricingAirportRoute
-  PricingHourlyRoute: typeof PricingHourlyRoute
-  PricingPointToPointRoute: typeof PricingPointToPointRoute
-  PricingToursRoute: typeof PricingToursRoute
-}
-
-const PricingRouteChildren: PricingRouteChildren = {
-  PricingAirportRoute: PricingAirportRoute,
-  PricingHourlyRoute: PricingHourlyRoute,
-  PricingPointToPointRoute: PricingPointToPointRoute,
-  PricingToursRoute: PricingToursRoute,
-}
-
-const PricingRouteWithChildren =
-  PricingRoute._addFileChildren(PricingRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   FleetRoute: FleetRoute,
-  PricingRoute: PricingRouteWithChildren,
   ServicesAirportRoute: ServicesAirportRoute,
   ServicesHourlyRoute: ServicesHourlyRoute,
   ServicesPointToPointRoute: ServicesPointToPointRoute,
   ServicesToursRoute: ServicesToursRoute,
+  PricingIndexRoute: PricingIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

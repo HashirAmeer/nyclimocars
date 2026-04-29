@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { BookingCTA } from "@/components/BookingCTA";
 
-export const Route = createFileRoute("/pricing")({
+export const Route = createFileRoute("/pricing/")({
   head: () => ({
     meta: [
       { title: "Pricing | NYC Limo Car — Select Service to View Rates" },
