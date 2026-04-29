@@ -223,9 +223,12 @@ function HomePage() {
     <PageShell>
       {/* SECTION 1 — HERO */}
       <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden text-center">
-        <img loading="lazy" decoding="async"
-          src="https://images.unsplash.com/photo-1520975922323-388183fcd0bd?w=1920&q=80"
+        <img
+          src="https://images.unsplash.com/photo-1520975922323-388183fcd0bd?w=1600&q=70"
           alt="Luxury black limousine driving through New York City at night"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-navy/80" />
