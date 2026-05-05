@@ -8,20 +8,20 @@ import { Users, Briefcase, Car } from "lucide-react";
 export const Route = createFileRoute("/fleet")({
   head: () => ({
     meta: [
-      { title: "Our Luxury Fleet | NYC Limo Car — Sedans, SUVs, Limousines, Vans & Buses New York" },
+      { title: "Our Luxury Fleet | NY City Limousine — Sedans, SUVs, Limousines, Vans & Buses New York" },
       {
         name: "description",
         content:
-          "Browse NYC Limo Car's luxury fleet in New York City — Lincoln Sedan, Cadillac Escalade, Mercedes S Class, stretch limousines, Sprinter Van, Hummer Limo, Party Bus & Coach Bus. Book online.",
+          "Browse NY City Limousine's luxury fleet in New York City — Lincoln Sedan, Cadillac Escalade, Mercedes S Class, stretch limousines, Sprinter Van, Hummer Limo & Coach Bus. Book online.",
       },
-      { property: "og:title", content: "Our Luxury Fleet | NYC Limo Car" },
+      { property: "og:title", content: "Our Luxury Fleet | NY City Limousine" },
       {
         property: "og:description",
-        content: "12 luxury vehicles for every occasion across NYC and the Tri-State Area.",
+        content: "10 luxury vehicles for every occasion across NYC and the Tri-State Area.",
       },
       {
         property: "og:image",
-        content: "https://images.unsplash.com/photo-1485291571150-772bcfc10da5?w=1600&q=80",
+        content: "/src/assets/lincoln-sedan.png",
       },
     ],
   }),
@@ -30,26 +30,7 @@ export const Route = createFileRoute("/fleet")({
 
 type Category = "Sedan" | "SUV" | "Limousine" | "Van" | "Bus";
 
-const VEHICLES: Array<{
-  name: string;
-  category: Category;
-  pax: number;
-  bags: number;
-  desc: string;
-}> = [
-  { name: "Lincoln Sedan",     category: "Sedan",     pax: 3,  bags: 3,  desc: "Classic executive elegance for business and leisure" },
-  { name: "Cadillac Sedan",    category: "Sedan",     pax: 3,  bags: 3,  desc: "Refined comfort with prestige Cadillac quality" },
-  { name: "Chevrolet SUV",     category: "SUV",       pax: 6,  bags: 6,  desc: "Spacious and powerful — perfect for groups and families" },
-  { name: "Cadillac Escalade", category: "SUV",       pax: 6,  bags: 6,  desc: "The ultimate luxury SUV — bold, spacious, commanding" },
-  { name: "Mercedes C Class",  category: "Sedan",     pax: 3,  bags: 3,  desc: "German engineering meets luxury for executive travel" },
-  { name: "Mercedes S Class",  category: "Sedan",     pax: 3,  bags: 3,  desc: "The pinnacle of Mercedes luxury for VIP travel" },
-  { name: "Black Limousine",   category: "Limousine", pax: 8,  bags: 8,  desc: "Classic stretch limo in sleek black — make a grand entrance" },
-  { name: "White Limousine",   category: "Limousine", pax: 8,  bags: 8,  desc: "Elegant white stretch limousine — perfect for weddings" },
-  { name: "Sprinter Van",      category: "Van",       pax: 14, bags: 14, desc: "Executive van comfort for medium-sized groups" },
-  { name: "Hummer Limousine",  category: "Limousine", pax: 20, bags: 20, desc: "The bold, unforgettable Hummer Limo for parties" },
-  { name: "Party Bus",         category: "Bus",       pax: 24, bags: 24, desc: "The ultimate mobile party experience in NYC" },
-  { name: "Coach Bus",         category: "Bus",       pax: 50, bags: 50, desc: "Full-size luxury coach for large groups and corporate events" },
-];
+const VEHICLES = FLEET;
 
 const FILTERS: Array<{ label: string; match: (c: Category) => boolean }> = [
   { label: "All Vehicles", match: () => true },
@@ -85,11 +66,11 @@ function FleetPage() {
         <div className="container-luxury mx-auto max-w-4xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Our Fleet</p>
           <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-semibold text-navy md:text-4xl">
-            12 Luxury Vehicles for Every Occasion
+            10 Luxury Vehicles for Every Occasion
           </h2>
           <div className="mx-auto mt-6 space-y-5 text-base leading-relaxed text-muted-foreground">
             <p>
-              At NYC Limo Car, we offer a full range of luxury vehicles for our New York City limousine service.
+              At NY City Limousine, we offer a full range of luxury vehicles for our New York City limousine service.
               From stretched limousines and executive SUVs to Mercedes Sprinter Vans and full-size Coach Buses —
               our fleet has something for every occasion and group size. Our professional chauffeurs will give you
               VIP treatment at every pick-up and drop-off location. We provide high-quality service at competitive
@@ -140,16 +121,15 @@ function FleetPage() {
                 key={v.name}
                 className="group flex flex-col items-center overflow-hidden rounded-2xl border border-border bg-card text-center transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-2xl"
               >
-                {/* Placeholder image */}
-                <div className="relative flex h-48 w-full items-center justify-center bg-gradient-to-br from-[#E5E5E5] via-[#C0C0C0] to-[#9A9A9A]">
-                  <div className="flex flex-col items-center gap-2 px-4 text-center">
-                    <Car className="h-10 w-10 text-navy/70" strokeWidth={1.5} />
-                    <span className="text-base font-semibold text-navy">{v.name}</span>
-                  </div>
+                {/* Vehicle image */}
+                <div className="relative flex h-64 w-full items-center justify-center bg-silver/10 overflow-hidden">
+                  <img
+                    src={v.image}
+                    alt={v.name}
+                    className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
                 </div>
-                <p className="mt-2 px-4 text-[11px] italic text-muted-foreground">
-                  (Photo coming soon — client will replace)
-                </p>
 
                 <div className="flex w-full flex-col items-center p-6 pt-3">
                   <h3 className="text-xl font-semibold text-navy">{v.name}</h3>

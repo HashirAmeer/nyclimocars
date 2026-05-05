@@ -17,7 +17,7 @@ export function FloatingActions() {
         href="https://wa.me/12125550199"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with NYC Limo Car on WhatsApp"
+        aria-label="Chat with NY City Limousine on WhatsApp"
         className="fixed bottom-6 left-6 z-40 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lg transition-transform hover:-translate-y-1 hover:scale-105"
         style={{ backgroundColor: "#25D366" }}
       >

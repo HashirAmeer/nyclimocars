@@ -7,7 +7,7 @@ import { FLEET, fmt } from "@/lib/fleet";
 export const Route = createFileRoute("/pricing/airport")({
   head: () => ({
     meta: [
-      { title: "NYC Airport Limo Rates | JFK LGA EWR Prices | NYC Limo Car" },
+      { title: "NYC Airport Limo Rates | JFK LGA EWR Prices | NY City Limousine" },
       {
         name: "description",
         content:

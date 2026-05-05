@@ -10,9 +10,9 @@ import { Clock, Car, UserCheck, MapPin, GlassWater, BadgeDollarSign, Check } fro
 export const Route = createFileRoute("/services/hourly")({
   head: () => ({
     meta: [
-      { title: "NYC Hourly Limousine Service | Per Hour Limo Hire New York City | NYC Limo Car" },
-      { name: "description", content: "Book NYC Limo Car's hourly limousine service in New York City. Flexible per-hour limo hire with professional chauffeurs for business meetings, events & city tours. Transparent all-inclusive pricing." },
-      { property: "og:title", content: "NYC Hourly Limousine Service — NYC Limo Car" },
+      { title: "NYC Hourly Limousine Service | Per Hour Limo Hire New York City | NY City Limousine" },
+      { name: "description", content: "Book NY City Limousine's hourly limousine service in New York City. Flexible per-hour limo hire with professional chauffeurs for business meetings, events & city tours. Transparent all-inclusive pricing." },
+      { property: "og:title", content: "NYC Hourly Limousine Service — NY City Limousine" },
       { property: "og:description", content: "Flexible per-hour limo hire with a dedicated professional chauffeur in NYC." },
       { property: "og:image", content: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=1600&q=80" },
     ],
@@ -50,7 +50,9 @@ function VehicleCalc({ name, image, pax, bags, hourly }: { name: string; image: 
 
   return (
     <div className="overflow-hidden rounded-2xl border border-border bg-card text-center transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-lg">
-      <img src={image} alt={name} className="h-44 w-full object-cover" loading="lazy" />
+      <div className="h-44 w-full bg-silver/10 overflow-hidden">
+        <img src={image} alt={name} className="h-full w-full object-contain" loading="lazy" />
+      </div>
       <div className="p-6">
         <h3 className="text-lg font-semibold text-navy">{name}</h3>
         <div className="mt-2 flex items-center justify-center gap-3 text-xs text-muted-foreground">
@@ -119,7 +121,7 @@ function HourlyPage() {
       <section className="bg-background pb-16 pt-4">
         <div className="container-luxury mx-auto max-w-3xl text-center">
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Elevate your travel experience with NYC Limo Car's Hourly Limousine Service — offering you the flexibility and sophistication you deserve. Whether you need a chauffeured limousine for a series of business meetings, a day of city exploration, or a special event, our hourly service ensures a reliable and luxurious transportation solution tailored entirely to your schedule. You can cruise New York City in style — stopping wherever you like, for as long as you need.
+            Elevate your travel experience with NY City Limousine's Hourly Limousine Service — offering you the flexibility and sophistication you deserve. Whether you need a chauffeured limousine for a series of business meetings, a day of city exploration, or a special event, our hourly service ensures a reliable and luxurious transportation solution tailored entirely to your schedule. You can cruise New York City in style — stopping wherever you like, for as long as you need.
           </p>
         </div>
       </section>

@@ -8,9 +8,9 @@ import { Plane, HandshakeIcon, Clock, Luggage, GlassWater, Car, Check } from "lu
 export const Route = createFileRoute("/services/airport")({
   head: () => ({
     meta: [
-      { title: "NYC Airport Limo Service | JFK LGA EWR Transfers | NYC Limo Car" },
-      { name: "description", content: "NYC Limo Car provides premium airport limousine transfers to JFK, LaGuardia (LGA), Newark (EWR) and Teterboro (TEB). Free meet & greet, real-time flight tracking, all-inclusive rates. 24/7." },
-      { property: "og:title", content: "NYC Airport Limousine Service — NYC Limo Car" },
+      { title: "NYC Airport Limo Service | JFK LGA EWR Transfers | NY City Limousine" },
+      { name: "description", content: "NY City Limousine provides premium airport limousine transfers to JFK, LaGuardia (LGA), Newark (EWR) and Teterboro (TEB). Free meet & greet, real-time flight tracking, all-inclusive rates. 24/7." },
+      { property: "og:title", content: "NYC Airport Limousine Service — NY City Limousine" },
       { property: "og:description", content: "JFK · LGA · EWR · TEB — premium transfers available 24/7." },
       { property: "og:image", content: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80" },
     ],
@@ -65,7 +65,7 @@ function AirportPage() {
       <section className="bg-background pb-16 pt-4">
         <div className="container-luxury mx-auto max-w-3xl text-center">
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Experience a seamless and comfortable journey to and from any New York City area airport with NYC Limo Car. We provide reliable, stress-free airport limousine transfers ensuring you arrive in style and on time. From the moment you land, our professional chauffeur will be waiting inside the terminal with a personalized name sign — ready to assist with your luggage and escort you to your luxury vehicle.
+            Experience a seamless and comfortable journey to and from any New York City area airport with NY City Limousine. We provide reliable, stress-free airport limousine transfers ensuring you arrive in style and on time. From the moment you land, our professional chauffeur will be waiting inside the terminal with a personalized name sign — ready to assist with your luggage and escort you to your luxury vehicle.
           </p>
         </div>
       </section>

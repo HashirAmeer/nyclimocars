@@ -22,7 +22,7 @@ export function Footer() {
         <div className="container-luxury py-12 text-center">
           <h3 className="text-2xl font-semibold text-white">Get Exclusive Deals</h3>
           <p className="mx-auto mt-2 max-w-md text-sm text-white/70">
-            Subscribe for VIP offers and seasonal promotions from NYC Limo Car.
+            Subscribe for VIP offers and seasonal promotions from NY City Limousine.
           </p>
           <form onSubmit={subscribe} className="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row">
             <label htmlFor="newsletter-email" className="sr-only">Email address</label>
@@ -128,7 +128,7 @@ export function Footer() {
 
       <div className="border-t border-gold/20">
         <div className="container-luxury flex flex-col items-center justify-center gap-3 py-6 text-center text-xs text-white/60 md:flex-row md:justify-between">
-          <p>© {new Date().getFullYear()} NYC Limo Car. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} NY City Limousine. All Rights Reserved.</p>
           <div className="flex gap-5">
             <a href="#" className="hover:text-gold">Privacy Policy</a>
             <a href="#" className="hover:text-gold">Terms of Service</a>

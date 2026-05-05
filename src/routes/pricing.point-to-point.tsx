@@ -7,11 +7,11 @@ import { FLEET, fmt } from "@/lib/fleet";
 export const Route = createFileRoute("/pricing/point-to-point")({
   head: () => ({
     meta: [
-      { title: "Point-to-Point Limo Rates NYC | Direct Transfer Prices | NYC Limo Car" },
+      { title: "Point-to-Point Limo Rates NYC | Direct Transfer Prices | NY City Limousine" },
       {
         name: "description",
         content:
-          "NYC Limo Car flat-rate point-to-point limo prices for direct transfers across New York City. Transparent base rates and per-mile pricing — all-inclusive.",
+          "NY City Limousine flat-rate point-to-point limo prices for direct transfers across New York City. Transparent base rates and per-mile pricing — all-inclusive.",
       },
       { property: "og:title", content: "NYC Point-to-Point Limo Rates" },
       { property: "og:description", content: "Flat-rate direct transfers across NYC and Tri-State." },

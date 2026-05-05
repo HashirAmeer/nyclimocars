@@ -8,8 +8,8 @@ import { Award, Lock, ListChecks, Hotel, BookOpen, Clock } from "lucide-react";
 export const Route = createFileRoute("/services/tours")({
   head: () => ({
     meta: [
-      { title: "NYC Limousine Tours | Private Sightseeing Tours New York City | NYC Limo Car" },
-      { name: "description", content: "Explore NYC in luxury with NYC Limo Car's private limousine tours. Times Square, Central Park, Statue of Liberty & more. All-inclusive packages. Night tours, shopping tours, guided tours available." },
+      { title: "NYC Limousine Tours | Private Sightseeing Tours New York City | NY City Limousine" },
+      { name: "description", content: "Explore NYC in luxury with NY City Limousine's private limousine tours. Times Square, Central Park, Statue of Liberty & more. All-inclusive packages. Night tours, shopping tours, guided tours available." },
       { property: "og:title", content: "Private Limousine Tours of New York City" },
       { property: "og:description", content: "All-inclusive private tour packages of NYC." },
       { property: "og:image", content: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1600&q=80" },
@@ -77,7 +77,7 @@ function ToursPage() {
       <section className="bg-background pb-16 pt-4">
         <div className="container-luxury mx-auto max-w-3xl text-center">
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Experience the Big Apple with NYC Limo Car's exclusive private limousine tour packages. NYC Limo Car gives you a tour of the city that would take 4–5 days on your own — covered in just a few hours. We are well-known for providing historical, informative, enjoyable, and memorable tours. All our tour packages can be customized to suit your group. Our knowledgeable chauffeur-guides are native English speakers; several foreign language experts are also available upon request. Pick-up and drop-off at your hotel.
+            Experience the Big Apple with NY City Limousine's exclusive private limousine tour packages. NY City Limousine gives you a tour of the city that would take 4–5 days on your own — covered in just a few hours. We are well-known for providing historical, informative, enjoyable, and memorable tours. All our tour packages can be customized to suit your group. Our knowledgeable chauffeur-guides are native English speakers; several foreign language experts are also available upon request. Pick-up and drop-off at your hotel.
           </p>
         </div>
       </section>

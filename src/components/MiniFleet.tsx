@@ -10,7 +10,7 @@ export function MiniFleet() {
           Vehicles Available for This Service
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-          Choose from 12 meticulously maintained luxury vehicles for any group size.
+          Choose from 10 meticulously maintained luxury vehicles for any group size.
         </p>
         <div className="mx-auto mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {FLEET.map((v) => (
@@ -18,12 +18,14 @@ export function MiniFleet() {
               key={v.name}
               className="group overflow-hidden rounded-xl border border-border bg-card text-center transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-lg"
             >
-              <img
-                src={v.image}
-                alt={v.name}
-                className="h-40 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
+              <div className="bg-silver/10 overflow-hidden">
+                <img
+                  src={v.image}
+                  alt={v.name}
+                  className="h-40 w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
               <div className="p-5">
                 <h3 className="text-base font-semibold text-navy">{v.name}</h3>
                 <div className="mt-3 flex items-center justify-center gap-3 text-xs text-muted-foreground">

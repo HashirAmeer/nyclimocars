@@ -8,13 +8,13 @@ import { FLEET, fmt } from "@/lib/fleet";
 export const Route = createFileRoute("/pricing/hourly")({
   head: () => ({
     meta: [
-      { title: "NYC Hourly Limousine Rates | Per Hour Limo Prices | NYC Limo Car" },
+      { title: "NYC Hourly Limousine Rates | Per Hour Limo Prices | NY City Limousine" },
       {
         name: "description",
         content:
-          "View NYC Limo Car's all-inclusive hourly limousine rates for all 12 vehicles. Transparent pricing with sales tax, gratuity, credit card fee, and admin fee all included. Book in New York City.",
+          "View NY City Limousine's all-inclusive hourly limousine rates for all 10 vehicles. Transparent pricing with sales tax, gratuity, credit card fee, and admin fee all included. Book in New York City.",
       },
-      { property: "og:title", content: "NYC Hourly Limo Rates — NYC Limo Car" },
+      { property: "og:title", content: "NYC Hourly Limo Rates — NY City Limousine" },
       { property: "og:description", content: "All-inclusive hourly rates with full breakdown." },
       { property: "og:image", content: "https://images.unsplash.com/photo-1493238792000-8113da705763?w=1600&q=80" },
     ],

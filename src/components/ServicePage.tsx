@@ -52,7 +52,7 @@ export function ServicePage(p: ServiceProps) {
         <div className="container-luxury">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Why Choose Us</p>
-            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">The NYC Limo Car difference.</h2>
+            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">The NY City Limousine difference.</h2>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {p.highlights.map(({ icon: Icon, title, desc }) => (

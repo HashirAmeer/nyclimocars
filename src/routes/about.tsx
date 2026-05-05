@@ -18,13 +18,13 @@ import {
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About NYC Limo Car | Trusted Luxury Limousine Service New York City" },
+      { title: "About NY City Limousine | Trusted Luxury Limousine Service New York City" },
       {
         name: "description",
         content:
-          "Learn about NYC Limo Car — New York City's trusted luxury limousine and chauffeur service. Professional drivers, premium fleet serving NYC, JFK, LGA, EWR and the entire Tri-State Area.",
+          "Learn about NY City Limousine — New York City's trusted luxury limousine and chauffeur service. Professional drivers, premium fleet serving NYC, JFK, LGA, EWR and the entire Tri-State Area.",
       },
-      { property: "og:title", content: "About NYC Limo Car | Luxury Chauffeur Service" },
+      { property: "og:title", content: "About NY City Limousine | Luxury Chauffeur Service" },
       {
         property: "og:description",
         content:
@@ -56,7 +56,7 @@ function AboutPage() {
             About Us
           </p>
           <h1 className="mx-auto max-w-4xl text-5xl font-semibold leading-tight md:text-7xl animate-fade-up">
-            About NYC Limo Car
+            About NY City Limousine
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/85 md:text-xl animate-fade-up">
             New York City's Trusted Luxury Limousine &amp; Chauffeur Service
@@ -94,14 +94,14 @@ function AboutPage() {
               <div className="mx-auto mt-5 h-px w-16 bg-gold lg:mx-0" />
               <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  A warm welcome to NYC Limo Car! We are dedicated to offering the safest
+                  A warm welcome to NY City Limousine! We are dedicated to offering the safest
                   and most reliable limousine services in the Tri-State Area, with you —
                   our valued customers — at the center of everything we do.
                 </p>
                 <p>
                   Need to arrive in style for a conference, big night out, intimate dinner,
                   or any special occasion? Or are you looking for a private limousine tour
-                  of NYC? Whatever you need, NYC Limo Car is here to make you feel like
+                  of NYC? Whatever you need, NY City Limousine is here to make you feel like
                   royalty. Our fleet of immaculate limousines and executive vehicles will
                   have you spoiled for choice, and our professional chauffeurs will add an
                   extra level of luxury to every ride.
@@ -132,13 +132,13 @@ function AboutPage() {
               {
                 icon: "✈️",
                 title: "NYC Airport Limousine Service",
-                text: "NYC Limo Car offers great rates for pick-ups and drop-offs at JFK, LGA, EWR, SWF, and TEB airports. Every airport service includes a FREE meet & greet inside the terminal with a personalized name sign, up to 60 minutes of complimentary waiting time, and complimentary water and soft drinks. Champagne available upon request.",
+                text: "NY City Limousine offers great rates for pick-ups and drop-offs at JFK, LGA, EWR, SWF, and TEB airports. Every airport service includes a FREE meet & greet inside the terminal with a personalized name sign, up to 60 minutes of complimentary waiting time, and complimentary water and soft drinks. Champagne available upon request.",
                 extra: "JFK · LGA · EWR · SWF · TEB",
               },
               {
                 icon: "🕐",
                 title: "Hourly Limousine Service",
-                text: "NYC Limo Car offers hourly limousine hire for all events so you can cruise New York City in style. Choose from our full fleet — stretched limousines, SUVs, luxury sedans, vans, and coach buses. Our professional chauffeurs provide VIP treatment throughout. Available for Brooklyn, Manhattan, the Bronx, and all of NYC.",
+                text: "NY City Limousine offers hourly limousine hire for all events so you can cruise New York City in style. Choose from our full fleet — stretched limousines, SUVs, luxury sedans, vans, and coach buses. Our professional chauffeurs provide VIP treatment throughout. Available for Brooklyn, Manhattan, the Bronx, and all of NYC.",
               },
               {
                 icon: "🗽",
@@ -181,7 +181,7 @@ function AboutPage() {
           </h2>
           <div className="mx-auto mt-5 h-px w-24 bg-gold" />
           <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-white/85">
-            At NYC Limo Car, our mission is to redefine luxury transportation in New York
+            At NY City Limousine, our mission is to redefine luxury transportation in New York
             City — one ride at a time. We are committed to punctuality, passenger safety,
             and exceptional service that exceeds your expectations on every journey. We
             pride ourselves on excellent customer service. All our chauffeurs have received
@@ -197,7 +197,7 @@ function AboutPage() {
             Why Us
           </p>
           <h2 className="mt-3 text-4xl font-semibold text-navy md:text-5xl">
-            Why Choose NYC Limo Car?
+            Why Choose NY City Limousine?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
             We Treat Our Customers Like Royalty
@@ -329,7 +329,7 @@ function AboutPage() {
             ))}
           </div>
           <p className="mx-auto mt-10 max-w-2xl text-muted-foreground">
-            NYC Limo Car serves the entire Tri-State Area. Whether you're in the heart of
+            NY City Limousine serves the entire Tri-State Area. Whether you're in the heart of
             Manhattan or the suburbs of New York, we bring luxury transportation to your
             door.
           </p>

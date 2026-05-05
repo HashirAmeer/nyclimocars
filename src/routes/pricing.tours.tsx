@@ -7,11 +7,11 @@ import { FLEET, fmt } from "@/lib/fleet";
 export const Route = createFileRoute("/pricing/tours")({
   head: () => ({
     meta: [
-      { title: "NYC Limo Tour Rates | Private Sightseeing Tour Prices | NYC Limo Car" },
+      { title: "NYC Limo Tour Rates | Private Sightseeing Tour Prices | NY City Limousine" },
       {
         name: "description",
         content:
-          "View NYC Limo Car's private sightseeing tour rates. All-inclusive packages with vehicle, chauffeur, taxes, gratuity & complimentary beverages. 2 to 8-hour tour pricing.",
+          "View NY City Limousine's private sightseeing tour rates. All-inclusive packages with vehicle, chauffeur, taxes, gratuity & complimentary beverages. 2 to 8-hour tour pricing.",
       },
       { property: "og:title", content: "NYC Private Limousine Tour Rates" },
       { property: "og:description", content: "All-inclusive 2 / 4 / 6 / 8-hour tour packages." },

@@ -16,7 +16,7 @@ export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "LimousineService",
-    name: "NYC Limo Car",
+    name: "NY City Limousine",
     description: "Premium limousine and chauffeur service in New York City",
     url: "https://www.nyclimocar.com",
     telephone: "+1-212-555-0199",

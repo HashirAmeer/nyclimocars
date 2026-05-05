@@ -22,9 +22,9 @@ const EMAIL = "reservations@nyclimocar.com";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Book a Limo | Contact NYC Limo Car | Luxury Limousine New York City" },
-      { name: "description", content: "Book your NYC Limo Car luxury limousine online or by phone. Airport transfers, hourly service, tours, point-to-point rides across New York City. Available 24/7. Fast response guaranteed." },
-      { property: "og:title", content: "Book a Limo | NYC Limo Car" },
+      { title: "Book a Limo | Contact NY City Limousine | Luxury Limousine New York City" },
+      { name: "description", content: "Book your NY City Limousine luxury limousine online or by phone. Airport transfers, hourly service, tours, point-to-point rides across New York City. Available 24/7. Fast response guaranteed." },
+      { property: "og:title", content: "Book a Limo | NY City Limousine" },
       { property: "og:description", content: "Reserve your luxury limousine in New York City — available 24/7." },
       { property: "og:image", content: "https://images.unsplash.com/photo-1496588152823-86ff7695e68f?w=1600&q=70" },
     ],
@@ -35,8 +35,8 @@ export const Route = createFileRoute("/contact")({
 const VEHICLES = [
   "No Preference", "Lincoln Sedan", "Cadillac Sedan", "Chevrolet SUV",
   "Cadillac Escalade", "Mercedes C Class", "Mercedes S Class",
-  "Black Limousine", "White Limousine", "Sprinter Van",
-  "Hummer Limousine", "Party Bus", "Coach Bus",
+  "Black Limousine", "Sprinter Van",
+  "Hummer Limousine", "Coach Bus",
 ];
 
 const SERVICES = ["Hourly Service", "Airport Service", "Point to Point", "Tours Service"];
@@ -172,7 +172,7 @@ function ContactPage() {
             {/* Map */}
             <div className="overflow-hidden rounded-2xl border border-border shadow-sm">
               <iframe
-                title="NYC Limo Car location"
+                title="NY City Limousine location"
                 src="https://www.google.com/maps?q=New+York+City&output=embed"
                 width="100%"
                 height="280"
@@ -370,7 +370,7 @@ function CounterField({
 }
 
 const FAQS = [
-  { q: "How do I book a limousine with NYC Limo Car?", a: "You can book through our online form above, call us 24/7, or send us an email. We confirm all bookings within 30 minutes." },
+  { q: "How do I book a limousine with NY City Limousine?", a: "You can book through our online form above, call us 24/7, or send us an email. We confirm all bookings within 30 minutes." },
   { q: "When will my credit card be charged?", a: "Your credit card will not be charged until 24 hours before your scheduled trip. You will receive a confirmation email with your Trip Confirmation Number before any charge is made." },
   { q: "Do you track flights for airport pickups?", a: "Yes. We monitor all incoming flights in real time. If your flight is delayed, we adjust your pickup time automatically at no extra charge." },
   { q: "What is included in the airport limousine service?", a: "All airport services include: free meet & greet inside the terminal with a personalized name sign, up to 60 minutes of complimentary waiting time, luggage assistance, complimentary water and soft drinks, and all-inclusive pricing with taxes and gratuity included." },

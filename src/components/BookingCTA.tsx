@@ -5,7 +5,7 @@ export function BookingCTA() {
     <section className="bg-gold py-20 text-center text-white">
       <div className="container-luxury mx-auto">
         <h2 className="mx-auto max-w-3xl text-3xl font-semibold md:text-4xl">
-          Ready to Book Your NYC Limo Car Experience?
+          Ready to Book Your NY City Limousine Experience?
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-white/90">
           Contact us 24/7 — we respond within 30 minutes.

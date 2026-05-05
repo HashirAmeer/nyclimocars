@@ -8,8 +8,8 @@ import { MapPin, BadgeDollarSign, ShieldCheck, Car, UserCheck, Globe, Check } fr
 export const Route = createFileRoute("/services/point-to-point")({
   head: () => ({
     meta: [
-      { title: "NYC Point-to-Point Limo Service | Direct Transfers New York | NYC Limo Car" },
-      { name: "description", content: "NYC Limo Car's point-to-point limousine service — flat-rate direct transfers anywhere in NYC and the Tri-State Area. On-time guarantee, professional chauffeurs, all-inclusive pricing." },
+      { title: "NYC Point-to-Point Limo Service | Direct Transfers New York | NY City Limousine" },
+      { name: "description", content: "NY City Limousine's point-to-point limousine service — flat-rate direct transfers anywhere in NYC and the Tri-State Area. On-time guarantee, professional chauffeurs, all-inclusive pricing." },
       { property: "og:title", content: "NYC Point-to-Point Limousine Service" },
       { property: "og:description", content: "Flat-rate direct transfers across NYC & the Tri-State Area." },
       { property: "og:image", content: "https://images.unsplash.com/photo-1502920514313-52581002a659?w=1600&q=80" },
@@ -58,7 +58,7 @@ function P2PPage() {
       <section className="bg-background pb-16 pt-4">
         <div className="container-luxury mx-auto max-w-3xl text-center">
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Experience convenience and luxury with NYC Limo Car's Point-to-Point Limousine Service. Whether you're headed to a business meeting, a special event, a hotel, or a night on the town — we provide unparalleled direct transfer solutions tailored to your needs. No meters, no surge pricing — just transparent flat rates and a guaranteed on-time arrival every single time.
+            Experience convenience and luxury with NY City Limousine's Point-to-Point Limousine Service. Whether you're headed to a business meeting, a special event, a hotel, or a night on the town — we provide unparalleled direct transfer solutions tailored to your needs. No meters, no surge pricing — just transparent flat rates and a guaranteed on-time arrival every single time.
           </p>
         </div>
       </section>

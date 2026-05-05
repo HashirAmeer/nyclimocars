@@ -5,13 +5,13 @@ import { BookingCTA } from "@/components/BookingCTA";
 export const Route = createFileRoute("/pricing/")({
   head: () => ({
     meta: [
-      { title: "Pricing | NYC Limo Car — Select Service to View Rates" },
+      { title: "Pricing | NY City Limousine — Select Service to View Rates" },
       {
         name: "description",
         content:
-          "View transparent NYC Limo Car pricing — airport transfers, hourly limo rates, point-to-point and private tour packages. Select a service to see full rates.",
+          "View transparent NY City Limousine pricing — airport transfers, hourly limo rates, point-to-point and private tour packages. Select a service to see full rates.",
       },
-      { property: "og:title", content: "NYC Limo Car — Pricing" },
+      { property: "og:title", content: "NY City Limousine — Pricing" },
       { property: "og:description", content: "All-inclusive transparent rates for every service." },
     ],
   }),
@@ -64,7 +64,7 @@ function PricingLanding() {
           <div className="mx-auto mt-16 max-w-3xl rounded-2xl border border-border bg-card p-8 text-center shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Booking Policy</p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Thank you for choosing NYC Limo Car. Upon submitting a reservation form, you will be entered into our system.
+              Thank you for choosing NY City Limousine. Upon submitting a reservation form, you will be entered into our system.
               Your credit card will not be charged until 24 hours before your trip. You will receive a follow-up email with
               your Trip Confirmation Number and the final estimated price. After receiving your Trip Confirmation Number,
               your vehicle is guaranteed. Feel free to contact us at any time for booking or information.
