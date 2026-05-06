@@ -15,9 +15,9 @@ const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
 const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
 const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
-const PHONE = "(212) 555-0199";
-const PHONE_HREF = "tel:+12125550199";
-const EMAIL = "reservations@nyclimocar.com";
+const PHONE = "+1 (917) 735-4320";
+const PHONE_HREF = "tel:+19177354320";
+const EMAIL = "info@nycitylimousine.com";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -189,7 +189,7 @@ function ContactPage() {
                 {[
                   { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
                   { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-                  { icon: MessageCircle, href: "https://wa.me/12125550199", label: "WhatsApp" },
+                  { icon: MessageCircle, href: "https://wa.me/19177354320", label: "WhatsApp" },
                 ].map(({ icon: Icon, href, label }) => (
                   <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
                      className="flex h-11 w-11 items-center justify-center rounded-full bg-navy text-gold transition-transform hover:scale-110">
@@ -328,8 +328,8 @@ function ContactPage() {
       </section>
       <JsonLd data={faqSchema(FAQS)} />
       <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: "https://www.nyclimocar.com/" },
-        { name: "Contact", url: "https://www.nyclimocar.com/contact" },
+        { name: "Home", url: "https://www.nycitylimousine.com/" },
+        { name: "Contact", url: "https://www.nycitylimousine.com/contact" },
       ])} />
     </PageShell>
   );

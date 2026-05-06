@@ -190,7 +190,7 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* SECTION 5 — WHY CHOOSE NYC LIMO CAR */}
+      {/* SECTION 5 — WHY CHOOSE NY CITY LIMOUSINE */}
       <section className="bg-background py-24">
         <div className="container-luxury text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
@@ -426,11 +426,11 @@ function AboutPage() {
               Book Your Ride
             </Link>
             <a
-              href="tel:+12125550199"
+              href="tel:+19177354320"
               className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white px-8 py-3.5 text-sm font-semibold uppercase tracking-widest text-white transition-all hover:-translate-y-0.5 hover:bg-white hover:text-navy"
             >
               <Phone className="h-4 w-4" />
-              Call Us 24/7
+              Call +1 (917) 735-4320
             </a>
           </div>
         </div>

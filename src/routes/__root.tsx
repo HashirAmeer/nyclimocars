@@ -1,5 +1,4 @@
 import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
-import { HomepageOnlyGuard } from "@/components/HomepageOnlyGuard";
 
 function NotFoundComponent() {
   return (
@@ -31,7 +30,6 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <>
-      {/* <HomepageOnlyGuard /> */}
       <Outlet />
     </>
   );

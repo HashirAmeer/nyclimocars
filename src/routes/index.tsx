@@ -640,10 +640,10 @@ function HomePage() {
               Book Your Ride Now <ArrowRight className="h-4 w-4" />
             </Link>
             <a
-              href="tel:+12125551234"
+              href="tel:+19177354320"
               className="inline-flex items-center gap-2 rounded-full border-2 border-white px-8 py-3.5 text-sm font-bold text-white hover:bg-white hover:text-navy"
             >
-              <Phone className="h-4 w-4" /> Call Us 24/7
+              <Phone className="h-4 w-4" /> Call +1 (917) 735-4320
             </a>
           </div>
         </div>

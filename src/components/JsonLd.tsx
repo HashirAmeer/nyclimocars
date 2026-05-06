@@ -18,8 +18,8 @@ export function localBusinessSchema() {
     "@type": "LimousineService",
     name: "NY City Limousine",
     description: "Premium limousine and chauffeur service in New York City",
-    url: "https://www.nyclimocar.com",
-    telephone: "+1-212-555-0199",
+    url: "https://www.nycitylimousine.com",
+    telephone: "+1-917-735-4320",
     address: {
       "@type": "PostalAddress",
       addressLocality: "New York",

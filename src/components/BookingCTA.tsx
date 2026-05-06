@@ -18,10 +18,10 @@ export function BookingCTA() {
             Book Now
           </Link>
           <a
-            href="tel:+18005466466"
+            href="tel:+19177354320"
             className="inline-flex items-center justify-center rounded-full border-2 border-white px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-gold"
           >
-            Call Us 24/7
+            Call +1 (917) 735-4320
           </a>
         </div>
       </div>

@@ -59,7 +59,7 @@ export function Footer() {
             {[
               { Icon: Facebook, label: "Facebook", href: "#" },
               { Icon: Instagram, label: "Instagram", href: "#" },
-              { Icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/12125550199" },
+              { Icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/19177354320" },
               { Icon: Youtube, label: "YouTube", href: "#" },
             ].map(({ Icon, label, href }) => (
               <a
@@ -106,12 +106,12 @@ export function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex items-center justify-center gap-3 lg:justify-start">
               <Phone className="h-4 w-4 text-gold" />
-              <a href="tel:+12125550199" className="hover:text-gold">(212) 555-0199 · 24/7</a>
+              <a href="tel:+19177354320" className="hover:text-gold">+1 (917) 735-4320 · 24/7</a>
             </li>
             <li className="flex items-center justify-center gap-3 lg:justify-start">
               <Mail className="h-4 w-4 text-gold" />
-              <a href="mailto:reservations@nyclimocar.com" className="hover:text-gold">
-                reservations@nyclimocar.com
+              <a href="mailto:info@nycitylimousine.com" className="hover:text-gold">
+                info@nycitylimousine.com
               </a>
             </li>
             <li className="flex items-center justify-center gap-3 lg:justify-start">
