@@ -1,7 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
-
+// import { HomepageOnlyGuard } from "@/components/HomepageOnlyGuard";
 
 function NotFoundComponent() {
   return (
@@ -30,17 +30,17 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "NY City Limousine — Premium Chauffeured Service in New York City" },
+      { title: "NYC Limo Car — Premium Chauffeured Service in New York City" },
       { name: "description", content: "Luxury limousine and chauffeured car service in NYC. Hourly, airport, point-to-point and tour services with a meticulously maintained fleet." },
       { name: "theme-color", content: "#1A304F" },
-      { property: "og:site_name", content: "NY City Limousine" },
+      { property: "og:site_name", content: "NYC Limo Car" },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "NY City Limousine — Premium Chauffeured Service in New York City" },
+      { property: "og:title", content: "NYC Limo Car — Premium Chauffeured Service in New York City" },
       { property: "og:description", content: "Luxury limousine and chauffeured car service in NYC. Hourly, airport, point-to-point and tour services with a meticulously maintained fleet." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/55c9c2eb-988a-4718-8c8f-10780f2f5c8b" },
       { property: "og:url", content: "https://www.nyclimocar.com" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "NY City Limousine — Premium Chauffeured Service in New York City" },
+      { name: "twitter:title", content: "NYC Limo Car — Premium Chauffeured Service in New York City" },
       { name: "twitter:description", content: "Luxury limousine and chauffeured car service in NYC. Hourly, airport, point-to-point and tour services with a meticulously maintained fleet." },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/55c9c2eb-988a-4718-8c8f-10780f2f5c8b" },
     ],
@@ -75,7 +75,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   return (
     <>
-
+      {/* <HomepageOnlyGuard /> */}
       <Outlet />
     </>
   );
