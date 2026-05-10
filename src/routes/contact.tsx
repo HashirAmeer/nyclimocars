@@ -26,7 +26,7 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Book your NY City Limousine luxury limousine online or by phone. Airport transfers, hourly service, tours, point-to-point rides across New York City. Available 24/7. Fast response guaranteed." },
       { property: "og:title", content: "Book a Limo | NY City Limousine" },
       { property: "og:description", content: "Reserve your luxury limousine in New York City — available 24/7." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1496588152823-86ff7695e68f?w=1600&q=70" },
+      { property: "og:image", content: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
   component: ContactPage,
@@ -35,11 +35,25 @@ export const Route = createFileRoute("/contact")({
 const VEHICLES = [
   "No Preference", "Lincoln Sedan", "Cadillac Sedan", "Chevrolet SUV",
   "Cadillac Escalade", "Mercedes C Class", "Mercedes S Class",
-  "Black Limousine", "Sprinter Van",
+  "Black Limousine", "White Stretch Limousine", "Sprinter Van",
   "Hummer Limousine", "Coach Bus",
 ];
 
-const SERVICES = ["Hourly Service", "Airport Service", "Point to Point", "Tours Service"];
+const SERVICES = [
+  "Hourly Service",
+  "Airport Service",
+  "Point to Point",
+  "Tours Service",
+  "Wedding Transportation",
+  "Corporate Transportation",
+];
+
+const AIRPORTS = [
+  "JFK Airport",
+  "LaGuardia Airport (LGA)",
+  "Newark Airport (EWR)",
+  "Teterboro Airport (TEB)",
+];
 
 type Errors = Record<string, string>;
 
@@ -47,6 +61,7 @@ function ContactPage() {
   const formRef = useRef<HTMLFormElement>(null);
   const [passengers, setPassengers] = useState(1);
   const [luggage, setLuggage] = useState(0);
+  const [selectedService, setSelectedService] = useState("");
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
@@ -57,6 +72,7 @@ function ContactPage() {
     const e: Errors = {};
     const fd = new FormData(form);
     const required = ["service", "pickup_date", "pickup_time", "pickup_location", "dropoff_location", "from_name", "phone", "reply_to"];
+    if (fd.get("service") === "Airport Service") required.push("airport");
     for (const key of required) {
       if (!String(fd.get(key) ?? "").trim()) e[key] = "This field is required";
     }
@@ -98,7 +114,7 @@ function ContactPage() {
         eyebrow="Contact & Reservations"
         title="Book Your Luxury Limousine"
         subtitle="Reserve Online or Call Us 24/7 — We Respond Within 30 Minutes"
-        image="https://images.unsplash.com/photo-1496588152823-86ff7695e68f?w=1600&q=70"
+        image="https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
 
       {/* Breadcrumb */}
@@ -110,105 +126,19 @@ function ContactPage() {
         </div>
       </div>
 
-      {/* Two-column layout */}
+      {/* SECTION 1 — BOOKING FORM (TOP) */}
       <section className="bg-background py-16 md:py-20">
-        <div className="container-luxury max-w-6xl mx-auto grid gap-10 lg:grid-cols-2 lg:gap-12">
-          {/* LEFT — Contact info */}
-          <div className="text-center space-y-8">
-            <div>
-              <h2 className="text-3xl font-semibold text-navy md:text-4xl">Get In Touch</h2>
-              <div className="mx-auto mt-4 h-px w-20 bg-gold" />
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                { icon: Phone, label: "Phone", value: PHONE, sub: "Available 24/7", href: PHONE_HREF },
-                { icon: Mail, label: "Email", value: EMAIL, sub: "Reply within 30 min", href: `mailto:${EMAIL}` },
-                { icon: MapPin, label: "Location", value: "New York City, NY", sub: "Serving Tri-State Area" },
-                { icon: Clock, label: "Hours", value: "24 / 7 / 365", sub: "Always available" },
-              ].map(({ icon: Icon, label, value, sub, href }) => {
-                const inner = (
-                  <>
-                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-navy text-gold">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-gold">{label}</p>
-                    <p className="mt-1 font-medium text-navy">{value}</p>
-                    <p className="text-xs text-muted-foreground">{sub}</p>
-                  </>
-                );
-                return href ? (
-                  <a key={label} href={href} className="rounded-xl border border-border bg-card p-5 transition-all hover:border-gold/60 hover:shadow-md">
-                    {inner}
-                  </a>
-                ) : (
-                  <div key={label} className="rounded-xl border border-border bg-card p-5">{inner}</div>
-                );
-              })}
-            </div>
-
-            {/* Booking policy */}
-            <div className="rounded-2xl bg-navy p-6 text-center text-white md:p-8">
-              <h3 className="text-lg font-semibold text-gold">Booking Policy</h3>
-              <p className="mt-3 text-sm leading-relaxed text-white/85">
-                Upon submitting your reservation form, you will be entered into our system. Your credit card will not be charged until 24 hours before your trip. You will receive a follow-up email with your Trip Confirmation Number and the final estimated price. After receiving your Trip Confirmation Number, your vehicle is guaranteed to be there waiting for you.
-              </p>
-            </div>
-
-            {/* Trust cards */}
-            <div className="grid gap-3 sm:grid-cols-3">
-              {[
-                { icon: ShieldCheck, text: "No Charge Until 24hrs Before Trip" },
-                { icon: RefreshCw, text: "Free Cancellation Up to 24 Hours" },
-                { icon: CreditCard, text: "All Major Credit Cards Accepted" },
-              ].map(({ icon: Icon, text }) => (
-                <div key={text} className="rounded-xl border border-border bg-card p-4 text-center">
-                  <Icon className="mx-auto h-6 w-6 text-gold" />
-                  <p className="mt-2 text-xs font-medium text-navy">{text}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Map */}
-            <div className="overflow-hidden rounded-2xl border border-border shadow-sm">
-              <iframe
-                title="NY City Limousine location"
-                src="https://www.google.com/maps?q=New+York+City&output=embed"
-                width="100%"
-                height="280"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="block w-full"
-              />
-            </div>
-
-            {/* Social */}
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-gold">Follow Us</p>
-              <div className="mt-3 flex justify-center gap-4">
-                {[
-                  { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-                  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-                  { icon: MessageCircle, href: "https://wa.me/19177354320", label: "WhatsApp" },
-                ].map(({ icon: Icon, href, label }) => (
-                  <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-                     className="flex h-11 w-11 items-center justify-center rounded-full bg-navy text-gold transition-transform hover:scale-110">
-                    <Icon className="h-5 w-5" />
-                  </a>
-                ))}
-              </div>
-            </div>
+        <div className="container-luxury max-w-4xl mx-auto">
+          <div className="text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Reservations</p>
+            <h2 className="mt-3 text-3xl font-semibold text-navy md:text-5xl">Book Your Luxury Ride</h2>
+            <div className="mx-auto mt-5 h-px w-24 bg-gold" />
+            <p className="mt-6 text-muted-foreground">Fill out the form below to receive a guaranteed confirmation within 30 minutes.</p>
           </div>
 
-          {/* RIGHT — Booking form */}
-          <div>
-            <div className="text-center">
-              <h2 className="text-3xl font-semibold text-navy md:text-4xl">Reserve Your Ride</h2>
-              <div className="mx-auto mt-4 h-px w-20 bg-gold" />
-            </div>
-
+          <div className="mt-12">
             {sent ? (
-              <div className="mt-8 rounded-2xl border border-gold/40 bg-card p-10 text-center shadow-lg">
+              <div className="rounded-2xl border border-gold/40 bg-card p-10 text-center shadow-lg">
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold/15 text-gold">
                   <ShieldCheck className="h-7 w-7" />
                 </div>
@@ -224,17 +154,36 @@ function ContactPage() {
               <form
                 ref={formRef}
                 onSubmit={onSubmit}
-                className="mt-8 rounded-2xl border border-border bg-card p-6 shadow-lg md:p-8 space-y-5"
+                className="rounded-2xl border border-border bg-card p-6 shadow-xl md:p-10 space-y-6"
               >
-                <FieldWrap label="Select Service *" error={errors.service}>
-                  <select name="service" defaultValue=""
-                    className={`w-full rounded-lg border ${errBorder("service")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`}>
-                    <option value="" disabled>Choose a service…</option>
-                    {SERVICES.map(s => <option key={s} value={s}>{s}</option>)}
-                  </select>
-                </FieldWrap>
+                <div className="grid gap-6 md:grid-cols-2">
+                  <FieldWrap label="Select Service *" error={errors.service}>
+                    <select
+                      name="service"
+                      value={selectedService}
+                      onChange={(e) => setSelectedService(e.target.value)}
+                      className={`w-full rounded-lg border ${errBorder("service")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`}
+                    >
+                      <option value="" disabled>Choose a service…</option>
+                      {SERVICES.map(s => <option key={s} value={s}>{s}</option>)}
+                    </select>
+                  </FieldWrap>
 
-                <div className="grid gap-5 sm:grid-cols-2">
+                  {selectedService === "Airport Service" && (
+                    <FieldWrap label="Select Airport *" error={errors.airport}>
+                      <select
+                        name="airport"
+                        defaultValue=""
+                        className={`w-full rounded-lg border ${errBorder("airport")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`}
+                      >
+                        <option value="" disabled>Choose an airport…</option>
+                        {AIRPORTS.map(a => <option key={a} value={a}>{a}</option>)}
+                      </select>
+                    </FieldWrap>
+                  )}
+                </div>
+
+                <div className="grid gap-6 sm:grid-cols-2">
                   <FieldWrap label="Pickup Date *" error={errors.pickup_date}>
                     <input type="date" name="pickup_date" min={today}
                       className={`w-full rounded-lg border ${errBorder("pickup_date")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
@@ -245,34 +194,33 @@ function ContactPage() {
                   </FieldWrap>
                 </div>
 
-                <FieldWrap label="Pickup Location *" error={errors.pickup_location}>
-                  <input type="text" name="pickup_location" placeholder="Enter full pickup address"
-                    className={`w-full rounded-lg border ${errBorder("pickup_location")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
-                </FieldWrap>
-
-                <FieldWrap label="Drop-off Location *" error={errors.dropoff_location}>
-                  <input type="text" name="dropoff_location" placeholder="Enter full drop-off address"
-                    className={`w-full rounded-lg border ${errBorder("dropoff_location")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
-                </FieldWrap>
-
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <CounterField label="Number of Passengers *" name="passengers" value={passengers} setValue={setPassengers} min={1} max={50} />
-                  <CounterField label="Number of Luggage *" name="luggage" value={luggage} setValue={setLuggage} min={0} max={50} />
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <FieldWrap label="Pickup Location *" error={errors.pickup_location}>
+                    <input type="text" name="pickup_location" placeholder="Address, Hotel, or Airport Terminal"
+                      className={`w-full rounded-lg border ${errBorder("pickup_location")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
+                  </FieldWrap>
+                  <FieldWrap label="Drop-off Location *" error={errors.dropoff_location}>
+                    <input type="text" name="dropoff_location" placeholder="Destination address"
+                      className={`w-full rounded-lg border ${errBorder("dropoff_location")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
+                  </FieldWrap>
                 </div>
 
-                <FieldWrap label="Preferred Vehicle">
-                  <select name="vehicle" defaultValue="No Preference"
-                    className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none">
-                    {VEHICLES.map(v => <option key={v} value={v}>{v}</option>)}
-                  </select>
-                </FieldWrap>
+                <div className="grid gap-6 sm:grid-cols-3">
+                  <CounterField label="Passengers *" name="passengers" value={passengers} setValue={setPassengers} min={1} max={50} />
+                  <CounterField label="Luggage *" name="luggage" value={luggage} setValue={setLuggage} min={0} max={50} />
+                  <FieldWrap label="Preferred Vehicle">
+                    <select name="vehicle" defaultValue="No Preference"
+                      className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none">
+                      {VEHICLES.map(v => <option key={v} value={v}>{v}</option>)}
+                    </select>
+                  </FieldWrap>
+                </div>
 
-                <FieldWrap label="Full Name *" error={errors.from_name}>
-                  <input type="text" name="from_name"
-                    className={`w-full rounded-lg border ${errBorder("from_name")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
-                </FieldWrap>
-
-                <div className="grid gap-5 sm:grid-cols-2">
+                <div className="grid gap-6 sm:grid-cols-3">
+                  <FieldWrap label="Full Name *" error={errors.from_name}>
+                    <input type="text" name="from_name"
+                      className={`w-full rounded-lg border ${errBorder("from_name")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
+                  </FieldWrap>
                   <FieldWrap label="Contact Number *" error={errors.phone}>
                     <input type="tel" name="phone"
                       className={`w-full rounded-lg border ${errBorder("phone")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
@@ -284,7 +232,7 @@ function ContactPage() {
                 </div>
 
                 <FieldWrap label="Special Requests or Notes">
-                  <textarea name="message" rows={4}
+                  <textarea name="message" rows={3}
                     placeholder="Flight number, special occasions, additional stops, accessibility needs, etc."
                     className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none" />
                 </FieldWrap>
@@ -293,23 +241,109 @@ function ContactPage() {
                   <p className="text-center text-sm text-destructive">{errors._form}</p>
                 )}
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[#A27A4B] px-6 py-4 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#8a6740] disabled:opacity-70"
-                >
-                  {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> Sending...</>) : "Book My Ride"}
-                </button>
-
-                <p className="flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
-                  <Lock className="h-3 w-3" />
-                  Secure booking. Your credit card will not be charged until 24 hours before your trip.
-                </p>
+                <div className="flex flex-col items-center gap-4">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="flex w-full max-w-md items-center justify-center gap-2 rounded-full bg-gold px-8 py-4 text-base font-bold text-white shadow-xl transition-all hover:bg-navy hover:-translate-y-0.5 disabled:opacity-70"
+                  >
+                    {loading ? (<><Loader2 className="h-5 w-5 animate-spin" /> Processing...</>) : "Reserve My Limousine"}
+                  </button>
+                  <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <Lock className="h-3 w-3" />
+                    Secure booking. No charge until 24 hours before trip.
+                  </p>
+                </div>
               </form>
             )}
           </div>
         </div>
       </section>
+
+      {/* SECTION 2 — CONTACT INFO & MAP */}
+      <section className="bg-secondary/20 py-16">
+        <div className="container-luxury max-w-6xl mx-auto">
+          <div className="grid gap-12 lg:grid-cols-2">
+            {/* Contact Details */}
+            <div className="space-y-10">
+              <div>
+                <h2 className="text-3xl font-semibold text-navy">Other Ways to Reach Us</h2>
+                <div className="mt-4 h-px w-20 bg-gold" />
+              </div>
+
+              <div className="grid gap-5 sm:grid-cols-2">
+                {[
+                  { icon: Phone, label: "Phone", value: PHONE, sub: "Available 24/7", href: PHONE_HREF },
+                  { icon: Mail, label: "Email", value: EMAIL, sub: "Reply within 30 min", href: `mailto:${EMAIL}` },
+                  { icon: MapPin, label: "Location", value: "New York City, NY", sub: "Serving Tri-State Area" },
+                  { icon: Clock, label: "Hours", value: "24 / 7 / 365", sub: "Always available" },
+                ].map(({ icon: Icon, label, value, sub, href }) => (
+                  <div key={label} className="flex gap-4 rounded-xl border border-border bg-card p-5">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy text-gold">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-gold">{label}</p>
+                      {href ? (
+                        <a href={href} className="mt-1 block font-semibold text-navy hover:text-gold">{value}</a>
+                      ) : (
+                        <p className="mt-1 font-semibold text-navy">{value}</p>
+                      )}
+                      <p className="text-xs text-muted-foreground">{sub}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="rounded-2xl bg-navy p-8 text-white">
+                <h3 className="text-lg font-semibold text-gold">Immediate Assistance</h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/85">
+                  Need a ride right now? Our dispatchers are standing by 24 hours a day to assist with immediate bookings and last-minute changes. Call us directly for the fastest service.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-4">
+                  {[
+                    { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+                    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+                    { icon: MessageCircle, href: "https://wa.me/19177354320", label: "WhatsApp" },
+                  ].map(({ icon: Icon, href, label }) => (
+                    <a key={label} href={href} target="_blank" rel="noopener noreferrer"
+                       className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 text-gold transition-colors hover:bg-gold hover:text-navy">
+                      <Icon className="h-5 w-5" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Map & Policy */}
+            <div className="space-y-8">
+              <div className="overflow-hidden rounded-2xl border border-border shadow-md h-64 lg:h-80">
+                <iframe
+                  title="NY City Limousine location"
+                  src="https://www.google.com/maps?q=New+York+City&output=embed"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  className="block"
+                />
+              </div>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { icon: ShieldCheck, text: "No Charge Until 24hrs Before" },
+                  { icon: RefreshCw, text: "Free Cancellation Up to 24hrs" },
+                  { icon: CreditCard, text: "All Major Cards Accepted" },
+                ].map(({ icon: Icon, text }) => (
+                  <div key={text} className="rounded-xl border border-border bg-card p-4 text-center shadow-sm">
+                    <Icon className="mx-auto h-5 w-5 text-gold" />
+                    <p className="mt-2 text-[10px] font-bold leading-tight text-navy">{text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* FAQ */}
       <section className="bg-muted/30 py-16 md:py-20">

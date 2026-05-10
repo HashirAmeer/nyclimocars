@@ -8,6 +8,7 @@ import BlackLimousine from "@/assets/black-limousine.png";
 import SprinterVan from "@/assets/sprinter-van.png";
 import HummerLimousine from "@/assets/hummer-limousine.png";
 import CoachBus from "@/assets/coach-bus.png";
+import WhiteStretchLimo from "@/assets/White-Stretch-Limo.webp";
 
 export type Vehicle = {
   name: string;
@@ -35,9 +36,10 @@ export const FLEET: Vehicle[] = [
   { name: "Cadillac Escalade",category: "SUV",       pax: 6,  bags: 6,  hourly: 95,  jfk: 120, lga: 105, ewr: 130, baseRate: 95,  perMile: 5.0,  tour2: 230, tour4: 420,  tour6: 580,  tour8: 720,  image: CadillacEscalade, desc: "The ultimate luxury SUV — bold, spacious, commanding" },
   { name: "Mercedes C Class", category: "Sedan",     pax: 3,  bags: 3,  hourly: 99,  jfk: 115, lga: 100, ewr: 125, baseRate: 95,  perMile: 4.75, tour2: 240, tour4: 440,  tour6: 600,  tour8: 760,  image: MercedesCClass, desc: "German engineering meets luxury for executive travel" },
   { name: "Mercedes S Class", category: "Sedan",     pax: 3,  bags: 3,  hourly: 120, jfk: 145, lga: 130, ewr: 155, baseRate: 120, perMile: 5.5,  tour2: 290, tour4: 540,  tour6: 740,  tour8: 940,  image: MercedesSClass, desc: "The pinnacle of Mercedes luxury for VIP travel" },
-  { name: "Black Limousine",  category: "Limousine", pax: 8,  bags: 8,  hourly: 130, jfk: 175, lga: 160, ewr: 190, baseRate: 140, perMile: 6.0,  tour2: 320, tour4: 580,  tour6: 800,  tour8: 1000, image: BlackLimousine, desc: "Classic stretch limo in sleek black — make a grand entrance" },
-  { name: "Sprinter Van",     category: "Van",       pax: 14, bags: 14, hourly: 150, jfk: 210, lga: 190, ewr: 230, baseRate: 160, perMile: 7.0,  tour2: 380, tour4: 700,  tour6: 960,  tour8: 1200, image: SprinterVan, desc: "Executive van comfort for medium-sized groups" },
-  { name: "Hummer Limousine", category: "Limousine", pax: 20, bags: 20, hourly: 180, jfk: 280, lga: 260, ewr: 300, baseRate: 200, perMile: 8.0,  tour2: 460, tour4: 850,  tour6: 1160, tour8: 1440, image: HummerLimousine, desc: "The bold, unforgettable Hummer Limo for parties" },
+  { name: "Black Limousine",  category: "Limousine", pax: 8,  bags: 6,  hourly: 130, jfk: 175, lga: 160, ewr: 190, baseRate: 140, perMile: 6.0,  tour2: 320, tour4: 580,  tour6: 800,  tour8: 1000, image: BlackLimousine, desc: "Classic stretch limo in sleek black — make a grand entrance" },
+  { name: "White Stretch Limousine", category: "Limousine", pax: 7, bags: 6, hourly: 130, jfk: 175, lga: 160, ewr: 190, baseRate: 140, perMile: 6.0, tour2: 320, tour4: 580, tour6: 800, tour8: 1000, image: WhiteStretchLimo, desc: "Elegant white stretch limousine — ideal for weddings and special events" },
+  { name: "Sprinter Van",     category: "Van",       pax: 14, bags: 12, hourly: 150, jfk: 210, lga: 190, ewr: 230, baseRate: 160, perMile: 7.0,  tour2: 380, tour4: 700,  tour6: 960,  tour8: 1200, image: SprinterVan, desc: "Executive van comfort for medium-sized groups" },
+  { name: "Hummer Limousine", category: "Limousine", pax: 20, bags: 8,  hourly: 180, jfk: 280, lga: 260, ewr: 300, baseRate: 200, perMile: 8.0,  tour2: 460, tour4: 850,  tour6: 1160, tour8: 1440, image: HummerLimousine, desc: "The bold, unforgettable Hummer Limo for parties" },
   { name: "Coach Bus",        category: "Bus",       pax: 50, bags: 50, hourly: 350, jfk: 550, lga: 500, ewr: 600, baseRate: 400, perMile: 12.0, tour2: 850, tour4: 1600, tour6: 2200, tour8: 2800, image: CoachBus, desc: "Full-size luxury coach for large groups and corporate events" },
 ];
 

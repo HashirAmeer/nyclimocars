@@ -94,9 +94,9 @@ export function Footer() {
             <li><Link to="/services/airport" className="hover:text-gold">Airport Service</Link></li>
             <li><Link to="/services/hourly" className="hover:text-gold">Hourly Service</Link></li>
             <li><Link to="/services/point-to-point" className="hover:text-gold">Point to Point</Link></li>
-            <li><Link to="/services/tours" className="hover:text-gold">Tours</Link></li>
-            <li><Link to="/services/hourly" className="hover:text-gold">Event Transportation</Link></li>
-            <li><Link to="/services/hourly" className="hover:text-gold">Corporate Travel</Link></li>
+            <li><Link to="/services/tours" className="hover:text-gold">Private NYC Tours</Link></li>
+            <li><Link to="/services/wedding" className="hover:text-gold">Wedding Transportation</Link></li>
+            <li><Link to="/services/corporate" className="hover:text-gold">Corporate Transportation</Link></li>
           </ul>
         </div>
 

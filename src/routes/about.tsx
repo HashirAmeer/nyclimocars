@@ -10,7 +10,6 @@ import {
   Calendar,
   Briefcase,
   Heart,
-  Dice5,
   Camera,
   Phone,
 } from "lucide-react";
@@ -33,7 +32,7 @@ export const Route = createFileRoute("/about")({
       {
         property: "og:image",
         content:
-          "https://images.unsplash.com/photo-1496588152823-86ff7695e68f?w=1600&q=80",
+          "https://images.pexels.com/photos/18369291/pexels-photo-18369291.jpeg?auto=compress&cs=tinysrgb&w=1600",
       },
     ],
   }),
@@ -46,8 +45,8 @@ function AboutPage() {
       {/* SECTION 1 — HERO */}
       <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden">
         <img loading="lazy" decoding="async"
-          src="https://images.unsplash.com/photo-1496588152823-86ff7695e68f?w=1920&q=80"
-          alt="New York City skyline at night"
+          src="https://images.pexels.com/photos/18369291/pexels-photo-18369291.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          alt="Luxury black car fleet"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/75 to-navy/95" />
@@ -80,7 +79,7 @@ function AboutPage() {
         <div className="container-luxury">
           <div className="grid items-center gap-14 text-center lg:grid-cols-2 lg:text-left">
             <img loading="lazy" decoding="async"
-              src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1200&q=80"
+              src="https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1200"
               alt="Professional chauffeur opening luxury limousine door"
               className="mx-auto rounded-2xl object-cover shadow-xl"
             />
@@ -168,8 +167,8 @@ function AboutPage() {
       {/* SECTION 4 — OUR MISSION */}
       <section className="relative isolate overflow-hidden bg-navy py-24 text-white">
         <img loading="lazy" decoding="async"
-          src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=1600&q=80"
-          alt=""
+          src="https://images.pexels.com/photos/12513224/pexels-photo-12513224.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          alt="Luxury SUV"
           className="absolute inset-0 h-full w-full object-cover opacity-15"
         />
         <div className="container-luxury relative text-center">
@@ -349,40 +348,40 @@ function AboutPage() {
           <div className="mx-auto mt-14 grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                icon: Calendar,
-                title: "Event Transportation",
-                text: "Galas, premieres, concerts, and private events. Arrive in style with chauffeured precision.",
-                href: "/services/hourly",
-              },
-              {
                 icon: Plane,
                 title: "Airport Service",
                 text: "Punctual JFK, LGA, EWR, SWF, and TEB transfers with meet-and-greet and flight tracking.",
                 href: "/services/airport",
               },
               {
+                icon: Calendar,
+                title: "Hourly Service",
+                text: "Flexible per-hour limo hire with a dedicated professional chauffeur for any occasion.",
+                href: "/services/hourly",
+              },
+              {
+                icon: Briefcase,
+                title: "Point to Point",
+                text: "Flat-rate direct transfers anywhere in NYC and the Tri-State Area with on-time guarantee.",
+                href: "/services/point-to-point",
+              },
+              {
                 icon: Camera,
-                title: "Private Tours",
+                title: "Private NYC Tours",
                 text: "Bespoke NYC sightseeing, night lights, and shopping tours with licensed guides.",
                 href: "/services/tours",
               },
               {
                 icon: Heart,
-                title: "Weddings",
+                title: "Wedding Transportation",
                 text: "Elegant wedding transportation for the bride, groom, and the entire wedding party.",
-                href: "/services/hourly",
-              },
-              {
-                icon: Dice5,
-                title: "Casinos",
-                text: "Comfortable luxury rides to Atlantic City, Foxwoods, Mohegan Sun, and Resorts World.",
-                href: "/services/point-to-point",
+                href: "/services/wedding",
               },
               {
                 icon: Briefcase,
-                title: "Corporate",
+                title: "Corporate Transportation",
                 text: "Executive ground transportation, roadshows, and corporate accounts with priority service.",
-                href: "/services/hourly",
+                href: "/services/corporate",
               },
             ].map(({ icon: Icon, title, text, href }) => (
               <Link

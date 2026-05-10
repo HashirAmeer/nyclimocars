@@ -12,7 +12,7 @@ export const Route = createFileRoute("/services/point-to-point")({
       { name: "description", content: "NY City Limousine's point-to-point limousine service — flat-rate direct transfers anywhere in NYC and the Tri-State Area. On-time guarantee, professional chauffeurs, all-inclusive pricing." },
       { property: "og:title", content: "NYC Point-to-Point Limousine Service" },
       { property: "og:description", content: "Flat-rate direct transfers across NYC & the Tri-State Area." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1502920514313-52581002a659?w=1600&q=80" },
+      { property: "og:image", content: "https://images.pexels.com/photos/12513224/pexels-photo-12513224.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
   component: P2PPage,
@@ -45,7 +45,7 @@ function P2PPage() {
         eyebrow="Point to Point"
         title="NYC Point-to-Point Limousine Service"
         subtitle="Flat-Rate Direct Transfers Across New York City & the Tri-State Area"
-        image="https://images.unsplash.com/photo-1502920514313-52581002a659?w=1600&q=80"
+        image="https://images.pexels.com/photos/12513224/pexels-photo-12513224.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
       <div className="bg-background">
         <div className="container-luxury mx-auto py-8 text-center">

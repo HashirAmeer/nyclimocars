@@ -15,7 +15,7 @@ export const Route = createFileRoute("/pricing/airport")({
       },
       { property: "og:title", content: "NYC Airport Limo Rates — JFK · LGA · EWR" },
       { property: "og:description", content: "Flat-rate all-inclusive airport transfer pricing." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80" },
+      { property: "og:image", content: "https://images.pexels.com/photos/1004584/pexels-photo-1004584.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
   component: AirportPricing,
@@ -28,7 +28,7 @@ function AirportPricing() {
         eyebrow="Airport Rates"
         title="NYC Airport Limousine Rates"
         subtitle="Flat-Rate All-Inclusive Transfers — JFK · LGA · EWR"
-        image="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80"
+        image="https://images.pexels.com/photos/1004584/pexels-photo-1004584.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
 
       <InfoBadges items={["Meet & Greet", "60 Min Free Wait", "Flight Tracking", "All-Inclusive"]} />

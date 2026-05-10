@@ -15,7 +15,7 @@ export const Route = createFileRoute("/pricing/tours")({
       },
       { property: "og:title", content: "NYC Private Limousine Tour Rates" },
       { property: "og:description", content: "All-inclusive 2 / 4 / 6 / 8-hour tour packages." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1600&q=80" },
+      { property: "og:image", content: "https://images.pexels.com/photos/28680391/pexels-photo-28680391.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
   component: ToursPricing,
@@ -28,7 +28,7 @@ function ToursPricing() {
         eyebrow="Tour Rates"
         title="NYC Limousine Tour Rates"
         subtitle="All-Inclusive Tour Packages — Vehicle · Chauffeur · Taxes · Gratuity · Beverages"
-        image="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1600&q=80"
+        image="https://images.pexels.com/photos/28680391/pexels-photo-28680391.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
 
       <InfoBadges

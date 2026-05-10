@@ -5,38 +5,38 @@ import { PageShell, PageHero } from "@/components/PageShell";
 import { MiniFleet } from "@/components/MiniFleet";
 import { BookingCTA } from "@/components/BookingCTA";
 import { FLEET, fmt } from "@/lib/fleet";
-import { Clock, Car, UserCheck, MapPin, GlassWater, BadgeDollarSign, Check } from "lucide-react";
+import { Heart, Car, UserCheck, GlassWater, MapPin, Clock, Check } from "lucide-react";
 
-export const Route = createFileRoute("/services/hourly")({
+export const Route = createFileRoute("/services/wedding")({
   head: () => ({
     meta: [
-      { title: "NYC Hourly Limousine Service | Per Hour Limo Hire New York City | NY City Limousine" },
-      { name: "description", content: "Book NY City Limousine's hourly limousine service in New York City. Flexible per-hour limo hire with professional chauffeurs for business meetings, events & city tours. Transparent all-inclusive pricing." },
-      { property: "og:title", content: "NYC Hourly Limousine Service — NY City Limousine" },
-      { property: "og:description", content: "Flexible per-hour limo hire with a dedicated professional chauffeur in NYC." },
-      { property: "og:image", content: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600" },
+      { title: "NYC Wedding Limousine Service | Bridal Transportation New York | NY City Limousine" },
+      { name: "description", content: "NY City Limousine provides premium wedding transportation in New York City. Stretch limousines, luxury SUVs and sedans for bride, groom and wedding party. Book your wedding limo." },
+      { property: "og:title", content: "NYC Wedding Limousine Service — NY City Limousine" },
+      { property: "og:description", content: "Premium wedding transportation for your special day in NYC." },
+      { property: "og:image", content: "https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
-  component: HourlyPage,
+  component: WeddingPage,
 });
 
 const FEATURES = [
-  { icon: Clock, title: "Flexible Booking", desc: "Book from 1 to 12 hours; control your entire itinerary with multiple stops." },
-  { icon: Car, title: "Multiple Vehicle Options", desc: "Sedans, SUVs, Mercedes S Class, stretch limousines, vans & buses." },
-  { icon: UserCheck, title: "Dedicated Chauffeur", desc: "Your professional driver stays with you for the full duration." },
-  { icon: MapPin, title: "Unlimited Stops", desc: "Perfect for meetings, events, or city exploration." },
-  { icon: GlassWater, title: "Complimentary Beverages", desc: "Water and soft drinks included; champagne available upon request." },
-  { icon: BadgeDollarSign, title: "All-Inclusive Pricing", desc: "No hidden fees; taxes, gratuity, and admin fee all included." },
+  { icon: Heart, title: "Bridal Party Transportation", desc: "Full fleet available for bride, groom, and entire wedding party." },
+  { icon: Car, title: "Immaculate Vehicles", desc: "Beautifully maintained and decorated vehicles for your special day." },
+  { icon: UserCheck, title: "Professional Chauffeurs", desc: "Formally dressed, punctual, and experienced wedding drivers." },
+  { icon: GlassWater, title: "Complimentary Champagne", desc: "Celebrate in style with complimentary champagne service." },
+  { icon: MapPin, title: "Any Venue in NYC", desc: "We cover all boroughs and surrounding Tri-State Area." },
+  { icon: Clock, title: "Flexible Scheduling", desc: "We work around your wedding timeline perfectly." },
 ];
 
-const IDEAL = ["Business Meetings","Corporate Events","City Sightseeing","Special Occasions","Birthday Parties","Bachelor/Bachelorette Parties","Shopping Trips","Multi-Stop NYC Itineraries"];
+const OCCASIONS = ["Bride & Groom Transfer", "Wedding Party", "Guest Transportation", "Rehearsal Dinner", "Bridal Shower", "Honeymoon Airport Transfer"];
 const INCLUDED = [
   "Professional licensed chauffeur",
-  "All-inclusive transparent pricing",
-  "Complimentary water & soft drinks",
-  "Unlimited stops within booked hours",
+  "Complimentary champagne service",
+  "Red carpet service available",
+  "Decorated vehicle on request",
+  "All-inclusive pricing",
   "24-hour free cancellation",
-  "Real-time chauffeur tracking",
 ];
 
 function VehicleCalc({ name, image, pax, bags, hourly }: { name: string; image: string; pax: number; bags: number; hourly: number }) {
@@ -100,19 +100,19 @@ function Row({ label, value }: { label: string; value: string }) {
   );
 }
 
-function HourlyPage() {
+function WeddingPage() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="Hourly Service"
-        title="NYC Hourly Limousine Service"
-        subtitle="Flexible Per-Hour Limo Hire with a Dedicated Professional Chauffeur"
-        image="https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        eyebrow="Wedding Service"
+        title="NYC Wedding Limousine Service"
+        subtitle="Arrive in Style on Your Most Special Day"
+        image="https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
       <div className="bg-background">
         <div className="container-luxury mx-auto py-8 text-center">
           <Link to="/contact" className="inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-navy">
-            Book Hourly Service
+            Book Wedding Limo
           </Link>
         </div>
       </div>
@@ -121,7 +121,7 @@ function HourlyPage() {
       <section className="bg-background pb-16 pt-4">
         <div className="container-luxury mx-auto max-w-3xl text-center">
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Elevate your travel experience with NY City Limousine's Hourly Limousine Service — offering you the flexibility and sophistication you deserve. Whether you need a chauffeured limousine for a series of business meetings, a day of city exploration, or a special event, our hourly service ensures a reliable and luxurious transportation solution tailored entirely to your schedule. You can cruise New York City in style — stopping wherever you like, for as long as you need.
+            NYC Limo Car are experts in providing quality wedding transportation for your big day. Let us handle all your transportation needs so you have one less thing to worry about on the most important day of your life. We cover the bride and groom, wedding party, and all guests with our stunning fleet of stretch limousines, luxury sedans, SUVs, and vans.
           </p>
         </div>
       </section>
@@ -129,7 +129,7 @@ function HourlyPage() {
       {/* Features */}
       <section className="bg-secondary/30 py-20">
         <div className="container-luxury mx-auto text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Why Choose Hourly</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Why Choose Us</p>
           <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-semibold text-navy md:text-4xl">Key Features</h2>
           <div className="mx-auto mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map(({ icon: Icon, title, desc }) => (
@@ -145,12 +145,12 @@ function HourlyPage() {
         </div>
       </section>
 
-      {/* Ideal for */}
+      {/* Occasions */}
       <section className="bg-background py-16">
         <div className="container-luxury mx-auto text-center">
-          <h2 className="text-2xl font-semibold text-navy md:text-3xl">Ideal For</h2>
+          <h2 className="text-2xl font-semibold text-navy md:text-3xl">Perfect For</h2>
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
-            {IDEAL.map((t) => (
+            {OCCASIONS.map((t) => (
               <span key={t} className="rounded-full border border-gold/40 bg-gold/5 px-5 py-2 text-sm font-medium text-navy">
                 {t}
               </span>
@@ -180,7 +180,7 @@ function HourlyPage() {
           <div className="mx-auto max-w-3xl rounded-2xl bg-navy p-8 text-center text-white">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Important Note</p>
             <p className="mt-3 text-white/90">
-              Hourly rates apply for travel within New York City (5 Boroughs: The Bronx, Brooklyn, Manhattan, Queens, Staten Island) only. For travel outside NYC, please contact us for a custom rate.
+              Hourly rates apply for travel within New York City (5 Boroughs: The Bronx, Brooklyn, Manhattan, Queens, Staten Island) only. For travel outside NYC, please contact us for a custom rate. Wedding packages can be customized to fit your specific timeline and needs.
             </p>
           </div>
         </div>
@@ -193,7 +193,7 @@ function HourlyPage() {
         <div className="container-luxury mx-auto text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Live Calculator</p>
           <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-semibold text-navy md:text-4xl">
-            Hourly Limousine Rates — Select Your Vehicle &amp; Hours
+            Wedding Limousine Rates — Select Your Vehicle &amp; Hours
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             All rates are all-inclusive — taxes, gratuity, credit card fee, and admin fee all included.

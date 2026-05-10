@@ -17,11 +17,11 @@ export const Route = createFileRoute("/fleet")({
       { property: "og:title", content: "Our Luxury Fleet | NY City Limousine" },
       {
         property: "og:description",
-        content: "10 luxury vehicles for every occasion across NYC and the Tri-State Area.",
+        content: "11 luxury vehicles for every occasion across NYC and the Tri-State Area.",
       },
       {
         property: "og:image",
-        content: "/src/assets/lincoln-sedan.png",
+        content: "https://images.pexels.com/photos/18369291/pexels-photo-18369291.jpeg?auto=compress&cs=tinysrgb&w=1600",
       },
     ],
   }),
@@ -41,10 +41,10 @@ const FILTERS: Array<{ label: string; match: (c: Category) => boolean }> = [
 ];
 
 const RATE_CARDS = [
-  { title: "Airport Rates",   to: "/pricing/airport",        img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1000&q=80" },
-  { title: "Hourly Rates",    to: "/pricing/hourly",         img: "https://images.unsplash.com/photo-1493238792000-8113da705763?w=1000&q=80" },
-  { title: "Point to Point",  to: "/pricing/point-to-point", img: "https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?w=1000&q=80" },
-  { title: "Tours",           to: "/pricing/tours",          img: "https://images.unsplash.com/photo-1522083165195-3424ed129620?w=1000&q=80" },
+  { title: "Airport Rates",   to: "/pricing/airport",        img: "https://images.pexels.com/photos/1004584/pexels-photo-1004584.jpeg?auto=compress&cs=tinysrgb&w=1000" },
+  { title: "Hourly Rates",    to: "/pricing/hourly",         img: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1000" },
+  { title: "Point to Point",  to: "/pricing/point-to-point", img: "https://images.pexels.com/photos/18369291/pexels-photo-18369291.jpeg?auto=compress&cs=tinysrgb&w=1000" },
+  { title: "Tours",           to: "/pricing/tours",          img: "https://images.pexels.com/photos/28680391/pexels-photo-28680391.jpeg?auto=compress&cs=tinysrgb&w=1000" },
 ];
 
 function FleetPage() {
@@ -58,7 +58,7 @@ function FleetPage() {
         eyebrow="Home > Fleet"
         title="Our Luxury Limousine Fleet"
         subtitle="Convenience Comes in Many Forms — We Have the Perfect Vehicle for You"
-        image="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?w=1600&q=80"
+        image="https://images.pexels.com/photos/18369291/pexels-photo-18369291.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
 
       {/* SECTION 2 — INTRO */}
@@ -66,7 +66,7 @@ function FleetPage() {
         <div className="container-luxury mx-auto max-w-4xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Our Fleet</p>
           <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-semibold text-navy md:text-4xl">
-            10 Luxury Vehicles for Every Occasion
+            11 Luxury Vehicles for Every Occasion
           </h2>
           <div className="mx-auto mt-6 space-y-5 text-base leading-relaxed text-muted-foreground">
             <p>

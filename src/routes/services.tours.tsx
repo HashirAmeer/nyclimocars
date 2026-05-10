@@ -3,16 +3,16 @@ import { PageShell, PageHero } from "@/components/PageShell";
 import { MiniFleet } from "@/components/MiniFleet";
 import { BookingCTA } from "@/components/BookingCTA";
 import { FLEET, fmt } from "@/lib/fleet";
-import { Award, Lock, ListChecks, Hotel, BookOpen, Clock } from "lucide-react";
+import { Award, Lock, ListChecks, Hotel, BookOpen, Clock, Check } from "lucide-react";
 
 export const Route = createFileRoute("/services/tours")({
   head: () => ({
     meta: [
-      { title: "NYC Limousine Tours | Private Sightseeing Tours New York City | NY City Limousine" },
-      { name: "description", content: "Explore NYC in luxury with NY City Limousine's private limousine tours. Times Square, Central Park, Statue of Liberty & more. All-inclusive packages. Night tours, shopping tours, guided tours available." },
+      { title: "NYC Private Limousine Tours | Sightseeing Limo Tour New York | NY City Limousine" },
+      { name: "description", content: "Explore NYC in luxury with NY City Limousine private tours. Times Square, Central Park, Statue of Liberty & more. All-inclusive packages with professional chauffeur-guide." },
       { property: "og:title", content: "Private Limousine Tours of New York City" },
       { property: "og:description", content: "All-inclusive private tour packages of NYC." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1600&q=80" },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1600712364716-eab8cabac7d0?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
     ],
   }),
   component: ToursPage,
@@ -21,23 +21,23 @@ export const Route = createFileRoute("/services/tours")({
 const TOURS = [
   {
     title: "Classic NYC Sightseeing Tour",
-    image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=900&q=80",
-    desc: "Visit Times Square, Central Park, Brooklyn Bridge, Statue of Liberty views, Rockefeller Center, Greenwich Village, the Lower East Side, and more. Starting from 3 hours — stop whenever you like for photos or shopping sessions. You will not see this much of NYC in such a short time on your own!",
+    image: "https://images.pexels.com/photos/290386/pexels-photo-290386.jpeg?auto=compress&cs=tinysrgb&w=900",
+    desc: "Visit Times Square, Central Park, Brooklyn Bridge, Statue of Liberty views, Rockefeller Center, Greenwich Village, and more. Stop whenever you like for photos or shopping.",
   },
   {
     title: "NYC Night Lights Tour",
-    image: "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=900&q=80",
-    desc: "Witness the magic of New York City come alive after dark. Marvel at the glittering skyline, the illuminated skyscrapers, and the electric energy of Manhattan by night. An unforgettable experience for first-time visitors and lifelong New Yorkers alike.",
+    image: "https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?auto=compress&cs=tinysrgb&w=900",
+    desc: "Witness New York City come alive after dark. Marvel at the glittering skyline, illuminated skyscrapers, and the electric energy of Manhattan by night.",
   },
   {
     title: "NYC Tour with Licensed Guide",
-    image: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=900&q=80",
-    desc: "The complete limousine sightseeing experience with a licensed, knowledgeable tour guide. Get historical context, insider stories about famous sites, and personalized recommendations. Our guides speak English, Spanish, French, German, and Italian.",
+    image: "https://images.pexels.com/photos/2224861/pexels-photo-2224861.jpeg?auto=compress&cs=tinysrgb&w=900",
+    desc: "The complete limousine experience with a licensed tour guide. Get historical context and insider stories across all five boroughs.",
   },
   {
     title: "Shopping Tour to Woodbury Common",
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900&q=80",
-    desc: "Located one hour north of NYC, Woodbury Common Premium Outlets is a colonial-style village housing 220+ designer brands including Banana Republic, Coach, Dior, Versace, and more. Or explore Manhattan's finest boutiques and shopping destinations in luxury.",
+    image: "https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg?auto=compress&cs=tinysrgb&w=900",
+    desc: "Visit Woodbury Common Premium Outlets featuring 220+ designer brands including Coach, Dior, and Versace — one hour north of NYC.",
   },
 ];
 
@@ -48,6 +48,16 @@ const BENEFITS = [
   { icon: Hotel, title: "Hotel Pick & Drop", desc: "Default pick-up and drop-off at your hotel." },
   { icon: BookOpen, title: "Educational & Entertaining", desc: "Informative guides cover history, culture, and hidden gems." },
   { icon: Clock, title: "Time-Saving", desc: "See in hours what would take days to explore on your own." },
+];
+
+const INCLUDED = [
+  "Professional licensed chauffeur",
+  "All vehicle costs and fuel",
+  "Taxes and tolls",
+  "Gratuity",
+  "Complimentary non-alcoholic beverages",
+  "Champagne service inside limousines",
+  "Hotel pick-up and drop-off",
 ];
 
 const TERMS = [
@@ -63,8 +73,8 @@ function ToursPage() {
       <PageHero
         eyebrow="City Tours"
         title="Private Limousine Tours of New York City"
-        subtitle="See the City Like Never Before — All-Inclusive Private Tour Packages"
-        image="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1600&q=80"
+        subtitle="See NYC Like Never Before — All-Inclusive Private Tour Packages"
+        image="https://images.unsplash.com/photo-1600712364716-eab8cabac7d0?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       />
       <div className="bg-background">
         <div className="container-luxury mx-auto py-8 text-center">
@@ -77,7 +87,7 @@ function ToursPage() {
       <section className="bg-background pb-16 pt-4">
         <div className="container-luxury mx-auto max-w-3xl text-center">
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Experience the Big Apple with NY City Limousine's exclusive private limousine tour packages. NY City Limousine gives you a tour of the city that would take 4–5 days on your own — covered in just a few hours. We are well-known for providing historical, informative, enjoyable, and memorable tours. All our tour packages can be customized to suit your group. Our knowledgeable chauffeur-guides are native English speakers; several foreign language experts are also available upon request. Pick-up and drop-off at your hotel.
+            Experience the Big Apple with NY City Limousine's exclusive private limousine tour packages. We give you a tour of the city that would take 4 to 5 days on your own — covered in just a few hours. We are well known for providing historical, informative, enjoyable, and memorable tours. All tour packages can be customized to suit your group. Our knowledgeable chauffeur-guides are native English speakers. Pick-up and drop-off at your hotel.
           </p>
         </div>
       </section>
@@ -119,8 +129,23 @@ function ToursPage() {
         </div>
       </section>
 
-      {/* Terms */}
+      {/* What's Included */}
       <section className="bg-secondary/30 py-16">
+        <div className="container-luxury mx-auto text-center">
+          <h2 className="text-2xl font-semibold text-navy md:text-3xl">What's Included</h2>
+          <ul className="mx-auto mt-8 grid max-w-2xl gap-3 text-left sm:grid-cols-2">
+            {INCLUDED.map((i) => (
+              <li key={i} className="flex items-start gap-3 rounded-lg bg-card p-4 shadow-sm">
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+                <span className="text-sm text-navy">{i}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Terms */}
+      <section className="bg-background py-16">
         <div className="container-luxury mx-auto">
           <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-card p-8 text-center shadow-sm">
             <h3 className="text-lg font-semibold text-navy">Terms &amp; Conditions</h3>

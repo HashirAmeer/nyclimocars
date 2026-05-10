@@ -7,7 +7,9 @@ const services = [
   { to: "/services/hourly", label: "Hourly Service" },
   { to: "/services/airport", label: "Airport Service" },
   { to: "/services/point-to-point", label: "Point to Point Service" },
-  { to: "/services/tours", label: "Tours Service" },
+  { to: "/services/tours", label: "Private NYC Tours" },
+  { to: "/services/wedding", label: "Wedding Transportation" },
+  { to: "/services/corporate", label: "Corporate Transportation" },
 ] as const;
 
 const pricing = [
@@ -15,6 +17,13 @@ const pricing = [
   { to: "/pricing/airport", label: "Airport Rates" },
   { to: "/pricing/point-to-point", label: "Point to Point Rates" },
   { to: "/pricing/tours", label: "Tours Rates" },
+] as const;
+
+const airports = [
+  { to: "/airports/jfk", label: "JFK Airport" },
+  { to: "/airports/lga", label: "LaGuardia Airport" },
+  { to: "/airports/ewr", label: "Newark Airport" },
+  { to: "/airports/teb", label: "Teterboro Airport" },
 ] as const;
 
 const linkClass =
@@ -135,6 +144,7 @@ export function Navbar() {
           <nav className="hidden items-center gap-7 lg:flex">
             <Link to="/" activeOptions={{ exact: true }} className={linkClass}>Home</Link>
             <Dropdown label="Services" items={services} />
+            <Dropdown label="Airports" items={airports} />
             <Link to="/about" className={linkClass}>About</Link>
             <Dropdown label="Pricing" items={pricing} />
             <Link to="/fleet" className={linkClass}>Fleet</Link>
@@ -182,6 +192,7 @@ export function Navbar() {
           <div className="flex flex-col gap-1 overflow-y-auto p-5">
             <MobileLink to="/" onClick={() => setMobileOpen(false)}>Home</MobileLink>
             <MobileGroup label="Services" items={services} onClose={() => setMobileOpen(false)} />
+            <MobileGroup label="Airports" items={airports} onClose={() => setMobileOpen(false)} />
             <MobileLink to="/about" onClick={() => setMobileOpen(false)}>About</MobileLink>
             <MobileGroup label="Pricing" items={pricing} onClose={() => setMobileOpen(false)} />
             <MobileLink to="/fleet" onClick={() => setMobileOpen(false)}>Fleet</MobileLink>

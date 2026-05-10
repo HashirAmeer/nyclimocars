@@ -10,7 +10,7 @@ export function MiniFleet() {
           Vehicles Available for This Service
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-          Choose from 10 meticulously maintained luxury vehicles for any group size.
+          Choose from 11 meticulously maintained luxury vehicles for any group size.
         </p>
         <div className="mx-auto mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {FLEET.map((v) => (

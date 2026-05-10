@@ -19,10 +19,10 @@ export const Route = createFileRoute("/pricing/")({
 });
 
 const SERVICES = [
-  { title: "Airport Rates",  to: "/pricing/airport",        img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80" },
-  { title: "Tours",          to: "/pricing/tours",          img: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1200&q=80" },
-  { title: "Hourly Rates",   to: "/pricing/hourly",         img: "https://images.unsplash.com/photo-1493238792000-8113da705763?w=1200&q=80" },
-  { title: "Point to Point", to: "/pricing/point-to-point", img: "https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?w=1200&q=80" },
+  { title: "Airport Rates",  to: "/pricing/airport",        img: "https://images.pexels.com/photos/1004584/pexels-photo-1004584.jpeg?auto=compress&cs=tinysrgb&w=1200" },
+  { title: "Tours",          to: "/pricing/tours",          img: "https://images.pexels.com/photos/28680391/pexels-photo-28680391.jpeg?auto=compress&cs=tinysrgb&w=1200" },
+  { title: "Hourly Rates",   to: "/pricing/hourly",         img: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1200" },
+  { title: "Point to Point", to: "/pricing/point-to-point", img: "https://images.pexels.com/photos/18369291/pexels-photo-18369291.jpeg?auto=compress&cs=tinysrgb&w=1200" },
 ];
 
 function PricingLanding() {
@@ -32,7 +32,7 @@ function PricingLanding() {
         eyebrow="Pricing"
         title="We Treat Our Customers Like Royalty"
         subtitle="Select Service Type to View Rates"
-        image="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?w=1600&q=80"
+        image="https://images.pexels.com/photos/12513224/pexels-photo-12513224.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
 
       <section className="bg-background py-20">

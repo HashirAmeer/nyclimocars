@@ -12,11 +12,11 @@ export const Route = createFileRoute("/pricing/hourly")({
       {
         name: "description",
         content:
-          "View NY City Limousine's all-inclusive hourly limousine rates for all 10 vehicles. Transparent pricing with sales tax, gratuity, credit card fee, and admin fee all included. Book in New York City.",
+          "View NY City Limousine's all-inclusive hourly limousine rates for all 11 vehicles. Transparent pricing with sales tax, gratuity, credit card fee, and admin fee all included. Book in New York City.",
       },
       { property: "og:title", content: "NYC Hourly Limo Rates — NY City Limousine" },
       { property: "og:description", content: "All-inclusive hourly rates with full breakdown." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1493238792000-8113da705763?w=1600&q=80" },
+      { property: "og:image", content: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
   component: HourlyPricing,
@@ -90,7 +90,7 @@ function HourlyPricing() {
         eyebrow="Hourly Rates"
         title="Hourly Limousine Rates — New York City"
         subtitle="All-Inclusive · No Hidden Fees · Select Hours to See Full Breakdown"
-        image="https://images.unsplash.com/photo-1493238792000-8113da705763?w=1600&q=80"
+        image="https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
 
       <InfoBadges

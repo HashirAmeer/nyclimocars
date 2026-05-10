@@ -24,6 +24,8 @@ import LincolnSedan from "@/assets/lincoln-sedan.png";
 import CadillacEscalade from "@/assets/cadillac-escalade.png";
 import BlackLimousine from "@/assets/black-limousine.png";
 import SprinterVan from "@/assets/sprinter-van.png";
+import WhiteStretchLimo from "@/assets/White-Stretch-Limo.webp";
+import { WorldCupPopup } from "@/components/WorldCupPopup";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,23 +53,33 @@ export const Route = createFileRoute("/")({
 const serviceTypes = [
   {
     title: "AIRPORT RATES",
-    img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80",
+    img: "https://images.pexels.com/photos/1004584/pexels-photo-1004584.jpeg?auto=compress&cs=tinysrgb&w=1200",
     to: "/services/airport" as const,
   },
   {
     title: "TOURS",
-    img: "https://images.unsplash.com/photo-1496588152823-86ff7695e68f?w=1200&q=80",
+    img: "https://images.unsplash.com/photo-1600712364716-eab8cabac7d0?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     to: "/services/tours" as const,
   },
   {
     title: "HOURLY RATES",
-    img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=1200&q=80",
+    img: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1200",
     to: "/services/hourly" as const,
   },
   {
     title: "POINT TO POINT",
-    img: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=1200&q=80",
+    img: "https://images.pexels.com/photos/18369291/pexels-photo-18369291.jpeg?auto=compress&cs=tinysrgb&w=1200",
     to: "/services/point-to-point" as const,
+  },
+  {
+    title: "WEDDINGS",
+    img: "https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    to: "/services/wedding" as const,
+  },
+  {
+    title: "CORPORATE",
+    img: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    to: "/services/corporate" as const,
   },
 ];
 
@@ -81,40 +93,40 @@ const trustBadges = [
 
 const services = [
   {
-    title: "EVENT TRANSPORTATION",
-    img: "https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?w=900&q=80",
-    text: "NY City Limousine works with experienced drivers to serve each client with their event transportation needs. We take special precautions to ensure the transportation we provide meets the safety standards of the limousine industry. Our mission is to provide safety and comfort for clients on their way to events — whether it's a prom, concert, birthday party, bachelor/bachelorette party, sports event, or conference.",
-    to: "/services/hourly" as const,
-  },
-  {
     title: "NYC AIRPORT LIMOUSINE SERVICE (JFK · LGA · EWR · TEB)",
-    img: "https://images.unsplash.com/photo-1542296332-2e4473faf563?w=900&q=80",
+    img: "https://images.pexels.com/photos/1004584/pexels-photo-1004584.jpeg?auto=compress&cs=tinysrgb&w=900",
     text: "NY City Limousine is among the top limousine service providers for airport transport in New York City. We provide limousine transfers to and from all major airports including JFK, LGA, EWR, and TEB. Complimentary meet & greet, flight monitoring, and up to 60 minutes free waiting time included.",
     to: "/services/airport" as const,
   },
   {
+    title: "HOURLY LIMOUSINE SERVICE",
+    img: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=900",
+    text: "NY City Limousine offers hourly limousine hire for all events so you can cruise New York City in style. Choose from our full fleet — stretched limousines, SUVs, luxury sedans, vans, and coach buses. Our professional chauffeurs provide VIP treatment throughout.",
+    to: "/services/hourly" as const,
+  },
+  {
+    title: "POINT TO POINT LIMOUSINE SERVICE",
+    img: "https://images.pexels.com/photos/18369291/pexels-photo-18369291.jpeg?auto=compress&cs=tinysrgb&w=900",
+    text: "Experience convenience and luxury with our Point-to-Point Limousine Service. Whether you're headed to a business meeting, a special event, or a night on the town — we provide flat-rate direct transfer solutions with guaranteed on-time arrival every single time.",
+    to: "/services/point-to-point" as const,
+  },
+  {
     title: "PRIVATE NEW YORK CITY LIMOUSINE TOURS",
-    img: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=900&q=80",
+    img: "https://images.unsplash.com/photo-1600712364716-eab8cabac7d0?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     text: "Experience the Big Apple with our exclusive private New York City limousine tour packages. Visit Times Square, Central Park, and the Statue of Liberty. NY City Limousine offers private tours with a knowledgeable chauffeur-guide who will take you through the most popular — and hidden — gems of the city across all five boroughs.",
     to: "/services/tours" as const,
   },
   {
     title: "LIMOUSINE SERVICE NYC FOR WEDDINGS",
-    img: "https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80",
+    img: "https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=900",
     text: "NY City Limousine are experts in providing quality wedding transportation for your big day. Let us handle all your transportation needs so you have one less thing to worry about on the most important day of your life. We cover the bride and groom, wedding party, and all guests — with stretch limousines, luxury sedans, SUVs, and vans available.",
-    to: "/services/hourly" as const,
-  },
-  {
-    title: "NYC TO ATLANTIC CITY LIMOUSINE — CASINOS",
-    img: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=900&q=80",
-    text: "There is nothing more exciting than a night at the casino. NY City Limousine ensures you travel to and from your casino night in style and comfort. Our professional chauffeurs take all the stress of driving off your shoulders — no parking, no traffic worries. Relax, enjoy complimentary beverages, and arrive ready to win big.",
-    to: "/services/point-to-point" as const,
+    to: "/services/wedding" as const,
   },
   {
     title: "CORPORATE LIMOUSINE TRANSPORTATION",
-    img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80",
+    img: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=900",
     text: "At NY City Limousine, we understand there is no margin for error when it comes to corporate travel. We have made fulfilling the corporate ground transportation needs of our clients our specialty. From solo executive travel to large groups headed for meetings, conventions, or conferences — our polished chauffeurs and luxury fleet deliver impeccable service every time.",
-    to: "/services/hourly" as const,
+    to: "/services/corporate" as const,
   },
 ];
 
@@ -154,30 +166,31 @@ const features = [
 const fleet = [
   { name: "Lincoln Sedan", passengers: 3, luggage: 3, image: LincolnSedan },
   { name: "Cadillac Escalade", passengers: 6, luggage: 6, image: CadillacEscalade },
-  { name: "Black Limousine", passengers: 8, luggage: 8, image: BlackLimousine },
-  { name: "Sprinter Van", passengers: 14, luggage: 14, image: SprinterVan },
+  { name: "Black Limousine", passengers: 8, luggage: 6, image: BlackLimousine },
+  { name: "White Stretch Limousine", passengers: 7, luggage: 6, image: WhiteStretchLimo },
+  { name: "Sprinter Van", passengers: 14, luggage: 12, image: SprinterVan },
 ];
 
 const airports = [
   {
     code: "JFK",
     name: "John F. Kennedy International Airport",
-    img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=80",
+    img: "https://images.unsplash.com/photo-1542296332-2e4473faf563?w=900&q=80",
   },
   {
     code: "LGA",
     name: "LaGuardia Airport",
-    img: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=900&q=80",
+    img: "https://images.unsplash.com/photo-1596200234241-118c89429188?w=900&q=80",
   },
   {
     code: "EWR",
     name: "Newark Liberty International Airport",
-    img: "https://images.unsplash.com/photo-1542296332-2e4473faf563?w=900&q=80",
+    img: "https://images.unsplash.com/photo-1629837905187-57351e065759?w=900&q=80",
   },
   {
     code: "TEB",
     name: "Teterboro Airport",
-    img: "https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=900&q=80",
+    img: "https://images.unsplash.com/photo-1616053429399-53e39b7a4f78?w=900&q=80",
   },
 ];
 
@@ -231,8 +244,10 @@ const stats = [
 
 function HomePage() {
   return (
-    <PageShell>
-      <JsonLd data={localBusinessSchema()} />
+    <>
+      <WorldCupPopup />
+      <PageShell>
+        <JsonLd data={localBusinessSchema()} />
       {/* SECTION 1 — HERO */}
       <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden text-center">
         <img
@@ -327,7 +342,7 @@ function HomePage() {
         <div className="container-luxury">
           <h2 className="text-4xl font-semibold text-navy md:text-5xl">Select Service Type</h2>
           <div className="mx-auto mt-4 h-px w-24 bg-gold" />
-          <div className="mx-auto mt-12 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-12 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {serviceTypes.map((s) => (
               <Link
                 key={s.title}
@@ -480,7 +495,8 @@ function HomePage() {
       </section>
 
 
-      {/* SECTION 8 — TOURS */}
+      {/* SECTION 8 — TOURS (HIDDEN) */}
+      {false && (
       <section className="bg-background py-20 text-center">
         <div className="container-luxury">
           <h2 className="text-4xl font-semibold text-navy md:text-5xl">Private Limousine Tours of New York City</h2>
@@ -528,6 +544,7 @@ function HomePage() {
           </p>
         </div>
       </section>
+      )}
 
       {/* SECTION 9 — ABOUT */}
       <section className="bg-silver/20 py-20">
@@ -538,7 +555,7 @@ function HomePage() {
             <img
               loading="lazy"
               decoding="async"
-              src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=1200&q=80"
+              src="https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1200"
               alt="Professional chauffeur in suit standing beside a luxury car"
               className="mx-auto aspect-[4/3] w-full rounded-2xl object-cover shadow-xl"
             />
@@ -649,5 +666,6 @@ function HomePage() {
         </div>
       </section>
     </PageShell>
+    </>
   );
 }

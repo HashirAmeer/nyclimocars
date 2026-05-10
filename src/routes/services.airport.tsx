@@ -12,7 +12,7 @@ export const Route = createFileRoute("/services/airport")({
       { name: "description", content: "NY City Limousine provides premium airport limousine transfers to JFK, LaGuardia (LGA), Newark (EWR) and Teterboro (TEB). Free meet & greet, real-time flight tracking, all-inclusive rates. 24/7." },
       { property: "og:title", content: "NYC Airport Limousine Service — NY City Limousine" },
       { property: "og:description", content: "JFK · LGA · EWR · TEB — premium transfers available 24/7." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80" },
+      { property: "og:image", content: "https://images.pexels.com/photos/1004584/pexels-photo-1004584.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
   component: AirportPage,
@@ -28,10 +28,10 @@ const FEATURES = [
 ];
 
 const AIRPORTS = [
-  { code: "JFK", name: "John F. Kennedy International Airport", area: "Queens, New York", img: "https://images.unsplash.com/photo-1542296332-2e4473faf563?w=900&q=80" },
-  { code: "LGA", name: "LaGuardia Airport", area: "Queens, New York", img: "https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=900&q=80" },
-  { code: "EWR", name: "Newark Liberty International Airport", area: "Newark, New Jersey", img: "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=900&q=80" },
-  { code: "TEB", name: "Teterboro Airport", area: "Private Aviation, New Jersey", img: "https://images.unsplash.com/photo-1583500178690-f7fd39c2691d?w=900&q=80" },
+  { code: "JFK", name: "John F. Kennedy International Airport", area: "Queens, New York", img: "https://images.unsplash.com/photo-1542296332-2e4473faf563?w=900&q=80", to: "/airports/jfk" },
+  { code: "LGA", name: "LaGuardia Airport", area: "Queens, New York", img: "https://images.unsplash.com/photo-1596200234241-118c89429188?w=900&q=80", to: "/airports/lga" },
+  { code: "EWR", name: "Newark Liberty International Airport", area: "Newark, New Jersey", img: "https://images.unsplash.com/photo-1629837905187-57351e065759?w=900&q=80", to: "/airports/ewr" },
+  { code: "TEB", name: "Teterboro Airport", area: "Private Aviation, New Jersey", img: "https://images.unsplash.com/photo-1616053429399-53e39b7a4f78?w=900&q=80", to: "/airports/teb" },
 ];
 
 const INCLUDED = [
@@ -52,7 +52,7 @@ function AirportPage() {
         eyebrow="Airport Service"
         title="NYC Airport Limousine Service"
         subtitle="JFK · LGA · EWR · TEB — Premium Transfers Available 24/7"
-        image="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80"
+        image="https://images.pexels.com/photos/1004584/pexels-photo-1004584.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
       <div className="bg-background">
         <div className="container-luxury mx-auto py-8 text-center">
@@ -94,14 +94,14 @@ function AirportPage() {
           <h2 className="text-3xl font-semibold text-navy md:text-4xl">Airports We Serve</h2>
           <div className="mx-auto mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {AIRPORTS.map((a) => (
-              <div key={a.code} className="overflow-hidden rounded-2xl border border-border bg-card text-center transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-lg">
-                <img src={a.img} alt={`${a.name} terminal`} className="h-40 w-full object-cover" loading="lazy" />
+              <Link key={a.code} to={a.to} className="group overflow-hidden rounded-2xl border border-border bg-card text-center transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-lg">
+                <img src={a.img} alt={`${a.name} terminal`} className="h-40 w-full object-cover transition-transform group-hover:scale-105" loading="lazy" />
                 <div className="p-6">
                   <p className="font-display text-3xl font-bold text-gold">{a.code}</p>
-                  <h3 className="mt-2 text-base font-semibold text-navy">{a.name}</h3>
+                  <h3 className="mt-2 text-base font-semibold text-navy group-hover:text-gold transition-colors">{a.name}</h3>
                   <p className="mt-1 text-xs text-muted-foreground">{a.area}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <p className="mx-auto mt-8 max-w-xl text-sm text-muted-foreground">

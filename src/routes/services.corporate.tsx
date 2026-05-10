@@ -5,38 +5,38 @@ import { PageShell, PageHero } from "@/components/PageShell";
 import { MiniFleet } from "@/components/MiniFleet";
 import { BookingCTA } from "@/components/BookingCTA";
 import { FLEET, fmt } from "@/lib/fleet";
-import { Clock, Car, UserCheck, MapPin, GlassWater, BadgeDollarSign, Check } from "lucide-react";
+import { Briefcase, Clock, UserCheck, Smartphone, Receipt, Globe, Check } from "lucide-react";
 
-export const Route = createFileRoute("/services/hourly")({
+export const Route = createFileRoute("/services/corporate")({
   head: () => ({
     meta: [
-      { title: "NYC Hourly Limousine Service | Per Hour Limo Hire New York City | NY City Limousine" },
-      { name: "description", content: "Book NY City Limousine's hourly limousine service in New York City. Flexible per-hour limo hire with professional chauffeurs for business meetings, events & city tours. Transparent all-inclusive pricing." },
-      { property: "og:title", content: "NYC Hourly Limousine Service — NY City Limousine" },
-      { property: "og:description", content: "Flexible per-hour limo hire with a dedicated professional chauffeur in NYC." },
+      { title: "NYC Corporate Limousine Service | Executive Transportation New York | NY City Limousine" },
+      { name: "description", content: "NY City Limousine provides premium corporate transportation in New York City. Executive sedans, SUVs and limousines for business travel, airport transfers, and corporate events. Book 24/7." },
+      { property: "og:title", content: "NYC Corporate Limousine Transportation — NY City Limousine" },
+      { property: "og:description", content: "Executive ground transportation for business professionals in NYC." },
       { property: "og:image", content: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
-  component: HourlyPage,
+  component: CorporatePage,
 });
 
 const FEATURES = [
-  { icon: Clock, title: "Flexible Booking", desc: "Book from 1 to 12 hours; control your entire itinerary with multiple stops." },
-  { icon: Car, title: "Multiple Vehicle Options", desc: "Sedans, SUVs, Mercedes S Class, stretch limousines, vans & buses." },
-  { icon: UserCheck, title: "Dedicated Chauffeur", desc: "Your professional driver stays with you for the full duration." },
-  { icon: MapPin, title: "Unlimited Stops", desc: "Perfect for meetings, events, or city exploration." },
-  { icon: GlassWater, title: "Complimentary Beverages", desc: "Water and soft drinks included; champagne available upon request." },
-  { icon: BadgeDollarSign, title: "All-Inclusive Pricing", desc: "No hidden fees; taxes, gratuity, and admin fee all included." },
+  { icon: Briefcase, title: "Executive Fleet", desc: "Mercedes S Class, Cadillac Escalade, and more for the ultimate corporate image." },
+  { icon: Clock, title: "Punctuality Guaranteed", desc: "Our chauffeurs are always early — never keep a client waiting." },
+  { icon: UserCheck, title: "Professional Chauffeurs", desc: "Formally dressed, discreet, and highly trained corporate drivers." },
+  { icon: Smartphone, title: "Easy Booking", desc: "Book online or call 24/7 for immediate corporate account setup." },
+  { icon: Receipt, title: "Corporate Accounts", desc: "Monthly invoicing and corporate account management available." },
+  { icon: Globe, title: "Tri-State Coverage", desc: "NYC, New Jersey, Connecticut, Long Island and beyond." },
 ];
 
-const IDEAL = ["Business Meetings","Corporate Events","City Sightseeing","Special Occasions","Birthday Parties","Bachelor/Bachelorette Parties","Shopping Trips","Multi-Stop NYC Itineraries"];
+const IDEAL = ["Airport Transfers", "Client Entertainment", "Road Shows", "Corporate Events", "Conferences", "Board Meetings", "Executive Travel", "Group Transportation"];
 const INCLUDED = [
-  "Professional licensed chauffeur",
+  "Professional formally dressed chauffeur",
   "All-inclusive transparent pricing",
-  "Complimentary water & soft drinks",
-  "Unlimited stops within booked hours",
+  "Corporate account billing available",
+  "Complimentary water and soft drinks",
+  "Wi-Fi available in select vehicles",
   "24-hour free cancellation",
-  "Real-time chauffeur tracking",
 ];
 
 function VehicleCalc({ name, image, pax, bags, hourly }: { name: string; image: string; pax: number; bags: number; hourly: number }) {
@@ -100,19 +100,19 @@ function Row({ label, value }: { label: string; value: string }) {
   );
 }
 
-function HourlyPage() {
+function CorporatePage() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="Hourly Service"
-        title="NYC Hourly Limousine Service"
-        subtitle="Flexible Per-Hour Limo Hire with a Dedicated Professional Chauffeur"
+        eyebrow="Corporate Service"
+        title="NYC Corporate Limousine Transportation"
+        subtitle="Executive Ground Transportation for Business Professionals"
         image="https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
       <div className="bg-background">
         <div className="container-luxury mx-auto py-8 text-center">
           <Link to="/contact" className="inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-navy">
-            Book Hourly Service
+            Book Corporate Service
           </Link>
         </div>
       </div>
@@ -121,7 +121,7 @@ function HourlyPage() {
       <section className="bg-background pb-16 pt-4">
         <div className="container-luxury mx-auto max-w-3xl text-center">
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Elevate your travel experience with NY City Limousine's Hourly Limousine Service — offering you the flexibility and sophistication you deserve. Whether you need a chauffeured limousine for a series of business meetings, a day of city exploration, or a special event, our hourly service ensures a reliable and luxurious transportation solution tailored entirely to your schedule. You can cruise New York City in style — stopping wherever you like, for as long as you need.
+            At NY City Limousine, we understand there is no margin for error when it comes to corporate travel. We have made fulfilling the corporate ground transportation needs of our clients our specialty. From solo executive travel to large groups headed for meetings, conventions, or conferences — our polished chauffeurs and luxury fleet deliver impeccable service every time.
           </p>
         </div>
       </section>
@@ -129,7 +129,7 @@ function HourlyPage() {
       {/* Features */}
       <section className="bg-secondary/30 py-20">
         <div className="container-luxury mx-auto text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Why Choose Hourly</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Why Choose Us</p>
           <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-semibold text-navy md:text-4xl">Key Features</h2>
           <div className="mx-auto mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map(({ icon: Icon, title, desc }) => (
@@ -178,9 +178,9 @@ function HourlyPage() {
       <section className="bg-background py-12">
         <div className="container-luxury mx-auto">
           <div className="mx-auto max-w-3xl rounded-2xl bg-navy p-8 text-center text-white">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Important Note</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Corporate Accounts</p>
             <p className="mt-3 text-white/90">
-              Hourly rates apply for travel within New York City (5 Boroughs: The Bronx, Brooklyn, Manhattan, Queens, Staten Island) only. For travel outside NYC, please contact us for a custom rate.
+              We offer dedicated corporate accounts with monthly invoicing, priority booking, and a dedicated account manager. Contact us to set up your corporate account today.
             </p>
           </div>
         </div>
@@ -193,7 +193,7 @@ function HourlyPage() {
         <div className="container-luxury mx-auto text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Live Calculator</p>
           <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-semibold text-navy md:text-4xl">
-            Hourly Limousine Rates — Select Your Vehicle &amp; Hours
+            Corporate Limousine Rates — Select Your Vehicle &amp; Hours
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             All rates are all-inclusive — taxes, gratuity, credit card fee, and admin fee all included.

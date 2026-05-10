@@ -15,7 +15,7 @@ export const Route = createFileRoute("/pricing/point-to-point")({
       },
       { property: "og:title", content: "NYC Point-to-Point Limo Rates" },
       { property: "og:description", content: "Flat-rate direct transfers across NYC and Tri-State." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1502920514313-52581002a659?w=1600&q=80" },
+      { property: "og:image", content: "https://images.pexels.com/photos/12513224/pexels-photo-12513224.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
   component: P2PPricing,
@@ -28,7 +28,7 @@ function P2PPricing() {
         eyebrow="Point-to-Point Rates"
         title="Point-to-Point Limousine Rates"
         subtitle="Flat-Rate Direct Transfers — Transparent All-Inclusive Pricing"
-        image="https://images.unsplash.com/photo-1502920514313-52581002a659?w=1600&q=80"
+        image="https://images.pexels.com/photos/12513224/pexels-photo-12513224.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
 
       <InfoBadges items={["Flat-Rate Pricing", "On-Time Guarantee", "All-Inclusive", "24/7 Service"]} />
