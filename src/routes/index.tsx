@@ -26,6 +26,7 @@ import BlackLimousine from "@/assets/black-limousine.png";
 import SprinterVan from "@/assets/sprinter-van.png";
 import WhiteStretchLimo from "@/assets/White-Stretch-Limo.webp";
 import { WorldCupPopup } from "@/components/WorldCupPopup";
+import { FleetSlider } from "@/components/FleetSlider";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -451,39 +452,8 @@ function HomePage() {
             Mercedes Sprinter Vans, Hummer Limousines, and Coach Buses. Complimentary soft drinks and water
             inside all vehicles. Champagne service available inside limousines upon request.
           </p>
-          <div className="mx-auto mt-12 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {fleet.map((v) => (
-              <article
-                key={v.name}
-                className="flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="flex aspect-[4/3] flex-col items-center justify-center bg-silver/10 overflow-hidden">
-                  <img
-                    src={v.image}
-                    alt={v.name}
-                    className="h-full w-full object-contain transition-transform duration-500 hover:scale-110"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col items-center p-5 text-center">
-                  <h3 className="text-lg font-semibold text-navy">{v.name}</h3>
-                  <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
-                    <span className="inline-flex items-center gap-1 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-navy">
-                      <Users className="h-3 w-3" /> {v.passengers}
-                    </span>
-                    <span className="inline-flex items-center gap-1 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-navy">
-                      <Briefcase className="h-3 w-3" /> {v.luggage}
-                    </span>
-                  </div>
-                  <Link
-                    to="/contact"
-                    className="mt-5 inline-flex items-center justify-center rounded-full bg-gold px-5 py-2 text-xs font-semibold text-white transition-all hover:opacity-90"
-                  >
-                    Book This Vehicle
-                  </Link>
-                </div>
-              </article>
-            ))}
+          <div className="mx-auto mt-12">
+            <FleetSlider />
           </div>
           <Link
             to="/fleet"
