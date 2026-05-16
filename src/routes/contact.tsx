@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 import { PageShell, PageHero } from "@/components/PageShell";
 import {
   Phone, Mail, MapPin, Clock, Minus, Plus, Loader2, Lock,
-  Facebook, Instagram, MessageCircle, ShieldCheck, RefreshCw, CreditCard,
+  Facebook, Instagram, MessageCircle, ShieldCheck, RefreshCw, CreditCard, CheckCircle2,
 } from "lucide-react";
 import {
   Accordion, AccordionItem, AccordionTrigger, AccordionContent,
@@ -22,10 +22,10 @@ const EMAIL = "info@nycitylimousine.com";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Book a Limo | Contact NY City Limousine | Luxury Limousine New York City" },
-      { name: "description", content: "Book your NY City Limousine luxury limousine online or by phone. Airport transfers, hourly service, tours, point-to-point rides across New York City. Available 24/7. Fast response guaranteed." },
-      { property: "og:title", content: "Book a Limo | NY City Limousine" },
-      { property: "og:description", content: "Reserve your luxury limousine in New York City — available 24/7." },
+      { title: "Contact NYC Limo | Book Your Ride | 24/7 Reservations" },
+      { name: "description", content: "Contact our NYC limousine & black car service. Book online, call 24/7, or email for corporate accounts, group bookings & custom quotes. We respond within one hour." },
+      { property: "og:title", content: "Contact NYC Limo | Book Your Ride | 24/7 Reservations" },
+      { property: "og:description", content: "Contact our NYC limousine & black car service. Book online, call 24/7, or email for corporate accounts, group bookings & custom quotes. We respond within one hour." },
       { property: "og:image", content: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
@@ -112,8 +112,8 @@ function ContactPage() {
     <PageShell>
       <PageHero
         eyebrow="Contact & Reservations"
-        title="Book Your Luxury Limousine"
-        subtitle="Reserve Online or Call Us 24/7 — We Respond Within 30 Minutes"
+        title="Book Your NYC Limo — Contact Us 24 Hours a Day, 7 Days a Week"
+        subtitle="Three ways to reach us. All three are staffed and monitored around the clock."
         image="https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
 
@@ -131,9 +131,11 @@ function ContactPage() {
         <div className="container-luxury max-w-4xl mx-auto">
           <div className="text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Reservations</p>
-            <h2 className="mt-3 text-3xl font-semibold text-navy md:text-5xl">Book Your Luxury Ride</h2>
+            <h2 className="mt-3 text-3xl font-semibold text-navy md:text-5xl">Online Booking</h2>
             <div className="mx-auto mt-5 h-px w-24 bg-gold" />
-            <p className="mt-6 text-muted-foreground">Fill out the form below to receive a guaranteed confirmation within 30 minutes.</p>
+            <p className="mx-auto mt-6 max-w-2xl text-muted-foreground leading-relaxed">
+              Use our instant booking form. Enter your pickup address, destination, vehicle preference, date, and time. Receive a fixed quote and confirmation immediately. Your chauffeur's direct contact number arrives 24 hours before pickup.
+            </p>
           </div>
 
           <div className="mt-12">
@@ -344,6 +346,58 @@ function ContactPage() {
         </div>
       </section>
 
+
+      {/* SECTION 3 — ADDITIONAL CONTACT INFO */}
+      <section className="bg-background py-16 md:py-20">
+        <div className="container-luxury max-w-5xl mx-auto space-y-12">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="flex gap-5 rounded-2xl border border-border bg-card p-8 shadow-sm">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-navy/5 text-navy">
+                <Phone className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-navy">Phone — 24/7 Dispatch</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Call our dispatch line for same-day bookings, last-minute changes, and immediate assistance. Our dispatch team is available every hour of every day, including all public holidays.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-5 rounded-2xl border border-border bg-card p-8 shadow-sm">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-navy/5 text-navy">
+                <Mail className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-navy">Email — Corporate & Groups</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  For corporate account enquiries, group bookings of 5 or more passengers, event fleet planning, or custom quotes for non-standard routes, email our reservations team.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-xl border-l-4 border-l-gold bg-secondary/30 p-8 shadow-sm">
+            <div className="flex items-center gap-3">
+              <Clock className="h-6 w-6 text-gold" />
+              <h3 className="text-xl font-bold text-navy">Expected Response Times</h3>
+            </div>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+              <li className="flex items-center gap-2 rounded-lg bg-white p-3 text-sm text-navy shadow-sm border border-border/50">
+                <CheckCircle2 className="h-4 w-4 text-gold shrink-0" /> 
+                <span><strong>Online:</strong> Instant</span>
+              </li>
+              <li className="flex items-center gap-2 rounded-lg bg-white p-3 text-sm text-navy shadow-sm border border-border/50">
+                <CheckCircle2 className="h-4 w-4 text-gold shrink-0" /> 
+                <span><strong>Phone:</strong> Immediate, 24/7</span>
+              </li>
+              <li className="flex items-center gap-2 rounded-lg bg-white p-3 text-sm text-navy shadow-sm border border-border/50">
+                <CheckCircle2 className="h-4 w-4 text-gold shrink-0" /> 
+                <span><strong>Email:</strong> 1 hr (business hrs)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ */}
       <section className="bg-muted/30 py-16 md:py-20">

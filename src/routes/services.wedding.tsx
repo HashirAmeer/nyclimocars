@@ -10,10 +10,10 @@ import { Heart, Car, UserCheck, GlassWater, MapPin, Clock, Check } from "lucide-
 export const Route = createFileRoute("/services/wedding")({
   head: () => ({
     meta: [
-      { title: "NYC Wedding Limousine Service | Bridal Transportation New York | NY City Limousine" },
-      { name: "description", content: "NY City Limousine provides premium wedding transportation in New York City. Stretch limousines, luxury SUVs and sedans for bride, groom and wedding party. Book your wedding limo." },
-      { property: "og:title", content: "NYC Wedding Limousine Service — NY City Limousine" },
-      { property: "og:description", content: "Premium wedding transportation for your special day in NYC." },
+      { title: "Wedding Limo Service NYC | Luxury Wedding Car Hire" },
+      { name: "description", content: "Luxury wedding limousine service in NYC. Stretch limos, SUVs & custom bridal fleets. On-day coordination, red-carpet arrivals, venue expertise. Book your wedding date." },
+      { property: "og:title", content: "Wedding Limo Service NYC | Luxury Wedding Car Hire" },
+      { property: "og:description", content: "Luxury wedding limousine service in NYC. Stretch limos, SUVs & custom bridal fleets. On-day coordination, red-carpet arrivals, venue expertise. Book your wedding date." },
       { property: "og:image", content: "https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
@@ -105,8 +105,8 @@ function WeddingPage() {
     <PageShell>
       <PageHero
         eyebrow="Wedding Service"
-        title="NYC Wedding Limousine Service"
-        subtitle="Arrive in Style on Your Most Special Day"
+        title="Wedding Limousine Service NYC — Arrive at Your Most Important Moment in Flawless Style"
+        subtitle="Flawless coordination, on-the-day briefings, and a luxury fleet for your most important celebration."
         image="https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
       <div className="bg-background">
@@ -119,10 +119,43 @@ function WeddingPage() {
 
       {/* Intro */}
       <section className="bg-background pb-16 pt-4">
-        <div className="container-luxury mx-auto max-w-3xl text-center">
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            NYC Limo Car are experts in providing quality wedding transportation for your big day. Let us handle all your transportation needs so you have one less thing to worry about on the most important day of your life. We cover the bride and groom, wedding party, and all guests with our stunning fleet of stretch limousines, luxury sedans, SUVs, and vans.
+        <div className="container-luxury mx-auto max-w-4xl text-center">
+          <p className="text-xl leading-relaxed text-muted-foreground">
+            Your wedding day timeline is the most logistically complex 
+            schedule most people ever manage — hair, makeup, photos, 
+            ceremony, reception, and a dozen family members who all 
+            need to be somewhere at a specific time. One late car creates 
+            a cascade of delays you cannot recover. Our NYC wedding 
+            limousine service is built to be the one part of your day 
+            that runs perfectly, with on-the-day chauffeur briefings, 
+            bridal party coordination, and a fleet chosen for your 
+            venue and style.
           </p>
+        </div>
+      </section>
+
+      {/* Wedding Venues */}
+      <section className="bg-secondary/30 py-20">
+        <div className="container-luxury mx-auto text-center">
+          <h2 className="text-3xl font-semibold text-navy md:text-4xl">Wedding Transportation for Every NYC Venue & Style</h2>
+          <div className="mx-auto mt-6 max-w-4xl">
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              New York City's wedding venues span the full spectrum — 
+              from grand ballrooms at The Plaza and Cipriani 42nd Street 
+              to waterfront celebrations in Brooklyn, vineyard estates 
+              in the Hudson Valley, and intimate loft ceremonies in Tribeca.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Our chauffeurs have worked weddings at many of New York's 
+              premier venues. They know the most photogenic arrival entrance 
+              at Oheka Castle, the staging area at The River Cafe in Brooklyn, 
+              and the access lane at Pier 60 at Chelsea Piers.
+            </p>
+            <p className="mt-4 text-lg font-semibold text-navy">
+              We serve weddings across all five boroughs, Long Island, 
+              the Hamptons, the Hudson Valley, New Jersey, and Connecticut.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -130,7 +163,7 @@ function WeddingPage() {
       <section className="bg-secondary/30 py-20">
         <div className="container-luxury mx-auto text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Why Choose Us</p>
-          <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-semibold text-navy md:text-4xl">Key Features</h2>
+          <h3 className="mx-auto mt-3 max-w-2xl text-3xl font-semibold text-navy md:text-4xl">Key Features</h3>
           <div className="mx-auto mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map(({ icon: Icon, title, desc }) => (
               <div key={title} className="rounded-2xl border border-border bg-card p-7 text-center transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-lg">
@@ -145,16 +178,55 @@ function WeddingPage() {
         </div>
       </section>
 
-      {/* Occasions */}
-      <section className="bg-background py-16">
+      {/* Wedding Fleet Options */}
+      <section className="bg-background py-20">
         <div className="container-luxury mx-auto text-center">
-          <h2 className="text-2xl font-semibold text-navy md:text-3xl">Perfect For</h2>
-          <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
-            {OCCASIONS.map((t) => (
-              <span key={t} className="rounded-full border border-gold/40 bg-gold/5 px-5 py-2 text-sm font-medium text-navy">
-                {t}
-              </span>
+          <h2 className="text-3xl font-semibold text-navy md:text-4xl">Wedding Fleet Options</h2>
+          <div className="mx-auto mt-12 grid gap-8 md:grid-cols-2">
+            {[
+              {
+                title: "Stretch Limousines",
+                desc: "Classic stretch limousines seat 6–10 passengers and remain the definitive wedding vehicle. Our stretch limousines feature leather interiors, champagne service, privacy partitions, and red-carpet deployment on arrival.",
+              },
+              {
+                title: "Luxury SUVs (Cadillac Escalade)",
+                desc: "Full-size luxury SUVs offer a modern, elegant alternative — particularly popular for couples with a contemporary aesthetic. Seat up to 6 passengers with luggage, easier to access in formal attire, and photograph exceptionally well.",
+              },
+              {
+                title: "Sprinter Vans (Bridal Party & Guest Transfers)",
+                desc: "A luxury Sprinter van seats 12–14 passengers — ideal for bridal party transportation and guest shuttles. Our Sprinters are configured with passenger-first interiors.",
+              },
+              {
+                title: "Executive Coaches (Large Guest Groups)",
+                desc: "For weddings with 20–50 guests requiring group transportation, our executive coaches provide a seamless, professional experience.",
+              },
+            ].map((f) => (
+              <div key={f.title} className="rounded-2xl border border-border bg-card p-8 text-left shadow-sm">
+                <h3 className="text-xl font-bold text-navy">{f.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
+              </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* On-the-Day Planning */}
+      <section className="bg-navy py-20 text-white">
+        <div className="container-luxury mx-auto text-center">
+          <h2 className="text-3xl font-semibold md:text-4xl text-gold">On-the-Day Wedding Transportation Planning</h2>
+          <div className="mx-auto mt-8 max-w-3xl">
+            <p className="text-lg leading-relaxed text-white/90">
+              Every wedding booking includes a pre-event consultation 
+              with your chauffeur team leader. We review the full 
+              day's timeline: pickup locations, ceremony venue, 
+              photo stops, reception arrival, and late-night departures.
+            </p>
+            <p className="mt-6 text-sm text-white/70 italic">
+              We ask that all wedding bookings are confirmed no later 
+              than 2 weeks before the event, with a final itinerary 
+              provided 5 days prior. For peak season weddings 
+              (May–June, September–October), book 8–12 weeks in advance.
+            </p>
           </div>
         </div>
       </section>
@@ -162,7 +234,7 @@ function WeddingPage() {
       {/* Included */}
       <section className="bg-secondary/30 py-16">
         <div className="container-luxury mx-auto text-center">
-          <h2 className="text-2xl font-semibold text-navy md:text-3xl">What's Included</h2>
+          <h3 className="text-2xl font-semibold text-navy md:text-3xl">What's Included</h3>
           <ul className="mx-auto mt-8 grid max-w-2xl gap-3 text-left sm:grid-cols-2">
             {INCLUDED.map((i) => (
               <li key={i} className="flex items-start gap-3 rounded-lg bg-card p-4 shadow-sm">
@@ -192,15 +264,43 @@ function WeddingPage() {
       <section className="bg-background py-20">
         <div className="container-luxury mx-auto text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Live Calculator</p>
-          <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-semibold text-navy md:text-4xl">
+          <h3 className="mx-auto mt-3 max-w-3xl text-3xl font-semibold text-navy md:text-4xl">
             Wedding Limousine Rates — Select Your Vehicle &amp; Hours
-          </h2>
+          </h3>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             All rates are all-inclusive — taxes, gratuity, credit card fee, and admin fee all included.
           </p>
           <div className="mx-auto mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {FLEET.map((v) => (
               <VehicleCalc key={v.name} name={v.name} image={v.image} pax={v.pax} bags={v.bags} hourly={v.hourly} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-secondary/30 py-20">
+        <div className="container-luxury mx-auto">
+          <h2 className="text-center text-3xl font-semibold text-navy md:text-4xl">Frequently Asked Questions</h2>
+          <div className="mx-auto mt-12 max-w-3xl space-y-6">
+            {[
+              {
+                q: "How many limousines do I need for my wedding?",
+                a: "A typical NYC wedding uses 1 stretch limo or SUV for the bride and immediate family, 1 additional vehicle for the groom's party, and 1–2 Sprinter vans for bridal party and close guests.",
+              },
+              {
+                q: "Can I view the vehicle before my wedding?",
+                a: "Yes. We welcome pre-wedding vehicle viewings by appointment 2–4 weeks before your wedding date.",
+              },
+              {
+                q: "Do you provide champagne on wedding vehicles?",
+                a: "Champagne service is available in closed, partitioned vehicles in compliance with NYC TLC regulations.",
+              },
+            ].map((faq, i) => (
+              <div key={i} className="rounded-xl border border-border bg-card p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-navy">Q: {faq.q}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">A: {faq.a}</p>
+              </div>
             ))}
           </div>
         </div>

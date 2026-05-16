@@ -56,8 +56,8 @@ function FleetPage() {
       {/* SECTION 1 — HERO */}
       <PageHero
         eyebrow="Home > Fleet"
-        title="Our Luxury Limousine Fleet"
-        subtitle="Convenience Comes in Many Forms — We Have the Perfect Vehicle for You"
+        title="Our Fleet — Late-Model Luxury Vehicles for Every Journey in New York City"
+        subtitle="Confirmed and ready. You get the vehicle class you selected at booking."
         image="https://images.pexels.com/photos/18369291/pexels-photo-18369291.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
 
@@ -66,22 +66,15 @@ function FleetPage() {
         <div className="container-luxury mx-auto max-w-4xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Our Fleet</p>
           <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-semibold text-navy md:text-4xl">
-            11 Luxury Vehicles for Every Occasion
+            Inspected. Detailed. Ready.
           </h2>
-          <div className="mx-auto mt-6 space-y-5 text-base leading-relaxed text-muted-foreground">
+          <div className="mx-auto mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
             <p>
-              At NY City Limousine, we offer a full range of luxury vehicles for our New York City limousine service.
-              From stretched limousines and executive SUVs to Mercedes Sprinter Vans and full-size Coach Buses —
-              our fleet has something for every occasion and group size. Our professional chauffeurs will give you
-              VIP treatment at every pick-up and drop-off location. We provide high-quality service at competitive
-              rates with attention to detail and customer service so you are treated like royalty from start to finish.
-            </p>
-            <p className="italic text-navy/80">
-              Complimentary soft drinks and water inside all vehicles. Champagne service inside limousines available upon request.
-            </p>
-            <p>
-              Hourly rates apply for travel within New York City (5 Boroughs: The Bronx, Brooklyn, Manhattan, Queens,
-              Staten Island) only. For travel outside New York City, please contact us for a special rate.
+              Every vehicle in our fleet is inspected before every shift, 
+              maintained to manufacturer service schedules, and detailed 
+              inside and out between trips. You do not get the car that 
+              happened to be available — you get the vehicle class you 
+              selected at booking, confirmed and ready.
             </p>
           </div>
         </div>
@@ -227,6 +220,34 @@ function FleetPage() {
 
       {/* Suppress unused FLEET import warning by referencing in dev-only — keep available for future image swap */}
       <span className="hidden">{FLEET.length}</span>
+
+      {/* FAQ Section */}
+      <section className="bg-secondary/30 py-20">
+        <div className="container-luxury mx-auto">
+          <h2 className="text-center text-3xl font-semibold text-navy md:text-4xl text-navy">Frequently Asked Questions</h2>
+          <div className="mx-auto mt-12 max-w-3xl space-y-6">
+            {[
+              {
+                q: "Can I request a specific vehicle model?",
+                a: "You can request a vehicle class. Specific make and model requests are accommodated where available — contact our reservations team at booking.",
+              },
+              {
+                q: "Are child car seats available?",
+                a: "Yes. Infant, toddler, and booster seats are available across all vehicle classes. Specify at booking.",
+              },
+              {
+                q: "Are your vehicles wheelchair accessible?",
+                a: "Please contact our reservations team to discuss accessibility requirements. We will identify the most suitable vehicle for your needs.",
+              },
+            ].map((faq, i) => (
+              <div key={i} className="rounded-xl border border-border bg-card p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-navy">Q: {faq.q}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">A: {faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <BookingCTA />
     </PageShell>

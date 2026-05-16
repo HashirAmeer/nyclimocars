@@ -4,6 +4,7 @@ import { ChevronDown, Menu, X, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 
 const services = [
+  { to: "/services/black-car", label: "Black Car Service" },
   { to: "/services/hourly", label: "Hourly Service" },
   { to: "/services/airport", label: "Airport Service" },
   { to: "/services/point-to-point", label: "Point to Point Service" },
@@ -26,6 +27,30 @@ const airports = [
   { to: "/airports/teb", label: "Teterboro Airport" },
 ] as const;
 
+const locations = [
+  { label: "MANHATTAN" },
+  { to: "/locations/manhattan", label: "Manhattan Overview" },
+  { to: "/locations/midtown-manhattan", label: "Midtown Manhattan" },
+  { to: "/locations/upper-east-side", label: "Upper East Side" },
+  { to: "/locations/upper-west-side", label: "Upper West Side" },
+  { to: "/locations/downtown-manhattan", label: "Downtown Manhattan" },
+  { to: "/locations/financial-district", label: "Financial District" },
+  { to: "/locations/soho-tribeca", label: "SoHo & Tribeca" },
+  { to: "/locations/greenwich-village", label: "Greenwich Village" },
+  { to: "/locations/chelsea-hudson-yards", label: "Chelsea & Hudson Yards" },
+  { label: "BOROUGHS" },
+  { to: "/locations/brooklyn", label: "Brooklyn" },
+  { to: "/locations/queens", label: "Queens" },
+  { to: "/locations/bronx", label: "The Bronx" },
+  { to: "/locations/staten-island", label: "Staten Island" },
+  { label: "TRI-STATE AREA" },
+  { to: "/locations/long-island", label: "Long Island" },
+  { to: "/locations/hamptons", label: "The Hamptons" },
+  { to: "/locations/new-jersey", label: "New Jersey" },
+  { to: "/locations/connecticut", label: "Connecticut" },
+  { to: "/locations/westchester", label: "Westchester County" },
+] as const;
+
 const linkClass =
   "relative px-1 py-2 text-sm font-medium tracking-wide text-white/85 transition-colors hover:text-gold " +
   "after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-gold after:transition-all hover:after:w-full " +
@@ -36,7 +61,7 @@ function Dropdown({
   items,
 }: {
   label: string;
-  items: readonly { to: string; label: string }[];
+  items: readonly { to?: string; label: string }[];
 }) {
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -99,16 +124,22 @@ function Dropdown({
           style={{ boxShadow: "var(--shadow-luxury)" }}
           role="menu"
         >
-          {items.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              onClick={() => setOpen(false)}
-              role="menuitem"
-              className="block px-5 py-3 text-sm text-white/85 transition-colors hover:bg-gold/15 hover:text-gold"
-            >
-              {item.label}
-            </Link>
+          {items.map((item, idx) => (
+            item.to ? (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={() => setOpen(false)}
+                role="menuitem"
+                className="block px-5 py-2.5 text-sm text-white/85 transition-colors hover:bg-gold/15 hover:text-gold"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <div key={idx} className="px-5 pb-1 pt-3 text-xs font-semibold tracking-wider text-gold/80 first:pt-2">
+                {item.label}
+              </div>
+            )
           ))}
         </div>
       </div>
@@ -145,6 +176,7 @@ export function Navbar() {
             <Link to="/" activeOptions={{ exact: true }} className={linkClass}>Home</Link>
             <Dropdown label="Services" items={services} />
             <Dropdown label="Airports" items={airports} />
+            <Dropdown label="Locations" items={locations} />
             <Link to="/about" className={linkClass}>About</Link>
             <Dropdown label="Pricing" items={pricing} />
             <Link to="/fleet" className={linkClass}>Fleet</Link>
@@ -193,6 +225,7 @@ export function Navbar() {
             <MobileLink to="/" onClick={() => setMobileOpen(false)}>Home</MobileLink>
             <MobileGroup label="Services" items={services} onClose={() => setMobileOpen(false)} />
             <MobileGroup label="Airports" items={airports} onClose={() => setMobileOpen(false)} />
+            <MobileGroup label="Locations" items={locations} onClose={() => setMobileOpen(false)} />
             <MobileLink to="/about" onClick={() => setMobileOpen(false)}>About</MobileLink>
             <MobileGroup label="Pricing" items={pricing} onClose={() => setMobileOpen(false)} />
             <MobileLink to="/fleet" onClick={() => setMobileOpen(false)}>Fleet</MobileLink>
@@ -236,7 +269,7 @@ function MobileGroup({
   onClose,
 }: {
   label: string;
-  items: readonly { to: string; label: string }[];
+  items: readonly { to?: string; label: string }[];
   onClose: () => void;
 }) {
   const [open, setOpen] = useState(false);
@@ -251,15 +284,21 @@ function MobileGroup({
       </button>
       {open && (
         <div className="ml-3 flex flex-col border-l border-gold/30 pl-3">
-          {items.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              onClick={onClose}
-              className="rounded-md px-3 py-2 text-sm text-white/75 hover:text-gold"
-            >
-              {item.label}
-            </Link>
+          {items.map((item, idx) => (
+            item.to ? (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={onClose}
+                className="rounded-md px-3 py-2 text-sm text-white/75 hover:text-gold"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <div key={idx} className="px-3 pb-1 pt-3 text-xs font-semibold tracking-wider text-gold/80 first:pt-1">
+                {item.label}
+              </div>
+            )
           ))}
         </div>
       )}

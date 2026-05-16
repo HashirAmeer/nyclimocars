@@ -55,7 +55,7 @@ function AboutPage() {
             About Us
           </p>
           <h1 className="mx-auto max-w-4xl text-5xl font-semibold leading-tight md:text-7xl animate-fade-up">
-            About NY City Limousine
+            About Us — The Standard Behind Every Ride
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/85 md:text-xl animate-fade-up">
             New York City's Trusted Luxury Limousine &amp; Chauffeur Service
@@ -91,24 +91,39 @@ function AboutPage() {
                 Our Story
               </h2>
               <div className="mx-auto mt-5 h-px w-16 bg-gold lg:mx-0" />
-              <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed">
+              <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed text-lg">
                 <p>
-                  A warm welcome to NY City Limousine! We are dedicated to offering the safest
-                  and most reliable limousine services in the Tri-State Area, with you —
-                  our valued customers — at the center of everything we do.
+                  We are a New York City luxury limousine and black car service, 
+                  fully licensed by the NYC Taxi & Limousine Commission and 
+                  operating across the five boroughs, the Tri-State area, and 
+                  all major metropolitan airports.
                 </p>
                 <p>
-                  Need to arrive in style for a conference, big night out, intimate dinner,
-                  or any special occasion? Or are you looking for a private limousine tour
-                  of NYC? Whatever you need, NY City Limousine is here to make you feel like
-                  royalty. Our fleet of immaculate limousines and executive vehicles will
-                  have you spoiled for choice, and our professional chauffeurs will add an
-                  extra level of luxury to every ride.
+                  We built this company on a straightforward conviction: ground 
+                  transportation in New York should be as reliable as the city 
+                  demands it to be. Every chauffeur we employ is TLC-licensed, 
+                  background-checked, drug-tested, and trained specifically in 
+                  airport pickup protocols, corporate account service, and 
+                  event transportation management.
                 </p>
                 <p>
-                  We provide more than just a transportation service — we add a touch of
-                  class and luxury to your journey and make each trip a memorable one you
-                  will remember for years to come.
+                  Our fleet is maintained to a standard above TLC minimums. 
+                  Every vehicle is inspected before every shift. We do not 
+                  put passengers in a vehicle we would not be comfortable 
+                  riding in ourselves.
+                </p>
+                <p>
+                  We do not believe in hidden charges, surge pricing, or 
+                  vague booking processes. Every fare is quoted upfront. 
+                  Every airport transfer includes flight tracking. Every 
+                  booking is confirmed with direct chauffeur contact 
+                  information 24 hours before pickup.
+                </p>
+                <p>
+                  Our team is based in New York City. We know these streets, 
+                  these airports, these traffic patterns, and these venues — 
+                  not because we studied them, but because we drive them 
+                  every day.
                 </p>
               </div>
             </div>
@@ -176,16 +191,24 @@ function AboutPage() {
             Our Promise
           </p>
           <h2 className="mt-3 text-4xl font-semibold text-gold md:text-5xl">
-            Our Mission
+            Our Commitments
           </h2>
           <div className="mx-auto mt-5 h-px w-24 bg-gold" />
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-white/85">
-            At NY City Limousine, our mission is to redefine luxury transportation in New York
-            City — one ride at a time. We are committed to punctuality, passenger safety,
-            and exceptional service that exceeds your expectations on every journey. We
-            pride ourselves on excellent customer service. All our chauffeurs have received
-            the highest training in customer etiquette and road safety.
-          </p>
+          <div className="mx-auto mt-10 grid max-w-4xl gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              "TLC compliance on every vehicle and every driver",
+              "Fixed-rate pricing on every booking",
+              "Real-time flight tracking on every airport transfer",
+              "24/7 dispatch availability",
+              "A named account manager for every corporate client",
+              "Response to every inquiry within one hour during business hours",
+            ].map((c) => (
+              <div key={c} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-5 text-left backdrop-blur-sm transition-all hover:bg-white/10">
+                <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+                <span className="text-sm text-white/90">{c}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

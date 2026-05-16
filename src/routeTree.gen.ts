@@ -19,11 +19,30 @@ import { Route as ServicesToursRouteImport } from './routes/services.tours'
 import { Route as ServicesPointToPointRouteImport } from './routes/services.point-to-point'
 import { Route as ServicesHourlyRouteImport } from './routes/services.hourly'
 import { Route as ServicesCorporateRouteImport } from './routes/services.corporate'
+import { Route as ServicesBlackCarRouteImport } from './routes/services.black-car'
 import { Route as ServicesAirportRouteImport } from './routes/services.airport'
 import { Route as PricingToursRouteImport } from './routes/pricing.tours'
 import { Route as PricingPointToPointRouteImport } from './routes/pricing.point-to-point'
 import { Route as PricingHourlyRouteImport } from './routes/pricing.hourly'
 import { Route as PricingAirportRouteImport } from './routes/pricing.airport'
+import { Route as LocationsWestchesterRouteImport } from './routes/locations.westchester'
+import { Route as LocationsUpperWestSideRouteImport } from './routes/locations.upper-west-side'
+import { Route as LocationsUpperEastSideRouteImport } from './routes/locations.upper-east-side'
+import { Route as LocationsStatenIslandRouteImport } from './routes/locations.staten-island'
+import { Route as LocationsSohoTribecaRouteImport } from './routes/locations.soho-tribeca'
+import { Route as LocationsQueensRouteImport } from './routes/locations.queens'
+import { Route as LocationsNewJerseyRouteImport } from './routes/locations.new-jersey'
+import { Route as LocationsMidtownManhattanRouteImport } from './routes/locations.midtown-manhattan'
+import { Route as LocationsManhattanRouteImport } from './routes/locations.manhattan'
+import { Route as LocationsLongIslandRouteImport } from './routes/locations.long-island'
+import { Route as LocationsHamptonsRouteImport } from './routes/locations.hamptons'
+import { Route as LocationsGreenwichVillageRouteImport } from './routes/locations.greenwich-village'
+import { Route as LocationsFinancialDistrictRouteImport } from './routes/locations.financial-district'
+import { Route as LocationsDowntownManhattanRouteImport } from './routes/locations.downtown-manhattan'
+import { Route as LocationsConnecticutRouteImport } from './routes/locations.connecticut'
+import { Route as LocationsChelseaHudsonYardsRouteImport } from './routes/locations.chelsea-hudson-yards'
+import { Route as LocationsBrooklynRouteImport } from './routes/locations.brooklyn'
+import { Route as LocationsBronxRouteImport } from './routes/locations.bronx'
 import { Route as AirportsTebRouteImport } from './routes/airports.teb'
 import { Route as AirportsLgaRouteImport } from './routes/airports.lga'
 import { Route as AirportsJfkRouteImport } from './routes/airports.jfk'
@@ -79,6 +98,11 @@ const ServicesCorporateRoute = ServicesCorporateRouteImport.update({
   path: '/services/corporate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesBlackCarRoute = ServicesBlackCarRouteImport.update({
+  id: '/services/black-car',
+  path: '/services/black-car',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesAirportRoute = ServicesAirportRouteImport.update({
   id: '/services/airport',
   path: '/services/airport',
@@ -102,6 +126,101 @@ const PricingHourlyRoute = PricingHourlyRouteImport.update({
 const PricingAirportRoute = PricingAirportRouteImport.update({
   id: '/pricing/airport',
   path: '/pricing/airport',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsWestchesterRoute = LocationsWestchesterRouteImport.update({
+  id: '/locations/westchester',
+  path: '/locations/westchester',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsUpperWestSideRoute = LocationsUpperWestSideRouteImport.update({
+  id: '/locations/upper-west-side',
+  path: '/locations/upper-west-side',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsUpperEastSideRoute = LocationsUpperEastSideRouteImport.update({
+  id: '/locations/upper-east-side',
+  path: '/locations/upper-east-side',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsStatenIslandRoute = LocationsStatenIslandRouteImport.update({
+  id: '/locations/staten-island',
+  path: '/locations/staten-island',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsSohoTribecaRoute = LocationsSohoTribecaRouteImport.update({
+  id: '/locations/soho-tribeca',
+  path: '/locations/soho-tribeca',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsQueensRoute = LocationsQueensRouteImport.update({
+  id: '/locations/queens',
+  path: '/locations/queens',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsNewJerseyRoute = LocationsNewJerseyRouteImport.update({
+  id: '/locations/new-jersey',
+  path: '/locations/new-jersey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsMidtownManhattanRoute =
+  LocationsMidtownManhattanRouteImport.update({
+    id: '/locations/midtown-manhattan',
+    path: '/locations/midtown-manhattan',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LocationsManhattanRoute = LocationsManhattanRouteImport.update({
+  id: '/locations/manhattan',
+  path: '/locations/manhattan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsLongIslandRoute = LocationsLongIslandRouteImport.update({
+  id: '/locations/long-island',
+  path: '/locations/long-island',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsHamptonsRoute = LocationsHamptonsRouteImport.update({
+  id: '/locations/hamptons',
+  path: '/locations/hamptons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsGreenwichVillageRoute =
+  LocationsGreenwichVillageRouteImport.update({
+    id: '/locations/greenwich-village',
+    path: '/locations/greenwich-village',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LocationsFinancialDistrictRoute =
+  LocationsFinancialDistrictRouteImport.update({
+    id: '/locations/financial-district',
+    path: '/locations/financial-district',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LocationsDowntownManhattanRoute =
+  LocationsDowntownManhattanRouteImport.update({
+    id: '/locations/downtown-manhattan',
+    path: '/locations/downtown-manhattan',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LocationsConnecticutRoute = LocationsConnecticutRouteImport.update({
+  id: '/locations/connecticut',
+  path: '/locations/connecticut',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsChelseaHudsonYardsRoute =
+  LocationsChelseaHudsonYardsRouteImport.update({
+    id: '/locations/chelsea-hudson-yards',
+    path: '/locations/chelsea-hudson-yards',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LocationsBrooklynRoute = LocationsBrooklynRouteImport.update({
+  id: '/locations/brooklyn',
+  path: '/locations/brooklyn',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsBronxRoute = LocationsBronxRouteImport.update({
+  id: '/locations/bronx',
+  path: '/locations/bronx',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AirportsTebRoute = AirportsTebRouteImport.update({
@@ -134,11 +253,30 @@ export interface FileRoutesByFullPath {
   '/airports/jfk': typeof AirportsJfkRoute
   '/airports/lga': typeof AirportsLgaRoute
   '/airports/teb': typeof AirportsTebRoute
+  '/locations/bronx': typeof LocationsBronxRoute
+  '/locations/brooklyn': typeof LocationsBrooklynRoute
+  '/locations/chelsea-hudson-yards': typeof LocationsChelseaHudsonYardsRoute
+  '/locations/connecticut': typeof LocationsConnecticutRoute
+  '/locations/downtown-manhattan': typeof LocationsDowntownManhattanRoute
+  '/locations/financial-district': typeof LocationsFinancialDistrictRoute
+  '/locations/greenwich-village': typeof LocationsGreenwichVillageRoute
+  '/locations/hamptons': typeof LocationsHamptonsRoute
+  '/locations/long-island': typeof LocationsLongIslandRoute
+  '/locations/manhattan': typeof LocationsManhattanRoute
+  '/locations/midtown-manhattan': typeof LocationsMidtownManhattanRoute
+  '/locations/new-jersey': typeof LocationsNewJerseyRoute
+  '/locations/queens': typeof LocationsQueensRoute
+  '/locations/soho-tribeca': typeof LocationsSohoTribecaRoute
+  '/locations/staten-island': typeof LocationsStatenIslandRoute
+  '/locations/upper-east-side': typeof LocationsUpperEastSideRoute
+  '/locations/upper-west-side': typeof LocationsUpperWestSideRoute
+  '/locations/westchester': typeof LocationsWestchesterRoute
   '/pricing/airport': typeof PricingAirportRoute
   '/pricing/hourly': typeof PricingHourlyRoute
   '/pricing/point-to-point': typeof PricingPointToPointRoute
   '/pricing/tours': typeof PricingToursRoute
   '/services/airport': typeof ServicesAirportRoute
+  '/services/black-car': typeof ServicesBlackCarRoute
   '/services/corporate': typeof ServicesCorporateRoute
   '/services/hourly': typeof ServicesHourlyRoute
   '/services/point-to-point': typeof ServicesPointToPointRoute
@@ -155,11 +293,30 @@ export interface FileRoutesByTo {
   '/airports/jfk': typeof AirportsJfkRoute
   '/airports/lga': typeof AirportsLgaRoute
   '/airports/teb': typeof AirportsTebRoute
+  '/locations/bronx': typeof LocationsBronxRoute
+  '/locations/brooklyn': typeof LocationsBrooklynRoute
+  '/locations/chelsea-hudson-yards': typeof LocationsChelseaHudsonYardsRoute
+  '/locations/connecticut': typeof LocationsConnecticutRoute
+  '/locations/downtown-manhattan': typeof LocationsDowntownManhattanRoute
+  '/locations/financial-district': typeof LocationsFinancialDistrictRoute
+  '/locations/greenwich-village': typeof LocationsGreenwichVillageRoute
+  '/locations/hamptons': typeof LocationsHamptonsRoute
+  '/locations/long-island': typeof LocationsLongIslandRoute
+  '/locations/manhattan': typeof LocationsManhattanRoute
+  '/locations/midtown-manhattan': typeof LocationsMidtownManhattanRoute
+  '/locations/new-jersey': typeof LocationsNewJerseyRoute
+  '/locations/queens': typeof LocationsQueensRoute
+  '/locations/soho-tribeca': typeof LocationsSohoTribecaRoute
+  '/locations/staten-island': typeof LocationsStatenIslandRoute
+  '/locations/upper-east-side': typeof LocationsUpperEastSideRoute
+  '/locations/upper-west-side': typeof LocationsUpperWestSideRoute
+  '/locations/westchester': typeof LocationsWestchesterRoute
   '/pricing/airport': typeof PricingAirportRoute
   '/pricing/hourly': typeof PricingHourlyRoute
   '/pricing/point-to-point': typeof PricingPointToPointRoute
   '/pricing/tours': typeof PricingToursRoute
   '/services/airport': typeof ServicesAirportRoute
+  '/services/black-car': typeof ServicesBlackCarRoute
   '/services/corporate': typeof ServicesCorporateRoute
   '/services/hourly': typeof ServicesHourlyRoute
   '/services/point-to-point': typeof ServicesPointToPointRoute
@@ -177,11 +334,30 @@ export interface FileRoutesById {
   '/airports/jfk': typeof AirportsJfkRoute
   '/airports/lga': typeof AirportsLgaRoute
   '/airports/teb': typeof AirportsTebRoute
+  '/locations/bronx': typeof LocationsBronxRoute
+  '/locations/brooklyn': typeof LocationsBrooklynRoute
+  '/locations/chelsea-hudson-yards': typeof LocationsChelseaHudsonYardsRoute
+  '/locations/connecticut': typeof LocationsConnecticutRoute
+  '/locations/downtown-manhattan': typeof LocationsDowntownManhattanRoute
+  '/locations/financial-district': typeof LocationsFinancialDistrictRoute
+  '/locations/greenwich-village': typeof LocationsGreenwichVillageRoute
+  '/locations/hamptons': typeof LocationsHamptonsRoute
+  '/locations/long-island': typeof LocationsLongIslandRoute
+  '/locations/manhattan': typeof LocationsManhattanRoute
+  '/locations/midtown-manhattan': typeof LocationsMidtownManhattanRoute
+  '/locations/new-jersey': typeof LocationsNewJerseyRoute
+  '/locations/queens': typeof LocationsQueensRoute
+  '/locations/soho-tribeca': typeof LocationsSohoTribecaRoute
+  '/locations/staten-island': typeof LocationsStatenIslandRoute
+  '/locations/upper-east-side': typeof LocationsUpperEastSideRoute
+  '/locations/upper-west-side': typeof LocationsUpperWestSideRoute
+  '/locations/westchester': typeof LocationsWestchesterRoute
   '/pricing/airport': typeof PricingAirportRoute
   '/pricing/hourly': typeof PricingHourlyRoute
   '/pricing/point-to-point': typeof PricingPointToPointRoute
   '/pricing/tours': typeof PricingToursRoute
   '/services/airport': typeof ServicesAirportRoute
+  '/services/black-car': typeof ServicesBlackCarRoute
   '/services/corporate': typeof ServicesCorporateRoute
   '/services/hourly': typeof ServicesHourlyRoute
   '/services/point-to-point': typeof ServicesPointToPointRoute
@@ -200,11 +376,30 @@ export interface FileRouteTypes {
     | '/airports/jfk'
     | '/airports/lga'
     | '/airports/teb'
+    | '/locations/bronx'
+    | '/locations/brooklyn'
+    | '/locations/chelsea-hudson-yards'
+    | '/locations/connecticut'
+    | '/locations/downtown-manhattan'
+    | '/locations/financial-district'
+    | '/locations/greenwich-village'
+    | '/locations/hamptons'
+    | '/locations/long-island'
+    | '/locations/manhattan'
+    | '/locations/midtown-manhattan'
+    | '/locations/new-jersey'
+    | '/locations/queens'
+    | '/locations/soho-tribeca'
+    | '/locations/staten-island'
+    | '/locations/upper-east-side'
+    | '/locations/upper-west-side'
+    | '/locations/westchester'
     | '/pricing/airport'
     | '/pricing/hourly'
     | '/pricing/point-to-point'
     | '/pricing/tours'
     | '/services/airport'
+    | '/services/black-car'
     | '/services/corporate'
     | '/services/hourly'
     | '/services/point-to-point'
@@ -221,11 +416,30 @@ export interface FileRouteTypes {
     | '/airports/jfk'
     | '/airports/lga'
     | '/airports/teb'
+    | '/locations/bronx'
+    | '/locations/brooklyn'
+    | '/locations/chelsea-hudson-yards'
+    | '/locations/connecticut'
+    | '/locations/downtown-manhattan'
+    | '/locations/financial-district'
+    | '/locations/greenwich-village'
+    | '/locations/hamptons'
+    | '/locations/long-island'
+    | '/locations/manhattan'
+    | '/locations/midtown-manhattan'
+    | '/locations/new-jersey'
+    | '/locations/queens'
+    | '/locations/soho-tribeca'
+    | '/locations/staten-island'
+    | '/locations/upper-east-side'
+    | '/locations/upper-west-side'
+    | '/locations/westchester'
     | '/pricing/airport'
     | '/pricing/hourly'
     | '/pricing/point-to-point'
     | '/pricing/tours'
     | '/services/airport'
+    | '/services/black-car'
     | '/services/corporate'
     | '/services/hourly'
     | '/services/point-to-point'
@@ -242,11 +456,30 @@ export interface FileRouteTypes {
     | '/airports/jfk'
     | '/airports/lga'
     | '/airports/teb'
+    | '/locations/bronx'
+    | '/locations/brooklyn'
+    | '/locations/chelsea-hudson-yards'
+    | '/locations/connecticut'
+    | '/locations/downtown-manhattan'
+    | '/locations/financial-district'
+    | '/locations/greenwich-village'
+    | '/locations/hamptons'
+    | '/locations/long-island'
+    | '/locations/manhattan'
+    | '/locations/midtown-manhattan'
+    | '/locations/new-jersey'
+    | '/locations/queens'
+    | '/locations/soho-tribeca'
+    | '/locations/staten-island'
+    | '/locations/upper-east-side'
+    | '/locations/upper-west-side'
+    | '/locations/westchester'
     | '/pricing/airport'
     | '/pricing/hourly'
     | '/pricing/point-to-point'
     | '/pricing/tours'
     | '/services/airport'
+    | '/services/black-car'
     | '/services/corporate'
     | '/services/hourly'
     | '/services/point-to-point'
@@ -264,11 +497,30 @@ export interface RootRouteChildren {
   AirportsJfkRoute: typeof AirportsJfkRoute
   AirportsLgaRoute: typeof AirportsLgaRoute
   AirportsTebRoute: typeof AirportsTebRoute
+  LocationsBronxRoute: typeof LocationsBronxRoute
+  LocationsBrooklynRoute: typeof LocationsBrooklynRoute
+  LocationsChelseaHudsonYardsRoute: typeof LocationsChelseaHudsonYardsRoute
+  LocationsConnecticutRoute: typeof LocationsConnecticutRoute
+  LocationsDowntownManhattanRoute: typeof LocationsDowntownManhattanRoute
+  LocationsFinancialDistrictRoute: typeof LocationsFinancialDistrictRoute
+  LocationsGreenwichVillageRoute: typeof LocationsGreenwichVillageRoute
+  LocationsHamptonsRoute: typeof LocationsHamptonsRoute
+  LocationsLongIslandRoute: typeof LocationsLongIslandRoute
+  LocationsManhattanRoute: typeof LocationsManhattanRoute
+  LocationsMidtownManhattanRoute: typeof LocationsMidtownManhattanRoute
+  LocationsNewJerseyRoute: typeof LocationsNewJerseyRoute
+  LocationsQueensRoute: typeof LocationsQueensRoute
+  LocationsSohoTribecaRoute: typeof LocationsSohoTribecaRoute
+  LocationsStatenIslandRoute: typeof LocationsStatenIslandRoute
+  LocationsUpperEastSideRoute: typeof LocationsUpperEastSideRoute
+  LocationsUpperWestSideRoute: typeof LocationsUpperWestSideRoute
+  LocationsWestchesterRoute: typeof LocationsWestchesterRoute
   PricingAirportRoute: typeof PricingAirportRoute
   PricingHourlyRoute: typeof PricingHourlyRoute
   PricingPointToPointRoute: typeof PricingPointToPointRoute
   PricingToursRoute: typeof PricingToursRoute
   ServicesAirportRoute: typeof ServicesAirportRoute
+  ServicesBlackCarRoute: typeof ServicesBlackCarRoute
   ServicesCorporateRoute: typeof ServicesCorporateRoute
   ServicesHourlyRoute: typeof ServicesHourlyRoute
   ServicesPointToPointRoute: typeof ServicesPointToPointRoute
@@ -349,6 +601,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesCorporateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/black-car': {
+      id: '/services/black-car'
+      path: '/services/black-car'
+      fullPath: '/services/black-car'
+      preLoaderRoute: typeof ServicesBlackCarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/airport': {
       id: '/services/airport'
       path: '/services/airport'
@@ -382,6 +641,132 @@ declare module '@tanstack/react-router' {
       path: '/pricing/airport'
       fullPath: '/pricing/airport'
       preLoaderRoute: typeof PricingAirportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/westchester': {
+      id: '/locations/westchester'
+      path: '/locations/westchester'
+      fullPath: '/locations/westchester'
+      preLoaderRoute: typeof LocationsWestchesterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/upper-west-side': {
+      id: '/locations/upper-west-side'
+      path: '/locations/upper-west-side'
+      fullPath: '/locations/upper-west-side'
+      preLoaderRoute: typeof LocationsUpperWestSideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/upper-east-side': {
+      id: '/locations/upper-east-side'
+      path: '/locations/upper-east-side'
+      fullPath: '/locations/upper-east-side'
+      preLoaderRoute: typeof LocationsUpperEastSideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/staten-island': {
+      id: '/locations/staten-island'
+      path: '/locations/staten-island'
+      fullPath: '/locations/staten-island'
+      preLoaderRoute: typeof LocationsStatenIslandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/soho-tribeca': {
+      id: '/locations/soho-tribeca'
+      path: '/locations/soho-tribeca'
+      fullPath: '/locations/soho-tribeca'
+      preLoaderRoute: typeof LocationsSohoTribecaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/queens': {
+      id: '/locations/queens'
+      path: '/locations/queens'
+      fullPath: '/locations/queens'
+      preLoaderRoute: typeof LocationsQueensRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/new-jersey': {
+      id: '/locations/new-jersey'
+      path: '/locations/new-jersey'
+      fullPath: '/locations/new-jersey'
+      preLoaderRoute: typeof LocationsNewJerseyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/midtown-manhattan': {
+      id: '/locations/midtown-manhattan'
+      path: '/locations/midtown-manhattan'
+      fullPath: '/locations/midtown-manhattan'
+      preLoaderRoute: typeof LocationsMidtownManhattanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/manhattan': {
+      id: '/locations/manhattan'
+      path: '/locations/manhattan'
+      fullPath: '/locations/manhattan'
+      preLoaderRoute: typeof LocationsManhattanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/long-island': {
+      id: '/locations/long-island'
+      path: '/locations/long-island'
+      fullPath: '/locations/long-island'
+      preLoaderRoute: typeof LocationsLongIslandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/hamptons': {
+      id: '/locations/hamptons'
+      path: '/locations/hamptons'
+      fullPath: '/locations/hamptons'
+      preLoaderRoute: typeof LocationsHamptonsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/greenwich-village': {
+      id: '/locations/greenwich-village'
+      path: '/locations/greenwich-village'
+      fullPath: '/locations/greenwich-village'
+      preLoaderRoute: typeof LocationsGreenwichVillageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/financial-district': {
+      id: '/locations/financial-district'
+      path: '/locations/financial-district'
+      fullPath: '/locations/financial-district'
+      preLoaderRoute: typeof LocationsFinancialDistrictRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/downtown-manhattan': {
+      id: '/locations/downtown-manhattan'
+      path: '/locations/downtown-manhattan'
+      fullPath: '/locations/downtown-manhattan'
+      preLoaderRoute: typeof LocationsDowntownManhattanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/connecticut': {
+      id: '/locations/connecticut'
+      path: '/locations/connecticut'
+      fullPath: '/locations/connecticut'
+      preLoaderRoute: typeof LocationsConnecticutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/chelsea-hudson-yards': {
+      id: '/locations/chelsea-hudson-yards'
+      path: '/locations/chelsea-hudson-yards'
+      fullPath: '/locations/chelsea-hudson-yards'
+      preLoaderRoute: typeof LocationsChelseaHudsonYardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/brooklyn': {
+      id: '/locations/brooklyn'
+      path: '/locations/brooklyn'
+      fullPath: '/locations/brooklyn'
+      preLoaderRoute: typeof LocationsBrooklynRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/bronx': {
+      id: '/locations/bronx'
+      path: '/locations/bronx'
+      fullPath: '/locations/bronx'
+      preLoaderRoute: typeof LocationsBronxRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/airports/teb': {
@@ -424,11 +809,30 @@ const rootRouteChildren: RootRouteChildren = {
   AirportsJfkRoute: AirportsJfkRoute,
   AirportsLgaRoute: AirportsLgaRoute,
   AirportsTebRoute: AirportsTebRoute,
+  LocationsBronxRoute: LocationsBronxRoute,
+  LocationsBrooklynRoute: LocationsBrooklynRoute,
+  LocationsChelseaHudsonYardsRoute: LocationsChelseaHudsonYardsRoute,
+  LocationsConnecticutRoute: LocationsConnecticutRoute,
+  LocationsDowntownManhattanRoute: LocationsDowntownManhattanRoute,
+  LocationsFinancialDistrictRoute: LocationsFinancialDistrictRoute,
+  LocationsGreenwichVillageRoute: LocationsGreenwichVillageRoute,
+  LocationsHamptonsRoute: LocationsHamptonsRoute,
+  LocationsLongIslandRoute: LocationsLongIslandRoute,
+  LocationsManhattanRoute: LocationsManhattanRoute,
+  LocationsMidtownManhattanRoute: LocationsMidtownManhattanRoute,
+  LocationsNewJerseyRoute: LocationsNewJerseyRoute,
+  LocationsQueensRoute: LocationsQueensRoute,
+  LocationsSohoTribecaRoute: LocationsSohoTribecaRoute,
+  LocationsStatenIslandRoute: LocationsStatenIslandRoute,
+  LocationsUpperEastSideRoute: LocationsUpperEastSideRoute,
+  LocationsUpperWestSideRoute: LocationsUpperWestSideRoute,
+  LocationsWestchesterRoute: LocationsWestchesterRoute,
   PricingAirportRoute: PricingAirportRoute,
   PricingHourlyRoute: PricingHourlyRoute,
   PricingPointToPointRoute: PricingPointToPointRoute,
   PricingToursRoute: PricingToursRoute,
   ServicesAirportRoute: ServicesAirportRoute,
+  ServicesBlackCarRoute: ServicesBlackCarRoute,
   ServicesCorporateRoute: ServicesCorporateRoute,
   ServicesHourlyRoute: ServicesHourlyRoute,
   ServicesPointToPointRoute: ServicesPointToPointRoute,

@@ -10,10 +10,10 @@ import { Clock, Car, UserCheck, MapPin, GlassWater, BadgeDollarSign, Check } fro
 export const Route = createFileRoute("/services/hourly")({
   head: () => ({
     meta: [
-      { title: "NYC Hourly Limousine Service | Per Hour Limo Hire New York City | NY City Limousine" },
-      { name: "description", content: "Book NY City Limousine's hourly limousine service in New York City. Flexible per-hour limo hire with professional chauffeurs for business meetings, events & city tours. Transparent all-inclusive pricing." },
-      { property: "og:title", content: "NYC Hourly Limousine Service — NY City Limousine" },
-      { property: "og:description", content: "Flexible per-hour limo hire with a dedicated professional chauffeur in NYC." },
+      { title: "Hourly Limo Service NYC | Black Car by the Hour" },
+      { name: "description", content: "Hourly limousine and black car service in NYC. Retain a TLC-licensed chauffeur for meetings, city tours, events or full-day use. Minimum 2 hours. Book online now." },
+      { property: "og:title", content: "Hourly Limo Service NYC | Black Car by the Hour" },
+      { property: "og:description", content: "Hourly limousine and black car service in NYC. Retain a TLC-licensed chauffeur for meetings, city tours, events or full-day use. Minimum 2 hours. Book online now." },
       { property: "og:image", content: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
@@ -105,8 +105,8 @@ function HourlyPage() {
     <PageShell>
       <PageHero
         eyebrow="Hourly Service"
-        title="NYC Hourly Limousine Service"
-        subtitle="Flexible Per-Hour Limo Hire with a Dedicated Professional Chauffeur"
+        title="Hourly Limo Service NYC — A Dedicated Chauffeur on Your Schedule"
+        subtitle="A dedicated TLC-licensed chauffeur and luxury vehicle for as many hours as your day requires."
         image="https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
       <div className="bg-background">
@@ -119,10 +119,48 @@ function HourlyPage() {
 
       {/* Intro */}
       <section className="bg-background pb-16 pt-4">
-        <div className="container-luxury mx-auto max-w-3xl text-center">
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            Elevate your travel experience with NY City Limousine's Hourly Limousine Service — offering you the flexibility and sophistication you deserve. Whether you need a chauffeured limousine for a series of business meetings, a day of city exploration, or a special event, our hourly service ensures a reliable and luxurious transportation solution tailored entirely to your schedule. You can cruise New York City in style — stopping wherever you like, for as long as you need.
+        <div className="container-luxury mx-auto max-w-4xl text-center">
+          <p className="text-xl leading-relaxed text-muted-foreground">
+            Five meetings across three boroughs and a client dinner 
+            that evening — a point-to-point car will not hold your 
+            day together. You need a driver who is there between every 
+            stop, ready when you are, routing around traffic in real time. 
+            Our hourly limo service in NYC gives you a dedicated, 
+            TLC-licensed chauffeur and a late-model luxury vehicle 
+            for as many hours as your day requires.
           </p>
+        </div>
+      </section>
+
+      {/* What the hourly service covers */}
+      <section className="bg-secondary/30 py-20">
+        <div className="container-luxury mx-auto text-center">
+          <h2 className="text-3xl font-semibold text-navy md:text-4xl">What the Hourly Service Covers</h2>
+          <div className="mx-auto mt-8 max-w-4xl">
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              The hourly service is the most flexible option in our fleet. 
+              You retain an exclusive vehicle and chauffeur for a set number 
+              of hours. During that time, the car is yours — you set the 
+              stops, the pace, and the destinations. No per-trip charges, 
+              no waiting fees, no rerouting costs for additional stops.
+            </p>
+            <div className="mt-10 grid gap-4 text-left sm:grid-cols-2">
+              {[
+                "Corporate road shows and multi-meeting executive days",
+                "City sightseeing — Central Park, Brooklyn Bridge, The High Line",
+                "Shopping trips along Fifth Avenue, Madison Avenue, and SoHo",
+                "Event days — Broadway shows, galas, charity dinners",
+                "Full-day client entertainment with multiple venue transitions",
+                "Hotel waiting service for visiting executives or VIP guests",
+                "Weddings and special events requiring a vehicle on standby",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3 rounded-lg border border-border bg-card p-4 shadow-sm">
+                  <Check className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+                  <span className="text-sm text-navy">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -130,7 +168,7 @@ function HourlyPage() {
       <section className="bg-secondary/30 py-20">
         <div className="container-luxury mx-auto text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Why Choose Hourly</p>
-          <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-semibold text-navy md:text-4xl">Key Features</h2>
+          <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-semibold text-navy md:text-4xl">Pricing Structure</h2>
           <div className="mx-auto mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map(({ icon: Icon, title, desc }) => (
               <div key={title} className="rounded-2xl border border-border bg-card p-7 text-center transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-lg">
@@ -148,7 +186,7 @@ function HourlyPage() {
       {/* Ideal for */}
       <section className="bg-background py-16">
         <div className="container-luxury mx-auto text-center">
-          <h2 className="text-2xl font-semibold text-navy md:text-3xl">Ideal For</h2>
+          <h3 className="text-2xl font-semibold text-navy md:text-3xl">Ideal For</h3>
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
             {IDEAL.map((t) => (
               <span key={t} className="rounded-full border border-gold/40 bg-gold/5 px-5 py-2 text-sm font-medium text-navy">
@@ -162,7 +200,7 @@ function HourlyPage() {
       {/* Included */}
       <section className="bg-secondary/30 py-16">
         <div className="container-luxury mx-auto text-center">
-          <h2 className="text-2xl font-semibold text-navy md:text-3xl">What's Included</h2>
+          <h3 className="text-2xl font-semibold text-navy md:text-3xl">What's Included</h3>
           <ul className="mx-auto mt-8 grid max-w-2xl gap-3 text-left sm:grid-cols-2">
             {INCLUDED.map((i) => (
               <li key={i} className="flex items-start gap-3 rounded-lg bg-card p-4 shadow-sm">
@@ -174,13 +212,19 @@ function HourlyPage() {
         </div>
       </section>
 
-      {/* Important note */}
+      {/* Pricing Note */}
       <section className="bg-background py-12">
         <div className="container-luxury mx-auto">
-          <div className="mx-auto max-w-3xl rounded-2xl bg-navy p-8 text-center text-white">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Important Note</p>
-            <p className="mt-3 text-white/90">
-              Hourly rates apply for travel within New York City (5 Boroughs: The Bronx, Brooklyn, Manhattan, Queens, Staten Island) only. For travel outside NYC, please contact us for a custom rate.
+          <div className="mx-auto max-w-3xl rounded-2xl bg-navy p-8 text-center text-white shadow-xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Pricing Note</p>
+            <p className="mt-4 text-lg text-white/90">
+              All hourly rates are flat-rate and fixed — no surge charges 
+              for peak hours, no tolls billed separately, no hidden fees. 
+              Minimum booking is two hours. Gratuity of 15–20% is customary 
+              and not included in the hourly rate.
+            </p>
+            <p className="mt-3 text-xs text-white/60">
+              Hourly service covers all five NYC boroughs. Travel outside NYC may incur additional mileage charges.
             </p>
           </div>
         </div>
@@ -192,15 +236,43 @@ function HourlyPage() {
       <section className="bg-background py-20">
         <div className="container-luxury mx-auto text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Live Calculator</p>
-          <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-semibold text-navy md:text-4xl">
+          <h3 className="mx-auto mt-3 max-w-3xl text-3xl font-semibold text-navy md:text-4xl">
             Hourly Limousine Rates — Select Your Vehicle &amp; Hours
-          </h2>
+          </h3>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             All rates are all-inclusive — taxes, gratuity, credit card fee, and admin fee all included.
           </p>
           <div className="mx-auto mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {FLEET.map((v) => (
               <VehicleCalc key={v.name} name={v.name} image={v.image} pax={v.pax} bags={v.bags} hourly={v.hourly} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-secondary/30 py-20">
+        <div className="container-luxury mx-auto">
+          <h2 className="text-center text-3xl font-semibold text-navy md:text-4xl">Frequently Asked Questions</h2>
+          <div className="mx-auto mt-12 max-w-3xl space-y-6">
+            {[
+              {
+                q: "What is the minimum booking for hourly limo service?",
+                a: "The minimum booking is two hours. There is no maximum.",
+              },
+              {
+                q: "Can I add hours on the day?",
+                a: "Yes, subject to fleet availability. Call our dispatch line and we will extend at the same hourly rate.",
+              },
+              {
+                q: "Does the hourly rate include all boroughs?",
+                a: "Yes. Hourly service covers all five NYC boroughs. Travel to Long Island, New Jersey, or Connecticut may have additional mileage charges — confirm at booking.",
+              },
+            ].map((faq, i) => (
+              <div key={i} className="rounded-xl border border-border bg-card p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-navy">Q: {faq.q}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">A: {faq.a}</p>
+              </div>
             ))}
           </div>
         </div>

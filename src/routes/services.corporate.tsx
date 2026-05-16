@@ -10,10 +10,10 @@ import { Briefcase, Clock, UserCheck, Smartphone, Receipt, Globe, Check } from "
 export const Route = createFileRoute("/services/corporate")({
   head: () => ({
     meta: [
-      { title: "NYC Corporate Limousine Service | Executive Transportation New York | NY City Limousine" },
-      { name: "description", content: "NY City Limousine provides premium corporate transportation in New York City. Executive sedans, SUVs and limousines for business travel, airport transfers, and corporate events. Book 24/7." },
-      { property: "og:title", content: "NYC Corporate Limousine Transportation — NY City Limousine" },
-      { property: "og:description", content: "Executive ground transportation for business professionals in NYC." },
+      { title: "Corporate Car Service NYC | Executive Black Car & Limo" },
+      { name: "description", content: "NYC's executive black car service for corporate travel. Hourly chauffeurs, roadshow support, corporate accounts, centralised billing. TLC-licensed. Book 24/7." },
+      { property: "og:title", content: "Corporate Car Service NYC | Executive Black Car & Limo" },
+      { property: "og:description", content: "NYC's executive black car service for corporate travel. Hourly chauffeurs, roadshow support, corporate accounts, centralised billing. TLC-licensed. Book 24/7." },
       { property: "og:image", content: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
@@ -21,12 +21,26 @@ export const Route = createFileRoute("/services/corporate")({
 });
 
 const FEATURES = [
-  { icon: Briefcase, title: "Executive Fleet", desc: "Mercedes S Class, Cadillac Escalade, and more for the ultimate corporate image." },
-  { icon: Clock, title: "Punctuality Guaranteed", desc: "Our chauffeurs are always early — never keep a client waiting." },
-  { icon: UserCheck, title: "Professional Chauffeurs", desc: "Formally dressed, discreet, and highly trained corporate drivers." },
-  { icon: Smartphone, title: "Easy Booking", desc: "Book online or call 24/7 for immediate corporate account setup." },
-  { icon: Receipt, title: "Corporate Accounts", desc: "Monthly invoicing and corporate account management available." },
-  { icon: Globe, title: "Tri-State Coverage", desc: "NYC, New Jersey, Connecticut, Long Island and beyond." },
+  {
+    icon: Receipt,
+    title: "Centralised Billing & Net-30 Invoicing",
+    desc: "Monthly consolidated invoices covering all trips and travellers. Net-30 payment terms and detailed CSV/PDF reports provided.",
+  },
+  {
+    icon: UserCheck,
+    title: "Dedicated Account Manager",
+    desc: "A named point of contact reachable by phone and email for all booking changes, additions, and event planning.",
+  },
+  {
+    icon: Clock,
+    title: "Priority Dispatch & Guaranteed Availability",
+    desc: "Priority status ensures your bookings are protected during high-demand periods like Fashion Week or UN General Assembly.",
+  },
+  {
+    icon: Briefcase,
+    title: "Travel Policy Compliance",
+    desc: "We align with your company's ground transportation policy, including vehicle restrictions and approval workflows.",
+  },
 ];
 
 const IDEAL = ["Airport Transfers", "Client Entertainment", "Road Shows", "Corporate Events", "Conferences", "Board Meetings", "Executive Travel", "Group Transportation"];
@@ -105,8 +119,8 @@ function CorporatePage() {
     <PageShell>
       <PageHero
         eyebrow="Corporate Service"
-        title="NYC Corporate Limousine Transportation"
-        subtitle="Executive Ground Transportation for Business Professionals"
+        title="Corporate Car Service NYC — Executive Ground Transportation for the Business That Cannot Afford a Mistake"
+        subtitle="Corporate accounts, centralised billing, and dedicated account management for seamless executive travel."
         image="https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
       <div className="bg-background">
@@ -119,10 +133,46 @@ function CorporatePage() {
 
       {/* Intro */}
       <section className="bg-background pb-16 pt-4">
-        <div className="container-luxury mx-auto max-w-3xl text-center">
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            At NY City Limousine, we understand there is no margin for error when it comes to corporate travel. We have made fulfilling the corporate ground transportation needs of our clients our specialty. From solo executive travel to large groups headed for meetings, conventions, or conferences — our polished chauffeurs and luxury fleet deliver impeccable service every time.
+        <div className="container-luxury mx-auto max-w-4xl text-center">
+          <p className="text-xl leading-relaxed text-muted-foreground">
+            A missed client pickup. A chauffeur who cannot find the address. 
+            A surge-priced rideshare that arrives eight minutes late for a 
+            board meeting. Every one of these failures is avoidable. Our 
+            corporate car service NYC is built around a single standard: 
+            your executive, client, or VIP arrives on time, in comfort, 
+            with zero logistical friction. Corporate accounts, centralised 
+            billing, and a dedicated account manager eliminate every 
+            administrative gap.
           </p>
+        </div>
+      </section>
+
+      {/* Corporate Pace */}
+      <section className="bg-secondary/30 py-20">
+        <div className="container-luxury mx-auto text-center">
+          <h2 className="text-3xl font-semibold text-navy md:text-4xl">Corporate Ground Transportation Built for New York's Pace</h2>
+          <div className="mx-auto mt-6 max-w-4xl">
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Manhattan operates on a schedule where minutes matter. 
+              Roadshows move across six offices in a single day. 
+              C-suite executives need a chauffeur who knows the fastest 
+              loading zone at 1 World Trade Center. Client entertainment 
+              means arriving at a top restaurant, not circling the block.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Our corporate car service maintains a dedicated fleet of 
+              late-model luxury sedans, full-size SUVs, and Sprinter vans 
+              for multi-person executive movements. Every chauffeur assigned 
+              to a corporate account is briefed on your company's preferences 
+              — usual pickup locations, preferred routes, passenger names, 
+              and any specific protocol requirements.
+            </p>
+            <p className="mt-4 text-lg font-semibold text-navy">
+              Discretion is standard, not optional. Conversations in the 
+              vehicle are never discussed. Itinerary details are held in 
+              strict confidence.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -130,7 +180,7 @@ function CorporatePage() {
       <section className="bg-secondary/30 py-20">
         <div className="container-luxury mx-auto text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Why Choose Us</p>
-          <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-semibold text-navy md:text-4xl">Key Features</h2>
+          <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-semibold text-navy md:text-4xl">Corporate Account Features</h2>
           <div className="mx-auto mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map(({ icon: Icon, title, desc }) => (
               <div key={title} className="rounded-2xl border border-border bg-card p-7 text-center transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-lg">
@@ -145,15 +195,33 @@ function CorporatePage() {
         </div>
       </section>
 
-      {/* Ideal for */}
-      <section className="bg-background py-16">
+      {/* Services for corporate clients */}
+      <section className="bg-background py-20">
         <div className="container-luxury mx-auto text-center">
-          <h2 className="text-2xl font-semibold text-navy md:text-3xl">Ideal For</h2>
-          <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
-            {IDEAL.map((t) => (
-              <span key={t} className="rounded-full border border-gold/40 bg-gold/5 px-5 py-2 text-sm font-medium text-navy">
-                {t}
-              </span>
+          <h2 className="text-3xl font-semibold text-navy md:text-4xl">Services for Corporate Clients</h2>
+          <div className="mx-auto mt-12 grid gap-8 md:grid-cols-2">
+            {[
+              {
+                title: "Airport Transfers for Executives & Clients",
+                desc: "Every corporate airport transfer includes inside meet-and-greet at JFK, LGA, or EWR, real-time flight tracking, and fixed-rate pricing.",
+              },
+              {
+                title: "Roadshow & Multi-Stop Executive Days",
+                desc: "Our roadshow drivers receive a full day brief — time windows for each stop, contingency routes if a meeting runs long, and standing instructions for your executive's standard preferences.",
+              },
+              {
+                title: "Client Entertainment & VIP Reception",
+                desc: "Arriving at a client dinner in a late-model Cadillac Escalade with a uniformed chauffeur communicates professionalism before a word is spoken.",
+              },
+              {
+                title: "Conference & Event Fleet Management",
+                desc: "We provide multi-vehicle fleet management for conference transportation — coordinating arrivals, hotel transfers, and event shuttles with dedicated dispatch support.",
+              },
+            ].map((s) => (
+              <div key={s.title} className="rounded-2xl border border-border bg-card p-8 text-left shadow-sm">
+                <h3 className="text-xl font-bold text-navy">{s.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -162,7 +230,7 @@ function CorporatePage() {
       {/* Included */}
       <section className="bg-secondary/30 py-16">
         <div className="container-luxury mx-auto text-center">
-          <h2 className="text-2xl font-semibold text-navy md:text-3xl">What's Included</h2>
+          <h3 className="text-2xl font-semibold text-navy md:text-3xl">What's Included</h3>
           <ul className="mx-auto mt-8 grid max-w-2xl gap-3 text-left sm:grid-cols-2">
             {INCLUDED.map((i) => (
               <li key={i} className="flex items-start gap-3 rounded-lg bg-card p-4 shadow-sm">
@@ -192,15 +260,43 @@ function CorporatePage() {
       <section className="bg-background py-20">
         <div className="container-luxury mx-auto text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Live Calculator</p>
-          <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-semibold text-navy md:text-4xl">
+          <h3 className="mx-auto mt-3 max-w-3xl text-3xl font-semibold text-navy md:text-4xl">
             Corporate Limousine Rates — Select Your Vehicle &amp; Hours
-          </h2>
+          </h3>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             All rates are all-inclusive — taxes, gratuity, credit card fee, and admin fee all included.
           </p>
           <div className="mx-auto mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {FLEET.map((v) => (
               <VehicleCalc key={v.name} name={v.name} image={v.image} pax={v.pax} bags={v.bags} hourly={v.hourly} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-secondary/30 py-20">
+        <div className="container-luxury mx-auto">
+          <h2 className="text-center text-3xl font-semibold text-navy md:text-4xl">Frequently Asked Questions</h2>
+          <div className="mx-auto mt-12 max-w-3xl space-y-6">
+            {[
+              {
+                q: "How does a corporate account work?",
+                a: "Contact our reservations team to open an account. Monthly invoicing covers all trips. A dedicated account manager handles all coordination.",
+              },
+              {
+                q: "Can you accommodate last-minute corporate bookings?",
+                a: "Yes, for sedan and SUV bookings. Corporate account holders receive priority dispatch for same-day requests.",
+              },
+              {
+                q: "Do you sign NDA or confidentiality agreements?",
+                a: "Yes. For clients requiring formal confidentiality agreements, our team can execute an NDA prior to service commencement.",
+              },
+            ].map((faq, i) => (
+              <div key={i} className="rounded-xl border border-border bg-card p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-navy">Q: {faq.q}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">A: {faq.a}</p>
+              </div>
             ))}
           </div>
         </div>
