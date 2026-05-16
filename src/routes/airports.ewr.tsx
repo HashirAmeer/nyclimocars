@@ -12,7 +12,7 @@ export const Route = createFileRoute("/airports/ewr")({
       { name: "description", content: "Fixed-rate Newark Liberty (EWR) car & limo service. TLC-licensed chauffeurs, terminal A–C pickup guide, real-time flight tracking. NYC & NJ transfers covered 24/7." },
       { property: "og:title", content: "Newark Airport Car Service | EWR Limo Transfers NYC" },
       { property: "og:description", content: "Fixed-rate Newark Liberty (EWR) car & limo service. TLC-licensed chauffeurs, terminal A–C pickup guide, real-time flight tracking. NYC & NJ transfers covered 24/7." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1629837905187-57351e065759?w=1600&q=80" },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=1600&q=80" },
     ],
   }),
   component: EWRPage,
@@ -59,7 +59,7 @@ function EWRPage() {
         eyebrow="Airport Service"
         title="Newark Airport Car Service — EWR Transfers to NYC & New Jersey"
         subtitle="Fixed rates, real-time flight tracking, and seamless cross-state transfers between Newark and New York City."
-        image="https://images.unsplash.com/photo-1629837905187-57351e065759?w=1600&q=80"
+        image="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=1600&q=80"
       />
 
       {/* INTRO & ABOUT EWR */}
@@ -86,7 +86,7 @@ function EWRPage() {
               </div>
             </div>
             <div className="relative h-full min-h-[400px] w-full overflow-hidden rounded-2xl shadow-xl">
-              <img src="https://images.unsplash.com/photo-1629837905187-57351e065759?w=900&q=80" alt="Newark Airport Terminal" className="absolute inset-0 h-full w-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=900&q=80" alt="Newark Airport Terminal" className="absolute inset-0 h-full w-full object-cover" />
             </div>
           </div>
         </div>

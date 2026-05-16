@@ -14,7 +14,7 @@ export const Route = createFileRoute("/services/wedding")({
       { name: "description", content: "Luxury wedding limousine service in NYC. Stretch limos, SUVs & custom bridal fleets. On-day coordination, red-carpet arrivals, venue expertise. Book your wedding date." },
       { property: "og:title", content: "Wedding Limo Service NYC | Luxury Wedding Car Hire" },
       { property: "og:description", content: "Luxury wedding limousine service in NYC. Stretch limos, SUVs & custom bridal fleets. On-day coordination, red-carpet arrivals, venue expertise. Book your wedding date." },
-      { property: "og:image", content: "https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1600" },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=80" },
     ],
   }),
   component: WeddingPage,
@@ -107,7 +107,7 @@ function WeddingPage() {
         eyebrow="Wedding Service"
         title="Wedding Limousine Service NYC — Arrive at Your Most Important Moment in Flawless Style"
         subtitle="Flawless coordination, on-the-day briefings, and a luxury fleet for your most important celebration."
-        image="https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        image="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=80"
       />
       <div className="bg-background">
         <div className="container-luxury mx-auto py-8 text-center">

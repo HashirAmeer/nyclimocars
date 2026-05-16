@@ -12,7 +12,7 @@ export const Route = createFileRoute("/airports/teb")({
       { name: "description", content: "Luxury limousine transfers to and from Teterboro Airport (TEB). Private aviation specialists, discreet VIP service, available 24/7. NY City Limousine." },
       { property: "og:title", content: "Teterboro Airport Car Service | TEB Private Aviation NYC" },
       { property: "og:description", content: "Luxury limousine transfers to and from Teterboro Airport (TEB). Private aviation specialists, discreet VIP service, available 24/7. NY City Limousine." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1616053429399-53e39b7a4f78?w=1600&q=80" },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1600&q=80" },
     ],
   }),
   component: TEBPage,
@@ -56,7 +56,7 @@ function TEBPage() {
         eyebrow="Airport Service"
         title="Teterboro Airport Limousine Service"
         subtitle="Teterboro Airport (TEB) — Private Aviation Transfers Available 24/7"
-        image="https://images.unsplash.com/photo-1616053429399-53e39b7a4f78?w=1600&q=80"
+        image="https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1600&q=80"
       />
 
       {/* INTRO & ABOUT TEB */}
@@ -83,7 +83,7 @@ function TEBPage() {
               </div>
             </div>
             <div className="relative h-full min-h-[400px] w-full overflow-hidden rounded-2xl shadow-xl">
-              <img src="https://images.unsplash.com/photo-1616053429399-53e39b7a4f78?w=900&q=80" alt="Teterboro Airport Private Aviation" className="absolute inset-0 h-full w-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=900&q=80" alt="Teterboro Airport Private Aviation" className="absolute inset-0 h-full w-full object-cover" />
             </div>
           </div>
         </div>

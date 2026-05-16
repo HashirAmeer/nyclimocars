@@ -12,7 +12,7 @@ export const Route = createFileRoute("/airports/lga")({
       { name: "description", content: "Expert LaGuardia (LGA) car service. Fixed rates, TLC chauffeurs, terminal A–D pickup guides, real-time flight tracking & meet & greet. Book your LGA transfer now." },
       { property: "og:title", content: "LaGuardia Airport Car Service | LGA Limo Transfers NYC" },
       { property: "og:description", content: "Expert LaGuardia (LGA) car service. Fixed rates, TLC chauffeurs, terminal A–D pickup guides, real-time flight tracking & meet & greet. Book your LGA transfer now." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1596200234241-118c89429188?w=1600&q=80" },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80" },
     ],
   }),
   component: LGAPage,
@@ -59,7 +59,7 @@ function LGAPage() {
         eyebrow="Airport Service"
         title="LaGuardia Airport Car Service — Precision Pickups at NYC's Fastest Curb"
         subtitle="Live flight tracking, professional chauffeurs, and coordinated curbside pickups at every LGA terminal."
-        image="https://images.unsplash.com/photo-1596200234241-118c89429188?w=1600&q=80"
+        image="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80"
       />
 
       {/* INTRO & ABOUT LGA */}
@@ -86,7 +86,7 @@ function LGAPage() {
               </div>
             </div>
             <div className="relative h-full min-h-[400px] w-full overflow-hidden rounded-2xl shadow-xl">
-              <img src="https://images.unsplash.com/photo-1596200234241-118c89429188?w=900&q=80" alt="LaGuardia Airport Terminal" className="absolute inset-0 h-full w-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=80" alt="LaGuardia Airport Terminal" className="absolute inset-0 h-full w-full object-cover" />
             </div>
           </div>
         </div>

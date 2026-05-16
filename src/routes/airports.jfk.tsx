@@ -12,7 +12,7 @@ export const Route = createFileRoute("/airports/jfk")({
       { name: "description", content: "Fixed-rate JFK airport limo & black car service. TLC-licensed chauffeurs, terminal-level pickup guides, real-time flight tracking. Meet & greet at all JFK terminals." },
       { property: "og:title", content: "JFK Airport Car Service | Limo & Black Car to JFK NYC" },
       { property: "og:description", content: "Fixed-rate JFK airport limo & black car service. TLC-licensed chauffeurs, terminal-level pickup guides, real-time flight tracking. Meet & greet at all JFK terminals." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1542296332-2e4473faf563?w=1600&q=80" },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=1600&q=80" },
     ],
   }),
   component: JFKPage,
@@ -59,7 +59,7 @@ function JFKPage() {
         eyebrow="Airport Service"
         title="JFK Airport Car Service NYC — Every Terminal, Every Flight"
         subtitle="Fixed rates, real-time flight tracking, and curbside pickup at every JFK terminal."
-        image="https://images.unsplash.com/photo-1542296332-2e4473faf563?w=1600&q=80"
+        image="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=1600&q=80"
       />
 
       {/* INTRO & ABOUT JFK */}
@@ -86,7 +86,7 @@ function JFKPage() {
               </div>
             </div>
             <div className="relative h-full min-h-[400px] w-full overflow-hidden rounded-2xl shadow-xl">
-              <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?w=900&q=80" alt="JFK Airport Terminal" className="absolute inset-0 h-full w-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=900&q=80" alt="JFK Airport Terminal" className="absolute inset-0 h-full w-full object-cover" />
             </div>
           </div>
         </div>
