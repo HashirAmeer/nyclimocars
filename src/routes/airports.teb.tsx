@@ -36,17 +36,17 @@ const INCLUDED = [
 ];
 
 const RATES = [
-  { name: "Lincoln Sedan", pax: 3, bags: 3, flat: 145.00, tolls: 24.00, operating: 29.00, cc: 6.22, tax: 18.40, congestion: 2.75, total: 225.37 },
-  { name: "Cadillac Sedan", pax: 3, bags: 3, flat: 165.00, tolls: 25.00, operating: 33.00, cc: 6.97, tax: 20.62, congestion: 2.75, total: 253.34 },
-  { name: "Chevrolet SUV", pax: 6, bags: 6, flat: 180.00, tolls: 24.00, operating: 36.00, cc: 7.44, tax: 22.00, congestion: 2.75, total: 272.19 },
-  { name: "Cadillac Escalade", pax: 6, bags: 6, flat: 285.00, tolls: 24.00, operating: 57.00, cc: 11.10, tax: 32.88, congestion: 2.75, total: 412.73 },
-  { name: "Mercedes C Class", pax: 3, bags: 3, flat: 165.00, tolls: 25.00, operating: 33.00, cc: 6.97, tax: 20.62, congestion: 2.75, total: 253.34 },
-  { name: "Mercedes S Class", pax: 3, bags: 3, flat: 260.00, tolls: 24.00, operating: 52.00, cc: 10.14, tax: 30.00, congestion: 2.75, total: 378.89 },
-  { name: "Black Limousine", pax: 8, bags: 6, flat: 292.00, tolls: 24.00, operating: 58.40, cc: 11.37, tax: 33.65, congestion: 2.75, total: 422.17 },
-  { name: "White Stretch Limousine", pax: 7, bags: 6, flat: 292.00, tolls: 24.00, operating: 58.40, cc: 11.37, tax: 33.65, congestion: 2.75, total: 422.17 },
-  { name: "Sprinter Van", pax: 14, bags: 12, flat: 295.00, tolls: 24.00, operating: 59.00, cc: 11.49, tax: 34.00, congestion: 2.75, total: 426.24 },
-  { name: "Hummer Limousine", pax: 20, bags: 8, flat: 325.00, tolls: 26.00, operating: 65.00, cc: 12.48, tax: 36.90, congestion: 2.75, total: 468.13 },
-  { name: "Coach Bus", pax: 50, bags: 50, flat: 590.00, tolls: 30.00, operating: 118.00, cc: 21.84, tax: 70.75, congestion: 2.75, total: 833.34 },
+  { name: "Lincoln Sedan", pax: 3, bags: 3, baseRate: 105.00, tolls: 24.00, operating: 26.50, cc: 6.36, tax: 14.68, congestion: 3.50, total: 174.24 },
+  { name: "Cadillac Sedan", pax: 3, bags: 3, baseRate: 120.00, tolls: 24.00, operating: 29.50, cc: 7.08, tax: 16.34, congestion: 3.50, total: 200.42 },
+  { name: "Chevrolet SUV", pax: 6, bags: 6, baseRate: 140.00, tolls: 24.00, operating: 33.50, cc: 8.04, tax: 18.56, congestion: 3.50, total: 227.60 },
+  { name: "Cadillac Escalade", pax: 6, bags: 6, baseRate: 164.00, tolls: 24.00, operating: 38.30, cc: 9.20, tax: 21.22, congestion: 3.50, total: 260.20 },
+  { name: "Mercedes C Class", pax: 3, bags: 3, baseRate: 140.00, tolls: 24.00, operating: 33.50, cc: 8.04, tax: 18.56, congestion: 3.50, total: 227.60 },
+  { name: "Mercedes S Class", pax: 3, bags: 3, baseRate: 220.60, tolls: 19.00, operating: 48.62, cc: 11.66, tax: 26.94, congestion: 3.50, total: 330.33 },
+  { name: "Black Limousine", pax: 8, bags: 6, baseRate: 266.60, tolls: 24.00, operating: 58.82, cc: 14.11, tax: 32.52, congestion: 3.59, total: 399.62 },
+  { name: "White Stretch Limousine", pax: 7, bags: 6, baseRate: 266.60, tolls: 24.00, operating: 58.82, cc: 14.11, tax: 32.52, congestion: 3.59, total: 399.62 },
+  { name: "Sprinter Van", pax: 14, bags: 12, baseRate: 282.00, tolls: 24.00, operating: 61.90, cc: 14.85, tax: 34.30, congestion: 3.59, total: 420.55 },
+  { name: "Hummer Limousine", pax: 20, bags: 8, baseRate: 694.00, tolls: 24.00, operating: 144.30, cc: 34.63, tax: 79.95, congestion: 3.50, total: 980.40 },
+  { name: "Coach Bus", pax: 50, bags: 50, baseRate: 1150.00, tolls: 24.00, operating: 235.50, cc: 56.52, tax: 130.49, congestion: 3.50, total: 1600.00 },
 ];
 
 function TEBPage() {
@@ -131,42 +131,42 @@ function TEBPage() {
                   <div className="p-8 md:w-1/2 flex flex-col justify-center bg-white">
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between border-b border-border/50 pb-2">
-                        <span className="text-muted-foreground">Flat Rate</span>
-                        <span className="font-medium text-navy">{fmt(v.flat)}</span>
+                        <span className="text-muted-foreground">Base Rate</span>
+                        <span className="font-medium text-navy">{fmt(v.baseRate)}</span>
                       </div>
                       {v.tolls !== undefined && (
                         <div className="flex justify-between border-b border-border/50 pb-2">
-                          <span className="text-muted-foreground">Estimate Tolls</span>
+                          <span className="text-muted-foreground">Route Tolls</span>
                           <span className="font-medium text-navy">{fmt(v.tolls)}</span>
                         </div>
                       )}
                       {v.operating !== undefined && (
                         <div className="flex justify-between border-b border-border/50 pb-2">
-                          <span className="text-muted-foreground">Operating Costs</span>
+                          <span className="text-muted-foreground">Ride Operations (20%)</span>
                           <span className="font-medium text-navy">{fmt(v.operating)}</span>
                         </div>
                       )}
                       {v.cc !== undefined && (
                         <div className="flex justify-between border-b border-border/50 pb-2">
-                          <span className="text-muted-foreground">Credit Card Processing</span>
+                          <span className="text-muted-foreground">Transaction Fee (4%)</span>
                           <span className="font-medium text-navy">{fmt(v.cc)}</span>
                         </div>
                       )}
                       {v.tax !== undefined && (
                         <div className="flex justify-between border-b border-border/50 pb-2">
-                          <span className="text-muted-foreground">State Sales Tax</span>
+                          <span className="text-muted-foreground">State Tax (8.88%)</span>
                           <span className="font-medium text-navy">{fmt(v.tax)}</span>
                         </div>
                       )}
                       {v.congestion !== undefined && (
                         <div className="flex justify-between border-b border-border/50 pb-2">
-                          <span className="text-muted-foreground">Congestion Surcharge</span>
+                          <span className="text-muted-foreground">Transit Surcharge</span>
                           <span className="font-medium text-navy">{fmt(v.congestion)}</span>
                         </div>
                       )}
                       <div className="flex justify-between pt-2">
-                        <span className="text-lg font-bold text-navy">SUB TOTAL</span>
-                        <span className="text-xl font-bold text-navy">{fmt(v.total)}</span>
+                        <span className="text-lg font-bold text-[#A27A4B]">Total Fare</span>
+                        <span className="text-xl font-bold text-[#A27A4B]">{fmt(v.total)}</span>
                       </div>
                     </div>
                     

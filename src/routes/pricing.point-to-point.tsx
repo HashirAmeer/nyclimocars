@@ -69,7 +69,7 @@ function P2PPricing() {
           </div>
 
           <p className="mx-auto mt-8 max-w-2xl text-sm italic text-muted-foreground">
-            Your card will not be charged until 24 hours before your trip. Final estimated price confirmed via email.
+            Your card will not be charged until 24 hours before your trip. Confirmation email with Trip Confirmation Number sent within 30 minutes of booking.
           </p>
         </div>
       </section>

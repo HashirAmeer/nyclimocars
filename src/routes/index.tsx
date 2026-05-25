@@ -291,10 +291,11 @@ function HomePage() {
             <div className="mx-auto mt-4 h-px w-24 bg-gold" />
             <div className="mx-auto mt-12 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {airports.map((a) => (
-                <article
-                  key={a.code}
-                  className="group relative isolate flex aspect-[4/5] flex-col items-center justify-end overflow-hidden rounded-xl text-center text-white transition-all hover:-translate-y-1 hover:shadow-2xl"
-                >
+            <Link
+              to={`/airports/${a.code.toLowerCase()}`}
+              key={a.code}
+              className="group relative isolate flex aspect-[4/5] flex-col items-center justify-end overflow-hidden rounded-xl border border-transparent text-center text-white transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-gold"
+            >
                   <img
                     loading="lazy"
                     decoding="async"
@@ -307,7 +308,7 @@ function HomePage() {
                     <p className="text-5xl font-bold text-gold">{a.code}</p>
                     <p className="mt-2 text-sm font-medium leading-snug">{a.name}</p>
                   </div>
-                </article>
+            </Link>
               ))}
             </div>
             <p className="mx-auto mt-8 max-w-3xl text-sm text-muted-foreground">

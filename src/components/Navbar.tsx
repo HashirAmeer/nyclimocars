@@ -15,7 +15,10 @@ const services = [
 
 const pricing = [
   { to: "/pricing/hourly", label: "Hourly Rates" },
-  { to: "/pricing/airport", label: "Airport Rates" },
+  { to: "/airports/jfk", label: "From/To JFK Airport" },
+  { to: "/airports/lga", label: "From/To LaGuardia Airport" },
+  { to: "/airports/ewr", label: "From/To Newark Airport" },
+  { to: "/airports/teb", label: "From/To Teterboro Airport" },
   { to: "/pricing/point-to-point", label: "Point to Point Rates" },
   { to: "/pricing/tours", label: "Tours Rates" },
 ] as const;
@@ -178,7 +181,7 @@ export function Navbar() {
             <Dropdown label="Airports" items={airports} />
             <Dropdown label="Locations" items={locations} />
             <Link to="/about" className={linkClass}>About</Link>
-            <Dropdown label="Pricing" items={pricing} />
+            <Dropdown label="Rates" items={pricing} />
             <Link to="/fleet" className={linkClass}>Fleet</Link>
             <Link to="/contact" className={linkClass}>Contact</Link>
           </nav>
@@ -227,7 +230,7 @@ export function Navbar() {
             <MobileGroup label="Airports" items={airports} onClose={() => setMobileOpen(false)} />
             <MobileGroup label="Locations" items={locations} onClose={() => setMobileOpen(false)} />
             <MobileLink to="/about" onClick={() => setMobileOpen(false)}>About</MobileLink>
-            <MobileGroup label="Pricing" items={pricing} onClose={() => setMobileOpen(false)} />
+            <MobileGroup label="Rates" items={pricing} onClose={() => setMobileOpen(false)} />
             <MobileLink to="/fleet" onClick={() => setMobileOpen(false)}>Fleet</MobileLink>
             <MobileLink to="/contact" onClick={() => setMobileOpen(false)}>Contact</MobileLink>
             <a
