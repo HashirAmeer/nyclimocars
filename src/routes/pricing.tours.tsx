@@ -19,6 +19,7 @@ import { useState } from "react";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { BookingCTA } from "@/components/BookingCTA";
 import { InfoBadges } from "@/components/InfoBadges";
+import { VehicleImageSlider } from "@/components/VehicleImageSlider";
 import { FLEET, fmt } from "@/lib/fleet";
 import { Users, Luggage } from "lucide-react";
 
@@ -49,9 +50,9 @@ function TourVehicleCalc({ name, pax, bags, tour2, tour4, tour6, tour8, image }:
   const total = flat + tax + cc + grat + admin;
 
   return (
-    <div className="mx-auto max-w-4xl rounded-2xl border border-border bg-card shadow-sm overflow-hidden flex flex-col md:flex-row">
-      <div className="bg-secondary/10 p-8 md:w-1/2 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-border">
-        <img src={image} alt={name} className="w-full max-w-[280px] object-contain drop-shadow-xl" />
+    <div className="mx-auto rounded-2xl border border-border bg-card shadow-sm overflow-hidden flex flex-col md:flex-row">
+      <div className="bg-secondary/10 p-8 md:w-1/2 flex flex-col items-center justify-center min-h-[400px] border-b md:border-b-0 md:border-r border-border">
+        <VehicleImageSlider name={name} primaryImage={image} />
         <h4 className="mt-6 text-2xl font-bold text-navy">{name}</h4>
         <div className="mt-4 flex items-center gap-6 text-muted-foreground">
           <div className="flex items-center gap-2">
