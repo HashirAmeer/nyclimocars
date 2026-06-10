@@ -4,19 +4,20 @@ import emailjs from "@emailjs/browser";
 import { PageShell, PageHero } from "@/components/PageShell";
 import {
   Phone, Mail, MapPin, Clock, Minus, Plus, Loader2, Lock,
-  Facebook, Instagram, MessageCircle, ShieldCheck, RefreshCw, CreditCard, CheckCircle2,
+  Facebook, Instagram, ShieldCheck, RefreshCw, CreditCard, CheckCircle2,
 } from "lucide-react";
 import {
   Accordion, AccordionItem, AccordionTrigger, AccordionContent,
 } from "@/components/ui/accordion";
 import { JsonLd, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
 const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
 const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
-const PHONE = "+1 (917) 735-4320";
-const PHONE_HREF = "tel:+19177354320";
+const PHONE = "+1 (917) 438-0858";
+const PHONE_HREF = "tel:+19174380858";
 const EMAIL = "info@nycitylimousine.com";
 
 export const Route = createFileRoute("/contact")({
@@ -306,7 +307,7 @@ function ContactPage() {
                   {[
                     { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
                     { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-                    { icon: MessageCircle, href: "https://wa.me/19177354320", label: "WhatsApp" },
+                    { icon: WhatsAppIcon, href: "https://wa.me/19174380858", label: "WhatsApp" },
                   ].map(({ icon: Icon, href, label }) => (
                     <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                        className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 text-gold transition-colors hover:bg-gold hover:text-navy">

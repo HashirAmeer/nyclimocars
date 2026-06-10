@@ -28,9 +28,9 @@ function VehicleCalc({ name, pax, bags, hourly, image }: { name: string; pax: nu
   const [hours, setHours] = useState(1);
   const flat = hourly * hours;
   const tax = flat * 0.0888;
-  const cc = flat * 0.03;
+  const cc = flat * 0.04;
   const grat = flat * 0.20;
-  const admin = 3.25;
+  const admin = 2.75;
   const total = flat + tax + cc + grat + admin;
 
   return (
@@ -73,7 +73,7 @@ function VehicleCalc({ name, pax, bags, hourly, image }: { name: string; pax: nu
             <span className="font-medium text-navy">{fmt(grat)}</span>
           </div>
           <div className="flex justify-between border-b border-border/50 pb-2">
-            <span className="text-muted-foreground">Transaction Fee (3%)</span>
+            <span className="text-muted-foreground">Transaction Fee (4%)</span>
             <span className="font-medium text-navy">{fmt(cc)}</span>
           </div>
           <div className="flex justify-between border-b border-border/50 pb-2">
@@ -131,7 +131,7 @@ function HourlyPricing() {
             Select a Vehicle &amp; See Your Total
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Every total includes the flat hourly rate plus sales tax, credit card fee, 20% gratuity, and the $3.25 admin fee.
+            Every total includes the flat hourly rate plus sales tax, credit card fee, 20% gratuity, and the $2.75 Transit Surcharge.
           </p>
 
           <div className="mx-auto mt-12 space-y-8">

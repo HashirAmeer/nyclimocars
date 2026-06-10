@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { ArrowUp, MessageCircle } from "lucide-react";
+import { ArrowUp } from "lucide-react";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 export function FloatingActions() {
   const [show, setShow] = useState(false);
@@ -14,14 +15,14 @@ export function FloatingActions() {
   return (
     <>
       <a
-        href="https://wa.me/19177354320"
+        href="https://wa.me/19174380858"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with NY City Limousine on WhatsApp"
         className="fixed bottom-6 left-6 z-40 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lg transition-transform hover:-translate-y-1 hover:scale-105"
         style={{ backgroundColor: "#25D366" }}
       >
-        <MessageCircle className="h-7 w-7" />
+        <WhatsAppIcon className="h-7 w-7" />
       </a>
 
       <button

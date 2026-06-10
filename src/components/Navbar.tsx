@@ -188,11 +188,11 @@ export function Navbar() {
 
           <div className="hidden items-center gap-3 lg:flex">
             <a
-              href="tel:+19177354320"
+              href="tel:+19174380858"
               className="inline-flex items-center gap-2 rounded-full border border-gold/40 px-5 py-2.5 text-sm font-medium text-gold transition-all hover:bg-gold hover:text-navy"
             >
               <Phone className="h-4 w-4" />
-              +1 (917) 735-4320
+              +1 (917) 438-0858
             </a>
           </div>
 
@@ -234,10 +234,10 @@ export function Navbar() {
             <MobileLink to="/fleet" onClick={() => setMobileOpen(false)}>Fleet</MobileLink>
             <MobileLink to="/contact" onClick={() => setMobileOpen(false)}>Contact</MobileLink>
             <a
-              href="tel:+19177354320"
+              href="tel:+19174380858"
               className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-navy"
             >
-              <Phone className="h-4 w-4" /> Call +1 (917) 735-4320
+              <Phone className="h-4 w-4" /> Call +1 (917) 438-0858
             </a>
           </div>
         </aside>

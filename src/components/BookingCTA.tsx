@@ -28,10 +28,10 @@ export function BookingCTA({
             {buttonText}
           </Link>
           <a
-            href="tel:+19177354320"
+            href="tel:+19174380858"
             className="inline-flex items-center justify-center rounded-full border-2 border-white px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-gold"
           >
-            Call +1 (917) 735-4320
+            Call +1 (917) 438-0858
           </a>
         </div>
       </div>

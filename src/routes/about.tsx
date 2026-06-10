@@ -448,11 +448,11 @@ function AboutPage() {
               Book Your Ride
             </Link>
             <a
-              href="tel:+19177354320"
+              href="tel:+19174380858"
               className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white px-8 py-3.5 text-sm font-semibold uppercase tracking-widest text-white transition-all hover:-translate-y-0.5 hover:bg-white hover:text-navy"
             >
               <Phone className="h-4 w-4" />
-              Call +1 (917) 735-4320
+              Call +1 (917) 438-0858
             </a>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Youtube, MessageCircle, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { useState } from "react";
 import { Logo } from "./Logo";
 
@@ -59,7 +60,7 @@ export function Footer() {
             {[
               { Icon: Facebook, label: "Facebook", href: "#" },
               { Icon: Instagram, label: "Instagram", href: "#" },
-              { Icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/19177354320" },
+              { Icon: WhatsAppIcon, label: "WhatsApp", href: "https://wa.me/19174380858" },
               { Icon: Youtube, label: "YouTube", href: "#" },
             ].map(({ Icon, label, href }) => (
               <a
@@ -106,7 +107,7 @@ export function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex items-center justify-center gap-3 lg:justify-start">
               <Phone className="h-4 w-4 text-gold" />
-              <a href="tel:+19177354320" className="hover:text-gold">+1 (917) 735-4320 · 24/7</a>
+              <a href="tel:+19174380858" className="hover:text-gold">+1 (917) 438-0858 · 24/7</a>
             </li>
             <li className="flex items-center justify-center gap-3 lg:justify-start">
               <Mail className="h-4 w-4 text-gold" />
