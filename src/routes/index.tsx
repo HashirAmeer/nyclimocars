@@ -31,6 +31,7 @@ import { FleetSlider } from "@/components/FleetSlider";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      { name: "google-site-verification", content: "K2FcYH3Q37Y8pJhtlgwVHhda6EQ7Ox3-W4MurOmgUz4" },
       { title: "NYC Limo & Black Car Service | Luxury Chauffeur NYC" },
       {
         name: "description",
