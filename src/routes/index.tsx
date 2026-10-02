@@ -26,7 +26,6 @@ import CadillacEscalade from "@/assets/cadillac-escalade.png";
 import BlackLimousine from "@/assets/black-limousine.png";
 import SprinterVan from "@/assets/sprinter-van.png";
 import WhiteStretchLimo from "@/assets/White-Stretch-Limo.webp";
-import { WorldCupPopup } from "@/components/WorldCupPopup";
 import { FleetSlider } from "@/components/FleetSlider";
 
 export const Route = createFileRoute("/")({
@@ -231,7 +230,6 @@ const stats = [
 function HomePage() {
   return (
     <>
-      <WorldCupPopup />
       <PageShell>
         <JsonLd data={localBusinessSchema()} />
         {/* SECTION 1 — HERO */}
