@@ -3,83 +3,105 @@ import { useState } from "react";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { BookingCTA } from "@/components/BookingCTA";
 import { InfoBadges } from "@/components/InfoBadges";
+import { VehicleImageSlider } from "@/components/VehicleImageSlider";
 import { FLEET, fmt } from "@/lib/fleet";
+import { Users, Luggage } from "lucide-react";
 
 export const Route = createFileRoute("/pricing/hourly")({
   head: () => ({
     meta: [
-      { title: "NYC Hourly Limousine Rates | Per Hour Limo Prices | NYC Limo Car" },
+      { title: "NYC Hourly Limousine Rates | Per Hour Limo Prices | NY City Limousine" },
       {
         name: "description",
         content:
-          "View NYC Limo Car's all-inclusive hourly limousine rates for all 12 vehicles. Transparent pricing with sales tax, gratuity, credit card fee, and admin fee all included. Book in New York City.",
+          "View NY City Limousine's all-inclusive hourly limousine rates for all 11 vehicles. Transparent pricing with sales tax, gratuity, credit card fee, and admin fee all included. Book in New York City.",
       },
-      { property: "og:title", content: "NYC Hourly Limo Rates — NYC Limo Car" },
+      { property: "og:title", content: "NYC Hourly Limo Rates — NY City Limousine" },
       { property: "og:description", content: "All-inclusive hourly rates with full breakdown." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1493238792000-8113da705763?w=1600&q=80" },
+      { property: "og:image", content: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
   component: HourlyPricing,
 });
 
-function VehicleCalc({ name, pax, bags, hourly }: { name: string; pax: number; bags: number; hourly: number }) {
+function VehicleCalc({ name, pax, bags, hourly, image }: { name: string; pax: number; bags: number; hourly: number; image: string }) {
   const [hours, setHours] = useState(1);
   const flat = hourly * hours;
   const tax = flat * 0.0888;
-  const cc = flat * 0.03;
+  const cc = flat * 0.04;
   const grat = flat * 0.20;
-  const admin = 3.25;
+  const admin = 2.75;
   const total = flat + tax + cc + grat + admin;
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-border bg-card text-center transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-lg">
-      <div className="bg-navy px-6 py-5 text-white">
-        <h3 className="text-lg font-semibold">{name}</h3>
-        <p className="mt-1 text-xs text-white/70">{pax} passengers · {bags} luggage</p>
+    <div className="mx-auto rounded-2xl border border-border bg-card shadow-sm overflow-hidden flex flex-col md:flex-row">
+      <div className="bg-secondary/10 p-8 md:w-1/2 flex flex-col items-center justify-center min-h-[400px] border-b md:border-b-0 md:border-r border-border">
+        <VehicleImageSlider name={name} primaryImage={image} />
+        <h4 className="mt-6 text-2xl font-bold text-navy">{name}</h4>
+        <div className="mt-4 flex items-center gap-6 text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <Users className="h-5 w-5 text-gold" />
+            <span className="font-medium">{pax} Passengers</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Luggage className="h-5 w-5 text-gold" />
+            <span className="font-medium">{bags} Luggage</span>
+          </div>
+        </div>
       </div>
-      <div className="p-6">
-        <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+      <div className="p-8 md:w-1/2 flex flex-col justify-center">
+        <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           Select Number of Hours
         </label>
         <select
           value={hours}
           onChange={(e) => setHours(Number(e.target.value))}
-          className="mx-auto mt-2 block w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:border-gold focus:outline-none"
+          className="mt-2 block w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:border-gold focus:outline-none"
         >
           {Array.from({ length: 12 }, (_, i) => i + 1).map((h) => (
             <option key={h} value={h}>{h} {h === 1 ? "Hour" : "Hours"}</option>
           ))}
         </select>
-        <table className="mt-5 w-full text-left text-sm">
-          <tbody>
-            <Row label={`Flat Hourly Rate (${hours}h × ${fmt(hourly)})`} value={fmt(flat)} />
-            <Row label="Sales Tax (8.880%)" value={fmt(tax)} />
-            <Row label="Credit Card Fee (3%)" value={fmt(cc)} />
-            <Row label="Gratuity (20%)" value={fmt(grat)} />
-            <Row label="Admin Fee" value={fmt(admin)} />
-            <tr className="border-t-2 border-gold">
-              <td className="py-3 font-semibold text-navy">GRAND TOTAL</td>
-              <td className="py-3 text-right font-display text-xl font-bold text-gold">{fmt(total)}</td>
-            </tr>
-          </tbody>
-        </table>
+
+        <div className="mt-5 space-y-3 text-sm">
+          <div className="flex justify-between border-b border-border/50 pb-2">
+            <span className="text-muted-foreground">Base Rate</span>
+            <span className="font-medium text-navy">{fmt(flat)}</span>
+          </div>
+          <div className="flex justify-between border-b border-border/50 pb-2">
+            <span className="text-muted-foreground">Ride Operations (20%)</span>
+            <span className="font-medium text-navy">{fmt(grat)}</span>
+          </div>
+          <div className="flex justify-between border-b border-border/50 pb-2">
+            <span className="text-muted-foreground">Transaction Fee (4%)</span>
+            <span className="font-medium text-navy">{fmt(cc)}</span>
+          </div>
+          <div className="flex justify-between border-b border-border/50 pb-2">
+            <span className="text-muted-foreground">State Tax (8.88%)</span>
+            <span className="font-medium text-navy">{fmt(tax)}</span>
+          </div>
+          <div className="flex justify-between border-b border-border/50 pb-2">
+            <span className="text-muted-foreground">Transit Surcharge</span>
+            <span className="font-medium text-navy">{fmt(admin)}</span>
+          </div>
+          <div className="flex justify-between pt-2">
+            <span className="text-lg font-bold text-gold">Total Fare</span>
+            <span className="text-xl font-bold text-gold">{fmt(total)}</span>
+          </div>
+        </div>
+
+        <p className="mt-4 text-center text-xs font-medium tracking-wide text-muted-foreground uppercase">
+          NO HIDDEN FEES
+        </p>
+
         <Link
           to="/contact"
-          className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-navy"
+          className="mt-6 w-full rounded-full bg-gold py-3.5 text-center text-sm font-bold text-white shadow-md transition-all hover:bg-navy hover:shadow-lg block"
         >
-          Book {name}
+          Book Now
         </Link>
       </div>
     </div>
-  );
-}
-
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <tr className="border-b border-border/60">
-      <td className="py-2 text-xs text-muted-foreground">{label}</td>
-      <td className="py-2 text-right text-sm font-medium text-navy">{value}</td>
-    </tr>
   );
 }
 
@@ -90,7 +112,7 @@ function HourlyPricing() {
         eyebrow="Hourly Rates"
         title="Hourly Limousine Rates — New York City"
         subtitle="All-Inclusive · No Hidden Fees · Select Hours to See Full Breakdown"
-        image="https://images.unsplash.com/photo-1493238792000-8113da705763?w=1600&q=80"
+        image="https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
 
       <InfoBadges
@@ -109,12 +131,12 @@ function HourlyPricing() {
             Select a Vehicle &amp; See Your Total
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Every total includes the flat hourly rate plus sales tax, credit card fee, 20% gratuity, and the $3.25 admin fee.
+            Every total includes the flat hourly rate plus sales tax, credit card fee, 20% gratuity, and the $2.75 Transit Surcharge.
           </p>
 
-          <div className="mx-auto mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-12 space-y-8">
             {FLEET.map((v) => (
-              <VehicleCalc key={v.name} name={v.name} pax={v.pax} bags={v.bags} hourly={v.hourly} />
+              <VehicleCalc key={v.name} name={v.name} pax={v.pax} bags={v.bags} hourly={v.hourly} image={v.image} />
             ))}
           </div>
 

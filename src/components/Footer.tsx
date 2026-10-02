@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Youtube, MessageCircle, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { useState } from "react";
 import { Logo } from "./Logo";
 
@@ -22,7 +23,7 @@ export function Footer() {
         <div className="container-luxury py-12 text-center">
           <h3 className="text-2xl font-semibold text-white">Get Exclusive Deals</h3>
           <p className="mx-auto mt-2 max-w-md text-sm text-white/70">
-            Subscribe for VIP offers and seasonal promotions from NYC Limo Car.
+            Subscribe for VIP offers and seasonal promotions from NY City Limousine.
           </p>
           <form onSubmit={subscribe} className="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row">
             <label htmlFor="newsletter-email" className="sr-only">Email address</label>
@@ -59,7 +60,7 @@ export function Footer() {
             {[
               { Icon: Facebook, label: "Facebook", href: "#" },
               { Icon: Instagram, label: "Instagram", href: "#" },
-              { Icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/12125550199" },
+              { Icon: WhatsAppIcon, label: "WhatsApp", href: "https://wa.me/19174380858" },
               { Icon: Youtube, label: "YouTube", href: "#" },
             ].map(({ Icon, label, href }) => (
               <a
@@ -94,9 +95,9 @@ export function Footer() {
             <li><Link to="/services/airport" className="hover:text-gold">Airport Service</Link></li>
             <li><Link to="/services/hourly" className="hover:text-gold">Hourly Service</Link></li>
             <li><Link to="/services/point-to-point" className="hover:text-gold">Point to Point</Link></li>
-            <li><Link to="/services/tours" className="hover:text-gold">Tours</Link></li>
-            <li><Link to="/services/hourly" className="hover:text-gold">Event Transportation</Link></li>
-            <li><Link to="/services/hourly" className="hover:text-gold">Corporate Travel</Link></li>
+            <li><Link to="/services/tours" className="hover:text-gold">Private NYC Tours</Link></li>
+            <li><Link to="/services/wedding" className="hover:text-gold">Wedding Transportation</Link></li>
+            <li><Link to="/services/corporate" className="hover:text-gold">Corporate Transportation</Link></li>
           </ul>
         </div>
 
@@ -106,12 +107,12 @@ export function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex items-center justify-center gap-3 lg:justify-start">
               <Phone className="h-4 w-4 text-gold" />
-              <a href="tel:+12125550199" className="hover:text-gold">(212) 555-0199 · 24/7</a>
+              <a href="tel:+19174380858" className="hover:text-gold">+1 (917) 438-0858 · 24/7</a>
             </li>
             <li className="flex items-center justify-center gap-3 lg:justify-start">
               <Mail className="h-4 w-4 text-gold" />
-              <a href="mailto:reservations@nyclimocar.com" className="hover:text-gold">
-                reservations@nyclimocar.com
+              <a href="mailto:info@nycitylimousine.com" className="hover:text-gold">
+                info@nycitylimousine.com
               </a>
             </li>
             <li className="flex items-center justify-center gap-3 lg:justify-start">
@@ -128,7 +129,7 @@ export function Footer() {
 
       <div className="border-t border-gold/20">
         <div className="container-luxury flex flex-col items-center justify-center gap-3 py-6 text-center text-xs text-white/60 md:flex-row md:justify-between">
-          <p>© {new Date().getFullYear()} NYC Limo Car. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} NY City Limousine. All Rights Reserved.</p>
           <div className="flex gap-5">
             <a href="#" className="hover:text-gold">Privacy Policy</a>
             <a href="#" className="hover:text-gold">Terms of Service</a>

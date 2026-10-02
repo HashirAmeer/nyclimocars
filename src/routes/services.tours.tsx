@@ -3,16 +3,16 @@ import { PageShell, PageHero } from "@/components/PageShell";
 import { MiniFleet } from "@/components/MiniFleet";
 import { BookingCTA } from "@/components/BookingCTA";
 import { FLEET, fmt } from "@/lib/fleet";
-import { Award, Lock, ListChecks, Hotel, BookOpen, Clock } from "lucide-react";
+import { Award, Lock, ListChecks, Hotel, BookOpen, Clock, Check } from "lucide-react";
 
 export const Route = createFileRoute("/services/tours")({
   head: () => ({
     meta: [
-      { title: "NYC Limousine Tours | Private Sightseeing Tours New York City | NYC Limo Car" },
-      { name: "description", content: "Explore NYC in luxury with NYC Limo Car's private limousine tours. Times Square, Central Park, Statue of Liberty & more. All-inclusive packages. Night tours, shopping tours, guided tours available." },
-      { property: "og:title", content: "Private Limousine Tours of New York City" },
-      { property: "og:description", content: "All-inclusive private tour packages of NYC." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1600&q=80" },
+      { title: "Private NYC Limo Tours | Luxury Sightseeing New York" },
+      { name: "description", content: "Custom private NYC tours in a luxury limousine or SUV. Expert chauffeurs, flexible itineraries (Manhattan, Brooklyn, Night Tours). Discover New York in style." },
+      { property: "og:title", content: "Private NYC Limo Tours | Luxury Sightseeing New York" },
+      { property: "og:description", content: "Custom private NYC tours in a luxury limousine or SUV. Expert chauffeurs, flexible itineraries (Manhattan, Brooklyn, Night Tours). Discover New York in style." },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1600712364716-eab8cabac7d0?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
     ],
   }),
   component: ToursPage,
@@ -21,23 +21,23 @@ export const Route = createFileRoute("/services/tours")({
 const TOURS = [
   {
     title: "Classic NYC Sightseeing Tour",
-    image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=900&q=80",
-    desc: "Visit Times Square, Central Park, Brooklyn Bridge, Statue of Liberty views, Rockefeller Center, Greenwich Village, the Lower East Side, and more. Starting from 3 hours — stop whenever you like for photos or shopping sessions. You will not see this much of NYC in such a short time on your own!",
+    image: "https://images.pexels.com/photos/290386/pexels-photo-290386.jpeg?auto=compress&cs=tinysrgb&w=900",
+    desc: "Visit Times Square, Central Park, Brooklyn Bridge, Statue of Liberty views, Rockefeller Center, Greenwich Village, and more. Stop whenever you like for photos or shopping.",
   },
   {
     title: "NYC Night Lights Tour",
-    image: "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=900&q=80",
-    desc: "Witness the magic of New York City come alive after dark. Marvel at the glittering skyline, the illuminated skyscrapers, and the electric energy of Manhattan by night. An unforgettable experience for first-time visitors and lifelong New Yorkers alike.",
+    image: "https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?auto=compress&cs=tinysrgb&w=900",
+    desc: "Witness New York City come alive after dark. Marvel at the glittering skyline, illuminated skyscrapers, and the electric energy of Manhattan by night.",
   },
   {
     title: "NYC Tour with Licensed Guide",
-    image: "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=900&q=80",
-    desc: "The complete limousine sightseeing experience with a licensed, knowledgeable tour guide. Get historical context, insider stories about famous sites, and personalized recommendations. Our guides speak English, Spanish, French, German, and Italian.",
+    image: "https://images.pexels.com/photos/2224861/pexels-photo-2224861.jpeg?auto=compress&cs=tinysrgb&w=900",
+    desc: "The complete limousine experience with a licensed tour guide. Get historical context and insider stories across all five boroughs.",
   },
   {
     title: "Shopping Tour to Woodbury Common",
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900&q=80",
-    desc: "Located one hour north of NYC, Woodbury Common Premium Outlets is a colonial-style village housing 220+ designer brands including Banana Republic, Coach, Dior, Versace, and more. Or explore Manhattan's finest boutiques and shopping destinations in luxury.",
+    image: "https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg?auto=compress&cs=tinysrgb&w=900",
+    desc: "Visit Woodbury Common Premium Outlets featuring 220+ designer brands including Coach, Dior, and Versace — one hour north of NYC.",
   },
 ];
 
@@ -48,6 +48,16 @@ const BENEFITS = [
   { icon: Hotel, title: "Hotel Pick & Drop", desc: "Default pick-up and drop-off at your hotel." },
   { icon: BookOpen, title: "Educational & Entertaining", desc: "Informative guides cover history, culture, and hidden gems." },
   { icon: Clock, title: "Time-Saving", desc: "See in hours what would take days to explore on your own." },
+];
+
+const INCLUDED = [
+  "Professional licensed chauffeur",
+  "All vehicle costs and fuel",
+  "Taxes and tolls",
+  "Gratuity",
+  "Complimentary non-alcoholic beverages",
+  "Champagne service inside limousines",
+  "Hotel pick-up and drop-off",
 ];
 
 const TERMS = [
@@ -63,8 +73,8 @@ function ToursPage() {
       <PageHero
         eyebrow="City Tours"
         title="Private Limousine Tours of New York City"
-        subtitle="See the City Like Never Before — All-Inclusive Private Tour Packages"
-        image="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1600&q=80"
+        subtitle="See NYC Like Never Before — All-Inclusive Private Tour Packages"
+        image="https://images.unsplash.com/photo-1600712364716-eab8cabac7d0?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       />
       <div className="bg-background">
         <div className="container-luxury mx-auto py-8 text-center">
@@ -76,8 +86,9 @@ function ToursPage() {
 
       <section className="bg-background pb-16 pt-4">
         <div className="container-luxury mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-semibold text-navy md:text-4xl mb-6">Discover New York City on Your Terms</h2>
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Experience the Big Apple with NYC Limo Car's exclusive private limousine tour packages. NYC Limo Car gives you a tour of the city that would take 4–5 days on your own — covered in just a few hours. We are well-known for providing historical, informative, enjoyable, and memorable tours. All our tour packages can be customized to suit your group. Our knowledgeable chauffeur-guides are native English speakers; several foreign language experts are also available upon request. Pick-up and drop-off at your hotel.
+            Experience the Big Apple with NY City Limousine's exclusive private limousine tour packages. We give you a tour of the city that would take 4 to 5 days on your own — covered in just a few hours. We are well known for providing historical, informative, enjoyable, and memorable tours. All tour packages can be customized to suit your group. Our knowledgeable chauffeur-guides are native English speakers. Pick-up and drop-off at your hotel.
           </p>
         </div>
       </section>
@@ -86,7 +97,7 @@ function ToursPage() {
       <section className="bg-secondary/30 py-20">
         <div className="container-luxury mx-auto text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Tour Packages</p>
-          <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-semibold text-navy md:text-4xl">Choose Your Adventure</h2>
+          <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-semibold text-navy md:text-4xl">Popular NYC Private Tour Itineraries</h2>
           <div className="mx-auto mt-12 grid gap-6 md:grid-cols-2">
             {TOURS.map((t) => (
               <div key={t.title} className="overflow-hidden rounded-2xl border border-border bg-card text-center transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-lg">
@@ -104,7 +115,7 @@ function ToursPage() {
       {/* Benefits */}
       <section className="bg-background py-20">
         <div className="container-luxury mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-navy md:text-4xl">Why Tour with Us</h2>
+          <h3 className="text-3xl font-semibold text-navy md:text-4xl">Why Tour with Us</h3>
           <div className="mx-auto mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {BENEFITS.map(({ icon: Icon, title, desc }) => (
               <div key={title} className="rounded-2xl border border-border bg-card p-7 text-center transition-all hover:-translate-y-1 hover:border-gold/60 hover:shadow-lg">
@@ -119,8 +130,23 @@ function ToursPage() {
         </div>
       </section>
 
-      {/* Terms */}
+      {/* What's Included */}
       <section className="bg-secondary/30 py-16">
+        <div className="container-luxury mx-auto text-center">
+          <h3 className="text-2xl font-semibold text-navy md:text-3xl">What's Included</h3>
+          <ul className="mx-auto mt-8 grid max-w-2xl gap-3 text-left sm:grid-cols-2">
+            {INCLUDED.map((i) => (
+              <li key={i} className="flex items-start gap-3 rounded-lg bg-card p-4 shadow-sm">
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+                <span className="text-sm text-navy">{i}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Terms */}
+      <section className="bg-background py-16">
         <div className="container-luxury mx-auto">
           <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-card p-8 text-center shadow-sm">
             <h3 className="text-lg font-semibold text-navy">Terms &amp; Conditions</h3>
@@ -139,9 +165,9 @@ function ToursPage() {
       <section className="bg-background py-20">
         <div className="container-luxury mx-auto text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Tour Pricing</p>
-          <h2 className="mx-auto mt-3 max-w-3xl text-3xl font-semibold text-navy md:text-4xl">
+          <h3 className="mx-auto mt-3 max-w-3xl text-3xl font-semibold text-navy md:text-4xl">
             NYC Limousine Tour Rates — All-Inclusive
-          </h2>
+          </h3>
           <div className="mx-auto mt-10 max-w-6xl overflow-x-auto rounded-2xl border border-border bg-card shadow-sm">
             <table className="w-full text-center text-sm">
               <thead className="bg-navy text-white">
@@ -171,6 +197,34 @@ function ToursPage() {
           <p className="mx-auto mt-6 max-w-3xl text-sm text-muted-foreground">
             All tour rates are all-inclusive: vehicle, chauffeur, taxes, tolls, gratuity, and complimentary beverages. Champagne included inside limousines. Minimum 2-hour booking required.
           </p>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-secondary/30 py-20">
+        <div className="container-luxury mx-auto">
+          <h2 className="text-center text-3xl font-semibold text-navy md:text-4xl">Frequently Asked Questions</h2>
+          <div className="mx-auto mt-12 max-w-3xl space-y-6 text-left">
+            {[
+              {
+                q: "Can we customize our tour itinerary?",
+                a: "Absolutely. Our tours are 100% private and customizable. You can provide a wish list of locations or let our expert chauffeurs guide you through the city's highlights.",
+              },
+              {
+                q: "Is there a minimum booking time for tours?",
+                a: "Yes, the minimum booking for our private NYC tours is 2 hours.",
+              },
+              {
+                q: "Do you provide a tour guide or just a driver?",
+                a: "Our chauffeurs are highly knowledgeable 'chauffeur-guides' who provide historical context. For a more in-depth experience, you can specifically request a licensed professional tour guide to accompany you.",
+              },
+            ].map((faq, i) => (
+              <div key={i} className="rounded-xl border border-border bg-card p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-navy">Q: {faq.q}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">A: {faq.a}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

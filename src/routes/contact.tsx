@@ -4,29 +4,30 @@ import emailjs from "@emailjs/browser";
 import { PageShell, PageHero } from "@/components/PageShell";
 import {
   Phone, Mail, MapPin, Clock, Minus, Plus, Loader2, Lock,
-  Facebook, Instagram, MessageCircle, ShieldCheck, RefreshCw, CreditCard,
+  Facebook, Instagram, ShieldCheck, RefreshCw, CreditCard, CheckCircle2,
 } from "lucide-react";
 import {
   Accordion, AccordionItem, AccordionTrigger, AccordionContent,
 } from "@/components/ui/accordion";
 import { JsonLd, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
 const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
 const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
-const PHONE = "(212) 555-0199";
-const PHONE_HREF = "tel:+12125550199";
-const EMAIL = "reservations@nyclimocar.com";
+const PHONE = "+1 (917) 438-0858";
+const PHONE_HREF = "tel:+19174380858";
+const EMAIL = "info@nycitylimousine.com";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Book a Limo | Contact NYC Limo Car | Luxury Limousine New York City" },
-      { name: "description", content: "Book your NYC Limo Car luxury limousine online or by phone. Airport transfers, hourly service, tours, point-to-point rides across New York City. Available 24/7. Fast response guaranteed." },
-      { property: "og:title", content: "Book a Limo | NYC Limo Car" },
-      { property: "og:description", content: "Reserve your luxury limousine in New York City — available 24/7." },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1496588152823-86ff7695e68f?w=1600&q=70" },
+      { title: "Contact NYC Limo | Book Your Ride | 24/7 Reservations" },
+      { name: "description", content: "Contact our NYC limousine & black car service. Book online, call 24/7, or email for corporate accounts, group bookings & custom quotes. We respond within one hour." },
+      { property: "og:title", content: "Contact NYC Limo | Book Your Ride | 24/7 Reservations" },
+      { property: "og:description", content: "Contact our NYC limousine & black car service. Book online, call 24/7, or email for corporate accounts, group bookings & custom quotes. We respond within one hour." },
+      { property: "og:image", content: "https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600" },
     ],
   }),
   component: ContactPage,
@@ -35,11 +36,25 @@ export const Route = createFileRoute("/contact")({
 const VEHICLES = [
   "No Preference", "Lincoln Sedan", "Cadillac Sedan", "Chevrolet SUV",
   "Cadillac Escalade", "Mercedes C Class", "Mercedes S Class",
-  "Black Limousine", "White Limousine", "Sprinter Van",
-  "Hummer Limousine", "Party Bus", "Coach Bus",
+  "Black Limousine", "White Stretch Limousine", "Sprinter Van",
+  "Hummer Limousine", "Coach Bus",
 ];
 
-const SERVICES = ["Hourly Service", "Airport Service", "Point to Point", "Tours Service"];
+const SERVICES = [
+  "Hourly Service",
+  "Airport Service",
+  "Point to Point",
+  "Tours Service",
+  "Wedding Transportation",
+  "Corporate Transportation",
+];
+
+const AIRPORTS = [
+  "JFK Airport",
+  "LaGuardia Airport (LGA)",
+  "Newark Airport (EWR)",
+  "Teterboro Airport (TEB)",
+];
 
 type Errors = Record<string, string>;
 
@@ -47,6 +62,7 @@ function ContactPage() {
   const formRef = useRef<HTMLFormElement>(null);
   const [passengers, setPassengers] = useState(1);
   const [luggage, setLuggage] = useState(0);
+  const [selectedService, setSelectedService] = useState("");
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
@@ -57,6 +73,7 @@ function ContactPage() {
     const e: Errors = {};
     const fd = new FormData(form);
     const required = ["service", "pickup_date", "pickup_time", "pickup_location", "dropoff_location", "from_name", "phone", "reply_to"];
+    if (fd.get("service") === "Airport Service") required.push("airport");
     for (const key of required) {
       if (!String(fd.get(key) ?? "").trim()) e[key] = "This field is required";
     }
@@ -96,9 +113,9 @@ function ContactPage() {
     <PageShell>
       <PageHero
         eyebrow="Contact & Reservations"
-        title="Book Your Luxury Limousine"
-        subtitle="Reserve Online or Call Us 24/7 — We Respond Within 30 Minutes"
-        image="https://images.unsplash.com/photo-1496588152823-86ff7695e68f?w=1600&q=70"
+        title="Book Your NYC Limo — Contact Us 24 Hours a Day, 7 Days a Week"
+        subtitle="Three ways to reach us. All three are staffed and monitored around the clock."
+        image="https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1600"
       />
 
       {/* Breadcrumb */}
@@ -110,105 +127,21 @@ function ContactPage() {
         </div>
       </div>
 
-      {/* Two-column layout */}
+      {/* SECTION 1 — BOOKING FORM (TOP) */}
       <section className="bg-background py-16 md:py-20">
-        <div className="container-luxury max-w-6xl mx-auto grid gap-10 lg:grid-cols-2 lg:gap-12">
-          {/* LEFT — Contact info */}
-          <div className="text-center space-y-8">
-            <div>
-              <h2 className="text-3xl font-semibold text-navy md:text-4xl">Get In Touch</h2>
-              <div className="mx-auto mt-4 h-px w-20 bg-gold" />
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                { icon: Phone, label: "Phone", value: PHONE, sub: "Available 24/7", href: PHONE_HREF },
-                { icon: Mail, label: "Email", value: EMAIL, sub: "Reply within 30 min", href: `mailto:${EMAIL}` },
-                { icon: MapPin, label: "Location", value: "New York City, NY", sub: "Serving Tri-State Area" },
-                { icon: Clock, label: "Hours", value: "24 / 7 / 365", sub: "Always available" },
-              ].map(({ icon: Icon, label, value, sub, href }) => {
-                const inner = (
-                  <>
-                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-navy text-gold">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-gold">{label}</p>
-                    <p className="mt-1 font-medium text-navy">{value}</p>
-                    <p className="text-xs text-muted-foreground">{sub}</p>
-                  </>
-                );
-                return href ? (
-                  <a key={label} href={href} className="rounded-xl border border-border bg-card p-5 transition-all hover:border-gold/60 hover:shadow-md">
-                    {inner}
-                  </a>
-                ) : (
-                  <div key={label} className="rounded-xl border border-border bg-card p-5">{inner}</div>
-                );
-              })}
-            </div>
-
-            {/* Booking policy */}
-            <div className="rounded-2xl bg-navy p-6 text-center text-white md:p-8">
-              <h3 className="text-lg font-semibold text-gold">Booking Policy</h3>
-              <p className="mt-3 text-sm leading-relaxed text-white/85">
-                Upon submitting your reservation form, you will be entered into our system. Your credit card will not be charged until 24 hours before your trip. You will receive a follow-up email with your Trip Confirmation Number and the final estimated price. After receiving your Trip Confirmation Number, your vehicle is guaranteed to be there waiting for you.
-              </p>
-            </div>
-
-            {/* Trust cards */}
-            <div className="grid gap-3 sm:grid-cols-3">
-              {[
-                { icon: ShieldCheck, text: "No Charge Until 24hrs Before Trip" },
-                { icon: RefreshCw, text: "Free Cancellation Up to 24 Hours" },
-                { icon: CreditCard, text: "All Major Credit Cards Accepted" },
-              ].map(({ icon: Icon, text }) => (
-                <div key={text} className="rounded-xl border border-border bg-card p-4 text-center">
-                  <Icon className="mx-auto h-6 w-6 text-gold" />
-                  <p className="mt-2 text-xs font-medium text-navy">{text}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Map */}
-            <div className="overflow-hidden rounded-2xl border border-border shadow-sm">
-              <iframe
-                title="NYC Limo Car location"
-                src="https://www.google.com/maps?q=New+York+City&output=embed"
-                width="100%"
-                height="280"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="block w-full"
-              />
-            </div>
-
-            {/* Social */}
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-gold">Follow Us</p>
-              <div className="mt-3 flex justify-center gap-4">
-                {[
-                  { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-                  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-                  { icon: MessageCircle, href: "https://wa.me/12125550199", label: "WhatsApp" },
-                ].map(({ icon: Icon, href, label }) => (
-                  <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-                     className="flex h-11 w-11 items-center justify-center rounded-full bg-navy text-gold transition-transform hover:scale-110">
-                    <Icon className="h-5 w-5" />
-                  </a>
-                ))}
-              </div>
-            </div>
+        <div className="container-luxury max-w-4xl mx-auto">
+          <div className="text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Reservations</p>
+            <h2 className="mt-3 text-3xl font-semibold text-navy md:text-5xl">Online Booking</h2>
+            <div className="mx-auto mt-5 h-px w-24 bg-gold" />
+            <p className="mx-auto mt-6 max-w-2xl text-muted-foreground leading-relaxed">
+              Use our instant booking form. Enter your pickup address, destination, vehicle preference, date, and time. Receive a fixed quote and confirmation immediately. Your chauffeur's direct contact number arrives 24 hours before pickup.
+            </p>
           </div>
 
-          {/* RIGHT — Booking form */}
-          <div>
-            <div className="text-center">
-              <h2 className="text-3xl font-semibold text-navy md:text-4xl">Reserve Your Ride</h2>
-              <div className="mx-auto mt-4 h-px w-20 bg-gold" />
-            </div>
-
+          <div className="mt-12">
             {sent ? (
-              <div className="mt-8 rounded-2xl border border-gold/40 bg-card p-10 text-center shadow-lg">
+              <div className="rounded-2xl border border-gold/40 bg-card p-10 text-center shadow-lg">
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold/15 text-gold">
                   <ShieldCheck className="h-7 w-7" />
                 </div>
@@ -224,17 +157,36 @@ function ContactPage() {
               <form
                 ref={formRef}
                 onSubmit={onSubmit}
-                className="mt-8 rounded-2xl border border-border bg-card p-6 shadow-lg md:p-8 space-y-5"
+                className="rounded-2xl border border-border bg-card p-6 shadow-xl md:p-10 space-y-6"
               >
-                <FieldWrap label="Select Service *" error={errors.service}>
-                  <select name="service" defaultValue=""
-                    className={`w-full rounded-lg border ${errBorder("service")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`}>
-                    <option value="" disabled>Choose a service…</option>
-                    {SERVICES.map(s => <option key={s} value={s}>{s}</option>)}
-                  </select>
-                </FieldWrap>
+                <div className="grid gap-6 md:grid-cols-2">
+                  <FieldWrap label="Select Service *" error={errors.service}>
+                    <select
+                      name="service"
+                      value={selectedService}
+                      onChange={(e) => setSelectedService(e.target.value)}
+                      className={`w-full rounded-lg border ${errBorder("service")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`}
+                    >
+                      <option value="" disabled>Choose a service…</option>
+                      {SERVICES.map(s => <option key={s} value={s}>{s}</option>)}
+                    </select>
+                  </FieldWrap>
 
-                <div className="grid gap-5 sm:grid-cols-2">
+                  {selectedService === "Airport Service" && (
+                    <FieldWrap label="Select Airport *" error={errors.airport}>
+                      <select
+                        name="airport"
+                        defaultValue=""
+                        className={`w-full rounded-lg border ${errBorder("airport")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`}
+                      >
+                        <option value="" disabled>Choose an airport…</option>
+                        {AIRPORTS.map(a => <option key={a} value={a}>{a}</option>)}
+                      </select>
+                    </FieldWrap>
+                  )}
+                </div>
+
+                <div className="grid gap-6 sm:grid-cols-2">
                   <FieldWrap label="Pickup Date *" error={errors.pickup_date}>
                     <input type="date" name="pickup_date" min={today}
                       className={`w-full rounded-lg border ${errBorder("pickup_date")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
@@ -245,34 +197,33 @@ function ContactPage() {
                   </FieldWrap>
                 </div>
 
-                <FieldWrap label="Pickup Location *" error={errors.pickup_location}>
-                  <input type="text" name="pickup_location" placeholder="Enter full pickup address"
-                    className={`w-full rounded-lg border ${errBorder("pickup_location")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
-                </FieldWrap>
-
-                <FieldWrap label="Drop-off Location *" error={errors.dropoff_location}>
-                  <input type="text" name="dropoff_location" placeholder="Enter full drop-off address"
-                    className={`w-full rounded-lg border ${errBorder("dropoff_location")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
-                </FieldWrap>
-
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <CounterField label="Number of Passengers *" name="passengers" value={passengers} setValue={setPassengers} min={1} max={50} />
-                  <CounterField label="Number of Luggage *" name="luggage" value={luggage} setValue={setLuggage} min={0} max={50} />
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <FieldWrap label="Pickup Location *" error={errors.pickup_location}>
+                    <input type="text" name="pickup_location" placeholder="Address, Hotel, or Airport Terminal"
+                      className={`w-full rounded-lg border ${errBorder("pickup_location")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
+                  </FieldWrap>
+                  <FieldWrap label="Drop-off Location *" error={errors.dropoff_location}>
+                    <input type="text" name="dropoff_location" placeholder="Destination address"
+                      className={`w-full rounded-lg border ${errBorder("dropoff_location")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
+                  </FieldWrap>
                 </div>
 
-                <FieldWrap label="Preferred Vehicle">
-                  <select name="vehicle" defaultValue="No Preference"
-                    className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none">
-                    {VEHICLES.map(v => <option key={v} value={v}>{v}</option>)}
-                  </select>
-                </FieldWrap>
+                <div className="grid gap-6 sm:grid-cols-3">
+                  <CounterField label="Passengers *" name="passengers" value={passengers} setValue={setPassengers} min={1} max={50} />
+                  <CounterField label="Luggage *" name="luggage" value={luggage} setValue={setLuggage} min={0} max={50} />
+                  <FieldWrap label="Preferred Vehicle">
+                    <select name="vehicle" defaultValue="No Preference"
+                      className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none">
+                      {VEHICLES.map(v => <option key={v} value={v}>{v}</option>)}
+                    </select>
+                  </FieldWrap>
+                </div>
 
-                <FieldWrap label="Full Name *" error={errors.from_name}>
-                  <input type="text" name="from_name"
-                    className={`w-full rounded-lg border ${errBorder("from_name")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
-                </FieldWrap>
-
-                <div className="grid gap-5 sm:grid-cols-2">
+                <div className="grid gap-6 sm:grid-cols-3">
+                  <FieldWrap label="Full Name *" error={errors.from_name}>
+                    <input type="text" name="from_name"
+                      className={`w-full rounded-lg border ${errBorder("from_name")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
+                  </FieldWrap>
                   <FieldWrap label="Contact Number *" error={errors.phone}>
                     <input type="tel" name="phone"
                       className={`w-full rounded-lg border ${errBorder("phone")} bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none`} />
@@ -284,7 +235,7 @@ function ContactPage() {
                 </div>
 
                 <FieldWrap label="Special Requests or Notes">
-                  <textarea name="message" rows={4}
+                  <textarea name="message" rows={3}
                     placeholder="Flight number, special occasions, additional stops, accessibility needs, etc."
                     className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none" />
                 </FieldWrap>
@@ -293,20 +244,158 @@ function ContactPage() {
                   <p className="text-center text-sm text-destructive">{errors._form}</p>
                 )}
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[#A27A4B] px-6 py-4 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#8a6740] disabled:opacity-70"
-                >
-                  {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> Sending...</>) : "Book My Ride"}
-                </button>
-
-                <p className="flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
-                  <Lock className="h-3 w-3" />
-                  Secure booking. Your credit card will not be charged until 24 hours before your trip.
-                </p>
+                <div className="flex flex-col items-center gap-4">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="flex w-full max-w-md items-center justify-center gap-2 rounded-full bg-gold px-8 py-4 text-base font-bold text-white shadow-xl transition-all hover:bg-navy hover:-translate-y-0.5 disabled:opacity-70"
+                  >
+                    {loading ? (<><Loader2 className="h-5 w-5 animate-spin" /> Processing...</>) : "Reserve My Limousine"}
+                  </button>
+                  <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <Lock className="h-3 w-3" />
+                    Secure booking. No charge until 24 hours before trip.
+                  </p>
+                </div>
               </form>
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 2 — CONTACT INFO & MAP */}
+      <section className="bg-secondary/20 py-16">
+        <div className="container-luxury max-w-6xl mx-auto">
+          <div className="grid gap-12 lg:grid-cols-2">
+            {/* Contact Details */}
+            <div className="space-y-10">
+              <div>
+                <h2 className="text-3xl font-semibold text-navy">Other Ways to Reach Us</h2>
+                <div className="mt-4 h-px w-20 bg-gold" />
+              </div>
+
+              <div className="grid gap-5 sm:grid-cols-2">
+                {[
+                  { icon: Phone, label: "Phone", value: PHONE, sub: "Available 24/7", href: PHONE_HREF },
+                  { icon: Mail, label: "Email", value: EMAIL, sub: "Reply within 30 min", href: `mailto:${EMAIL}` },
+                  { icon: MapPin, label: "Location", value: "New York City, NY", sub: "Serving Tri-State Area" },
+                  { icon: Clock, label: "Hours", value: "24 / 7 / 365", sub: "Always available" },
+                ].map(({ icon: Icon, label, value, sub, href }) => (
+                  <div key={label} className="flex gap-4 rounded-xl border border-border bg-card p-5">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy text-gold">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-gold">{label}</p>
+                      {href ? (
+                        <a href={href} className="mt-1 block font-semibold text-navy hover:text-gold">{value}</a>
+                      ) : (
+                        <p className="mt-1 font-semibold text-navy">{value}</p>
+                      )}
+                      <p className="text-xs text-muted-foreground">{sub}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="rounded-2xl bg-navy p-8 text-white">
+                <h3 className="text-lg font-semibold text-gold">Immediate Assistance</h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/85">
+                  Need a ride right now? Our dispatchers are standing by 24 hours a day to assist with immediate bookings and last-minute changes. Call us directly for the fastest service.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-4">
+                  {[
+                    { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+                    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+                    { icon: WhatsAppIcon, href: "https://wa.me/19174380858", label: "WhatsApp" },
+                  ].map(({ icon: Icon, href, label }) => (
+                    <a key={label} href={href} target="_blank" rel="noopener noreferrer"
+                       className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 text-gold transition-colors hover:bg-gold hover:text-navy">
+                      <Icon className="h-5 w-5" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Map & Policy */}
+            <div className="space-y-8">
+              <div className="overflow-hidden rounded-2xl border border-border shadow-md h-64 lg:h-80">
+                <iframe
+                  title="NY City Limousine location"
+                  src="https://www.google.com/maps?q=New+York+City&output=embed"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  className="block"
+                />
+              </div>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { icon: ShieldCheck, text: "No Charge Until 24hrs Before" },
+                  { icon: RefreshCw, text: "Free Cancellation Up to 24hrs" },
+                  { icon: CreditCard, text: "All Major Cards Accepted" },
+                ].map(({ icon: Icon, text }) => (
+                  <div key={text} className="rounded-xl border border-border bg-card p-4 text-center shadow-sm">
+                    <Icon className="mx-auto h-5 w-5 text-gold" />
+                    <p className="mt-2 text-[10px] font-bold leading-tight text-navy">{text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* SECTION 3 — ADDITIONAL CONTACT INFO */}
+      <section className="bg-background py-16 md:py-20">
+        <div className="container-luxury max-w-5xl mx-auto space-y-12">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="flex gap-5 rounded-2xl border border-border bg-card p-8 shadow-sm">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-navy/5 text-navy">
+                <Phone className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-navy">Phone — 24/7 Dispatch</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  Call our dispatch line for same-day bookings, last-minute changes, and immediate assistance. Our dispatch team is available every hour of every day, including all public holidays.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-5 rounded-2xl border border-border bg-card p-8 shadow-sm">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-navy/5 text-navy">
+                <Mail className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-navy">Email — Corporate & Groups</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  For corporate account enquiries, group bookings of 5 or more passengers, event fleet planning, or custom quotes for non-standard routes, email our reservations team.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-xl border-l-4 border-l-gold bg-secondary/30 p-8 shadow-sm">
+            <div className="flex items-center gap-3">
+              <Clock className="h-6 w-6 text-gold" />
+              <h3 className="text-xl font-bold text-navy">Expected Response Times</h3>
+            </div>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+              <li className="flex items-center gap-2 rounded-lg bg-white p-3 text-sm text-navy shadow-sm border border-border/50">
+                <CheckCircle2 className="h-4 w-4 text-gold shrink-0" /> 
+                <span><strong>Online:</strong> Instant</span>
+              </li>
+              <li className="flex items-center gap-2 rounded-lg bg-white p-3 text-sm text-navy shadow-sm border border-border/50">
+                <CheckCircle2 className="h-4 w-4 text-gold shrink-0" /> 
+                <span><strong>Phone:</strong> Immediate, 24/7</span>
+              </li>
+              <li className="flex items-center gap-2 rounded-lg bg-white p-3 text-sm text-navy shadow-sm border border-border/50">
+                <CheckCircle2 className="h-4 w-4 text-gold shrink-0" /> 
+                <span><strong>Email:</strong> 1 hr (business hrs)</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -328,8 +417,8 @@ function ContactPage() {
       </section>
       <JsonLd data={faqSchema(FAQS)} />
       <JsonLd data={breadcrumbSchema([
-        { name: "Home", url: "https://www.nyclimocar.com/" },
-        { name: "Contact", url: "https://www.nyclimocar.com/contact" },
+        { name: "Home", url: "https://www.nycitylimousine.com/" },
+        { name: "Contact", url: "https://www.nycitylimousine.com/contact" },
       ])} />
     </PageShell>
   );
@@ -370,7 +459,7 @@ function CounterField({
 }
 
 const FAQS = [
-  { q: "How do I book a limousine with NYC Limo Car?", a: "You can book through our online form above, call us 24/7, or send us an email. We confirm all bookings within 30 minutes." },
+  { q: "How do I book a limousine with NY City Limousine?", a: "You can book through our online form above, call us 24/7, or send us an email. We confirm all bookings within 30 minutes." },
   { q: "When will my credit card be charged?", a: "Your credit card will not be charged until 24 hours before your scheduled trip. You will receive a confirmation email with your Trip Confirmation Number before any charge is made." },
   { q: "Do you track flights for airport pickups?", a: "Yes. We monitor all incoming flights in real time. If your flight is delayed, we adjust your pickup time automatically at no extra charge." },
   { q: "What is included in the airport limousine service?", a: "All airport services include: free meet & greet inside the terminal with a personalized name sign, up to 60 minutes of complimentary waiting time, luggage assistance, complimentary water and soft drinks, and all-inclusive pricing with taxes and gratuity included." },

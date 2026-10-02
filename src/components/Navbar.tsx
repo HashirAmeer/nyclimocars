@@ -4,17 +4,54 @@ import { ChevronDown, Menu, X, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 
 const services = [
+  { to: "/services/black-car", label: "Black Car Service" },
   { to: "/services/hourly", label: "Hourly Service" },
   { to: "/services/airport", label: "Airport Service" },
   { to: "/services/point-to-point", label: "Point to Point Service" },
-  { to: "/services/tours", label: "Tours Service" },
+  { to: "/services/tours", label: "Private NYC Tours" },
+  { to: "/services/wedding", label: "Wedding Transportation" },
+  { to: "/services/corporate", label: "Corporate Transportation" },
 ] as const;
 
 const pricing = [
   { to: "/pricing/hourly", label: "Hourly Rates" },
-  { to: "/pricing/airport", label: "Airport Rates" },
+  { to: "/airports/jfk", label: "From/To JFK Airport" },
+  { to: "/airports/lga", label: "From/To LaGuardia Airport" },
+  { to: "/airports/ewr", label: "From/To Newark Airport" },
+  { to: "/airports/teb", label: "From/To Teterboro Airport" },
   { to: "/pricing/point-to-point", label: "Point to Point Rates" },
   { to: "/pricing/tours", label: "Tours Rates" },
+] as const;
+
+const airports = [
+  { to: "/airports/jfk", label: "JFK Airport" },
+  { to: "/airports/lga", label: "LaGuardia Airport" },
+  { to: "/airports/ewr", label: "Newark Airport" },
+  { to: "/airports/teb", label: "Teterboro Airport" },
+] as const;
+
+const locations = [
+  { label: "MANHATTAN" },
+  { to: "/locations/manhattan", label: "Manhattan Overview" },
+  { to: "/locations/midtown-manhattan", label: "Midtown Manhattan" },
+  { to: "/locations/upper-east-side", label: "Upper East Side" },
+  { to: "/locations/upper-west-side", label: "Upper West Side" },
+  { to: "/locations/downtown-manhattan", label: "Downtown Manhattan" },
+  { to: "/locations/financial-district", label: "Financial District" },
+  { to: "/locations/soho-tribeca", label: "SoHo & Tribeca" },
+  { to: "/locations/greenwich-village", label: "Greenwich Village" },
+  { to: "/locations/chelsea-hudson-yards", label: "Chelsea & Hudson Yards" },
+  { label: "BOROUGHS" },
+  { to: "/locations/brooklyn", label: "Brooklyn" },
+  { to: "/locations/queens", label: "Queens" },
+  { to: "/locations/bronx", label: "The Bronx" },
+  { to: "/locations/staten-island", label: "Staten Island" },
+  { label: "TRI-STATE AREA" },
+  { to: "/locations/long-island", label: "Long Island" },
+  { to: "/locations/hamptons", label: "The Hamptons" },
+  { to: "/locations/new-jersey", label: "New Jersey" },
+  { to: "/locations/connecticut", label: "Connecticut" },
+  { to: "/locations/westchester", label: "Westchester County" },
 ] as const;
 
 const linkClass =
@@ -27,7 +64,7 @@ function Dropdown({
   items,
 }: {
   label: string;
-  items: readonly { to: string; label: string }[];
+  items: readonly { to?: string; label: string }[];
 }) {
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -90,16 +127,22 @@ function Dropdown({
           style={{ boxShadow: "var(--shadow-luxury)" }}
           role="menu"
         >
-          {items.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              onClick={() => setOpen(false)}
-              role="menuitem"
-              className="block px-5 py-3 text-sm text-white/85 transition-colors hover:bg-gold/15 hover:text-gold"
-            >
-              {item.label}
-            </Link>
+          {items.map((item, idx) => (
+            item.to ? (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={() => setOpen(false)}
+                role="menuitem"
+                className="block px-5 py-2.5 text-sm text-white/85 transition-colors hover:bg-gold/15 hover:text-gold"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <div key={idx} className="px-5 pb-1 pt-3 text-xs font-semibold tracking-wider text-gold/80 first:pt-2">
+                {item.label}
+              </div>
+            )
           ))}
         </div>
       </div>
@@ -135,19 +178,21 @@ export function Navbar() {
           <nav className="hidden items-center gap-7 lg:flex">
             <Link to="/" activeOptions={{ exact: true }} className={linkClass}>Home</Link>
             <Dropdown label="Services" items={services} />
+            <Dropdown label="Airports" items={airports} />
+            <Dropdown label="Locations" items={locations} />
             <Link to="/about" className={linkClass}>About</Link>
-            <Dropdown label="Pricing" items={pricing} />
+            <Dropdown label="Rates" items={pricing} />
             <Link to="/fleet" className={linkClass}>Fleet</Link>
             <Link to="/contact" className={linkClass}>Contact</Link>
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
             <a
-              href="tel:+12125550199"
+              href="tel:+19174380858"
               className="inline-flex items-center gap-2 rounded-full border border-gold/40 px-5 py-2.5 text-sm font-medium text-gold transition-all hover:bg-gold hover:text-navy"
             >
               <Phone className="h-4 w-4" />
-              (212) 555-0199
+              +1 (917) 438-0858
             </a>
           </div>
 
@@ -182,15 +227,17 @@ export function Navbar() {
           <div className="flex flex-col gap-1 overflow-y-auto p-5">
             <MobileLink to="/" onClick={() => setMobileOpen(false)}>Home</MobileLink>
             <MobileGroup label="Services" items={services} onClose={() => setMobileOpen(false)} />
+            <MobileGroup label="Airports" items={airports} onClose={() => setMobileOpen(false)} />
+            <MobileGroup label="Locations" items={locations} onClose={() => setMobileOpen(false)} />
             <MobileLink to="/about" onClick={() => setMobileOpen(false)}>About</MobileLink>
-            <MobileGroup label="Pricing" items={pricing} onClose={() => setMobileOpen(false)} />
+            <MobileGroup label="Rates" items={pricing} onClose={() => setMobileOpen(false)} />
             <MobileLink to="/fleet" onClick={() => setMobileOpen(false)}>Fleet</MobileLink>
             <MobileLink to="/contact" onClick={() => setMobileOpen(false)}>Contact</MobileLink>
             <a
-              href="tel:+12125550199"
+              href="tel:+19174380858"
               className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-navy"
             >
-              <Phone className="h-4 w-4" /> Call (212) 555-0199
+              <Phone className="h-4 w-4" /> Call +1 (917) 438-0858
             </a>
           </div>
         </aside>
@@ -225,7 +272,7 @@ function MobileGroup({
   onClose,
 }: {
   label: string;
-  items: readonly { to: string; label: string }[];
+  items: readonly { to?: string; label: string }[];
   onClose: () => void;
 }) {
   const [open, setOpen] = useState(false);
@@ -240,15 +287,21 @@ function MobileGroup({
       </button>
       {open && (
         <div className="ml-3 flex flex-col border-l border-gold/30 pl-3">
-          {items.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              onClick={onClose}
-              className="rounded-md px-3 py-2 text-sm text-white/75 hover:text-gold"
-            >
-              {item.label}
-            </Link>
+          {items.map((item, idx) => (
+            item.to ? (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={onClose}
+                className="rounded-md px-3 py-2 text-sm text-white/75 hover:text-gold"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <div key={idx} className="px-3 pb-1 pt-3 text-xs font-semibold tracking-wider text-gold/80 first:pt-1">
+                {item.label}
+              </div>
+            )
           ))}
         </div>
       )}

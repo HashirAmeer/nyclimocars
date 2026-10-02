@@ -10,7 +10,6 @@ import {
   Calendar,
   Briefcase,
   Heart,
-  Dice5,
   Camera,
   Phone,
 } from "lucide-react";
@@ -18,13 +17,13 @@ import {
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About NYC Limo Car | Trusted Luxury Limousine Service New York City" },
+      { title: "About NY City Limousine | Trusted Luxury Limousine Service New York City" },
       {
         name: "description",
         content:
-          "Learn about NYC Limo Car — New York City's trusted luxury limousine and chauffeur service. Professional drivers, premium fleet serving NYC, JFK, LGA, EWR and the entire Tri-State Area.",
+          "Learn about NY City Limousine — New York City's trusted luxury limousine and chauffeur service. Professional drivers, premium fleet serving NYC, JFK, LGA, EWR and the entire Tri-State Area.",
       },
-      { property: "og:title", content: "About NYC Limo Car | Luxury Chauffeur Service" },
+      { property: "og:title", content: "About NY City Limousine | Luxury Chauffeur Service" },
       {
         property: "og:description",
         content:
@@ -33,7 +32,7 @@ export const Route = createFileRoute("/about")({
       {
         property: "og:image",
         content:
-          "https://images.unsplash.com/photo-1496588152823-86ff7695e68f?w=1600&q=80",
+          "https://images.pexels.com/photos/18369291/pexels-photo-18369291.jpeg?auto=compress&cs=tinysrgb&w=1600",
       },
     ],
   }),
@@ -46,8 +45,8 @@ function AboutPage() {
       {/* SECTION 1 — HERO */}
       <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden">
         <img loading="lazy" decoding="async"
-          src="https://images.unsplash.com/photo-1496588152823-86ff7695e68f?w=1920&q=80"
-          alt="New York City skyline at night"
+          src="https://images.pexels.com/photos/18369291/pexels-photo-18369291.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          alt="Luxury black car fleet"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/75 to-navy/95" />
@@ -56,7 +55,7 @@ function AboutPage() {
             About Us
           </p>
           <h1 className="mx-auto max-w-4xl text-5xl font-semibold leading-tight md:text-7xl animate-fade-up">
-            About NYC Limo Car
+            About Us — The Standard Behind Every Ride
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/85 md:text-xl animate-fade-up">
             New York City's Trusted Luxury Limousine &amp; Chauffeur Service
@@ -80,7 +79,7 @@ function AboutPage() {
         <div className="container-luxury">
           <div className="grid items-center gap-14 text-center lg:grid-cols-2 lg:text-left">
             <img loading="lazy" decoding="async"
-              src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1200&q=80"
+              src="https://images.pexels.com/photos/15774577/pexels-photo-15774577.jpeg?auto=compress&cs=tinysrgb&w=1200"
               alt="Professional chauffeur opening luxury limousine door"
               className="mx-auto rounded-2xl object-cover shadow-xl"
             />
@@ -92,24 +91,39 @@ function AboutPage() {
                 Our Story
               </h2>
               <div className="mx-auto mt-5 h-px w-16 bg-gold lg:mx-0" />
-              <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed">
+              <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed text-lg">
                 <p>
-                  A warm welcome to NYC Limo Car! We are dedicated to offering the safest
-                  and most reliable limousine services in the Tri-State Area, with you —
-                  our valued customers — at the center of everything we do.
+                  We are a New York City luxury limousine and black car service, 
+                  fully licensed by the NYC Taxi & Limousine Commission and 
+                  operating across the five boroughs, the Tri-State area, and 
+                  all major metropolitan airports.
                 </p>
                 <p>
-                  Need to arrive in style for a conference, big night out, intimate dinner,
-                  or any special occasion? Or are you looking for a private limousine tour
-                  of NYC? Whatever you need, NYC Limo Car is here to make you feel like
-                  royalty. Our fleet of immaculate limousines and executive vehicles will
-                  have you spoiled for choice, and our professional chauffeurs will add an
-                  extra level of luxury to every ride.
+                  We built this company on a straightforward conviction: ground 
+                  transportation in New York should be as reliable as the city 
+                  demands it to be. Every chauffeur we employ is TLC-licensed, 
+                  background-checked, drug-tested, and trained specifically in 
+                  airport pickup protocols, corporate account service, and 
+                  event transportation management.
                 </p>
                 <p>
-                  We provide more than just a transportation service — we add a touch of
-                  class and luxury to your journey and make each trip a memorable one you
-                  will remember for years to come.
+                  Our fleet is maintained to a standard above TLC minimums. 
+                  Every vehicle is inspected before every shift. We do not 
+                  put passengers in a vehicle we would not be comfortable 
+                  riding in ourselves.
+                </p>
+                <p>
+                  We do not believe in hidden charges, surge pricing, or 
+                  vague booking processes. Every fare is quoted upfront. 
+                  Every airport transfer includes flight tracking. Every 
+                  booking is confirmed with direct chauffeur contact 
+                  information 24 hours before pickup.
+                </p>
+                <p>
+                  Our team is based in New York City. We know these streets, 
+                  these airports, these traffic patterns, and these venues — 
+                  not because we studied them, but because we drive them 
+                  every day.
                 </p>
               </div>
             </div>
@@ -132,13 +146,13 @@ function AboutPage() {
               {
                 icon: "✈️",
                 title: "NYC Airport Limousine Service",
-                text: "NYC Limo Car offers great rates for pick-ups and drop-offs at JFK, LGA, EWR, SWF, and TEB airports. Every airport service includes a FREE meet & greet inside the terminal with a personalized name sign, up to 60 minutes of complimentary waiting time, and complimentary water and soft drinks. Champagne available upon request.",
+                text: "NY City Limousine offers great rates for pick-ups and drop-offs at JFK, LGA, EWR, SWF, and TEB airports. Every airport service includes a FREE meet & greet inside the terminal with a personalized name sign, up to 60 minutes of complimentary waiting time, and complimentary water and soft drinks. Champagne available upon request.",
                 extra: "JFK · LGA · EWR · SWF · TEB",
               },
               {
                 icon: "🕐",
                 title: "Hourly Limousine Service",
-                text: "NYC Limo Car offers hourly limousine hire for all events so you can cruise New York City in style. Choose from our full fleet — stretched limousines, SUVs, luxury sedans, vans, and coach buses. Our professional chauffeurs provide VIP treatment throughout. Available for Brooklyn, Manhattan, the Bronx, and all of NYC.",
+                text: "NY City Limousine offers hourly limousine hire for all events so you can cruise New York City in style. Choose from our full fleet — stretched limousines, SUVs, luxury sedans, vans, and coach buses. Our professional chauffeurs provide VIP treatment throughout. Available for Brooklyn, Manhattan, the Bronx, and all of NYC.",
               },
               {
                 icon: "🗽",
@@ -168,8 +182,8 @@ function AboutPage() {
       {/* SECTION 4 — OUR MISSION */}
       <section className="relative isolate overflow-hidden bg-navy py-24 text-white">
         <img loading="lazy" decoding="async"
-          src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=1600&q=80"
-          alt=""
+          src="https://images.pexels.com/photos/12513224/pexels-photo-12513224.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          alt="Luxury SUV"
           className="absolute inset-0 h-full w-full object-cover opacity-15"
         />
         <div className="container-luxury relative text-center">
@@ -177,27 +191,35 @@ function AboutPage() {
             Our Promise
           </p>
           <h2 className="mt-3 text-4xl font-semibold text-gold md:text-5xl">
-            Our Mission
+            Our Commitments
           </h2>
           <div className="mx-auto mt-5 h-px w-24 bg-gold" />
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-white/85">
-            At NYC Limo Car, our mission is to redefine luxury transportation in New York
-            City — one ride at a time. We are committed to punctuality, passenger safety,
-            and exceptional service that exceeds your expectations on every journey. We
-            pride ourselves on excellent customer service. All our chauffeurs have received
-            the highest training in customer etiquette and road safety.
-          </p>
+          <div className="mx-auto mt-10 grid max-w-4xl gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              "TLC compliance on every vehicle and every driver",
+              "Fixed-rate pricing on every booking",
+              "Real-time flight tracking on every airport transfer",
+              "24/7 dispatch availability",
+              "A named account manager for every corporate client",
+              "Response to every inquiry within one hour during business hours",
+            ].map((c) => (
+              <div key={c} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-5 text-left backdrop-blur-sm transition-all hover:bg-white/10">
+                <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+                <span className="text-sm text-white/90">{c}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* SECTION 5 — WHY CHOOSE NYC LIMO CAR */}
+      {/* SECTION 5 — WHY CHOOSE NY CITY LIMOUSINE */}
       <section className="bg-background py-24">
         <div className="container-luxury text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
             Why Us
           </p>
           <h2 className="mt-3 text-4xl font-semibold text-navy md:text-5xl">
-            Why Choose NYC Limo Car?
+            Why Choose NY City Limousine?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
             We Treat Our Customers Like Royalty
@@ -329,7 +351,7 @@ function AboutPage() {
             ))}
           </div>
           <p className="mx-auto mt-10 max-w-2xl text-muted-foreground">
-            NYC Limo Car serves the entire Tri-State Area. Whether you're in the heart of
+            NY City Limousine serves the entire Tri-State Area. Whether you're in the heart of
             Manhattan or the suburbs of New York, we bring luxury transportation to your
             door.
           </p>
@@ -349,40 +371,40 @@ function AboutPage() {
           <div className="mx-auto mt-14 grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                icon: Calendar,
-                title: "Event Transportation",
-                text: "Galas, premieres, concerts, and private events. Arrive in style with chauffeured precision.",
-                href: "/services/hourly",
-              },
-              {
                 icon: Plane,
                 title: "Airport Service",
                 text: "Punctual JFK, LGA, EWR, SWF, and TEB transfers with meet-and-greet and flight tracking.",
                 href: "/services/airport",
               },
               {
+                icon: Calendar,
+                title: "Hourly Service",
+                text: "Flexible per-hour limo hire with a dedicated professional chauffeur for any occasion.",
+                href: "/services/hourly",
+              },
+              {
+                icon: Briefcase,
+                title: "Point to Point",
+                text: "Flat-rate direct transfers anywhere in NYC and the Tri-State Area with on-time guarantee.",
+                href: "/services/point-to-point",
+              },
+              {
                 icon: Camera,
-                title: "Private Tours",
+                title: "Private NYC Tours",
                 text: "Bespoke NYC sightseeing, night lights, and shopping tours with licensed guides.",
                 href: "/services/tours",
               },
               {
                 icon: Heart,
-                title: "Weddings",
+                title: "Wedding Transportation",
                 text: "Elegant wedding transportation for the bride, groom, and the entire wedding party.",
-                href: "/services/hourly",
-              },
-              {
-                icon: Dice5,
-                title: "Casinos",
-                text: "Comfortable luxury rides to Atlantic City, Foxwoods, Mohegan Sun, and Resorts World.",
-                href: "/services/point-to-point",
+                href: "/services/wedding",
               },
               {
                 icon: Briefcase,
-                title: "Corporate",
+                title: "Corporate Transportation",
                 text: "Executive ground transportation, roadshows, and corporate accounts with priority service.",
-                href: "/services/hourly",
+                href: "/services/corporate",
               },
             ].map(({ icon: Icon, title, text, href }) => (
               <Link
@@ -426,11 +448,11 @@ function AboutPage() {
               Book Your Ride
             </Link>
             <a
-              href="tel:+12125550199"
+              href="tel:+19174380858"
               className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white px-8 py-3.5 text-sm font-semibold uppercase tracking-widest text-white transition-all hover:-translate-y-0.5 hover:bg-white hover:text-navy"
             >
               <Phone className="h-4 w-4" />
-              Call Us 24/7
+              Call +1 (917) 438-0858
             </a>
           </div>
         </div>
